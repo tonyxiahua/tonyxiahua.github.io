@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Arduino Basic Connections</title>
+    <url>/2016/10/26/Arduino-Basic-Connections/</url>
+    <content><![CDATA[<p>这里分享一下来自 <a href="http://www.pighixxx.com/">www.pighixxx.com</a> 的 Arduino 基础接线图（ABC，Arduino Basic Connections），希望对大家有用。</p>
+<p><img src="/images/arduino_basic_connections/1.jpg" alt="1">  </p>
+<span id="more"></span>
+<p><img src="/images/arduino_basic_connections/2.jpg" alt="2"><br><img src="/images/arduino_basic_connections/3.jpg" alt="3"><br><img src="/images/arduino_basic_connections/4.jpg" alt="4"><br><img src="/images/arduino_basic_connections/5.jpg" alt="5"><br><img src="/images/arduino_basic_connections/6.jpg" alt="6"><br><img src="/images/arduino_basic_connections/7.jpg" alt="7"><br><img src="/images/arduino_basic_connections/8.jpg" alt="8"><br><img src="/images/arduino_basic_connections/9.jpg" alt="9"><br><img src="/images/arduino_basic_connections/10.jpg" alt="10"><br><img src="/images/arduino_basic_connections/11.jpg" alt="11"><br><img src="/images/arduino_basic_connections/12.jpg" alt="12"><br><img src="/images/arduino_basic_connections/13.jpg" alt="13"><br><img src="/images/arduino_basic_connections/14.jpg" alt="14"><br><img src="/images/arduino_basic_connections/15.jpg" alt="15"><br><img src="/images/arduino_basic_connections/16.jpg" alt="16"><br><img src="/images/arduino_basic_connections/17.jpg" alt="17"><br><img src="/images/arduino_basic_connections/18.jpg" alt="18"><br><img src="/images/arduino_basic_connections/19.jpg" alt="19"><br><img src="/images/arduino_basic_connections/20.jpg" alt="20"></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Arduino</tag>
+        <tag>单片机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Audi B6 A4 刹车液报警：只在冷天出现</title>
+    <url>/2016/12/08/Audi-B6-A4-Break-Fluid-Warning-on-cold-days/</url>
+    <content><![CDATA[<p>冬天一冷，车就开始出毛病。这次是刹车系统报警——嘀嘀响、手刹灯闪三下——但只在天冷的时候出现，暖和了就正常，运气不好还会持续报个不停。上网一查，发现不少车友都遇到过同样的问题。</p>
+<span id="more"></span>
+
+<p>翻了一圈车友论坛，大家给出的可能原因主要集中在这几个方向：</p>
+<ul>
+<li><strong>卡钳泄漏</strong>：某个卡钳的放气阀（bleeder screw）密封不好，转弯时因为离心力，刹车液被甩到某一侧导致液位报警，换掉那个卡钳就能解决。</li>
+<li><strong>传感器故障</strong>：也有车友是每次启动车子就报警、开起来却完全正常，怀疑是液位传感器接触不良，跟真实液位没关系。</li>
+<li><strong>和 ESP 联动</strong>：ABS&#x2F;ESP 属于同一套系统，如果 ESP 故障灯也一起亮，说明可能是 ALB 模块或传感器的问题，建议用 VAG-COM 读一下故障码，能更精确定位问题出在哪。</li>
+</ul>
+<p>对我来说，因为刹车片、刹车盘、刹车液这些部件本来就快到了该换的里程，所以没有再深挖具体故障点，先把这件事放一放。</p>
+<p><strong>更新</strong>：后来确认就是刹车片磨损导致刹车液面下降，触发了报警。冲洗了整套刹车系统、换上新液体之后，报警就再也没出现过。</p>
+]]></content>
+      <categories>
+        <category>汽车</category>
+      </categories>
+      <tags>
+        <tag>Audi</tag>
+        <tag>A4</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Arduino UNO R3 上手测试</title>
     <url>/2016/07/29/Arduino-UNO-R3-%E4%B8%8A%E6%89%8B%E6%B5%8B%E8%AF%95/</url>
     <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Arduino 作为一款偏向硬件控制的单片机，相比Raspberry Pi 3，我当时购入的Starter kit 有很多有趣的控，比如NFC卡，JoyStick，Speaker，一堆我都不知道怎么玩的东西qwq。感觉就是一个很强大的控制模块。经过几天的捣鼓，暂时知道了一些基本的玩法，现在向大家介绍一下。</p>
@@ -34,45 +73,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Audi B6 A4 刹车液报警：只在冷天出现</title>
-    <url>/2016/12/08/Audi-B6-A4-Break-Fluid-Warning-on-cold-days/</url>
-    <content><![CDATA[<p>冬天一冷，车就开始出毛病。这次是刹车系统报警——嘀嘀响、手刹灯闪三下——但只在天冷的时候出现，暖和了就正常，运气不好还会持续报个不停。上网一查，发现不少车友都遇到过同样的问题。</p>
-<span id="more"></span>
-
-<p>翻了一圈车友论坛，大家给出的可能原因主要集中在这几个方向：</p>
-<ul>
-<li><strong>卡钳泄漏</strong>：某个卡钳的放气阀（bleeder screw）密封不好，转弯时因为离心力，刹车液被甩到某一侧导致液位报警，换掉那个卡钳就能解决。</li>
-<li><strong>传感器故障</strong>：也有车友是每次启动车子就报警、开起来却完全正常，怀疑是液位传感器接触不良，跟真实液位没关系。</li>
-<li><strong>和 ESP 联动</strong>：ABS&#x2F;ESP 属于同一套系统，如果 ESP 故障灯也一起亮，说明可能是 ALB 模块或传感器的问题，建议用 VAG-COM 读一下故障码，能更精确定位问题出在哪。</li>
-</ul>
-<p>对我来说，因为刹车片、刹车盘、刹车液这些部件本来就快到了该换的里程，所以没有再深挖具体故障点，先把这件事放一放。</p>
-<p><strong>更新</strong>：后来确认就是刹车片磨损导致刹车液面下降，触发了报警。冲洗了整套刹车系统、换上新液体之后，报警就再也没出现过。</p>
-]]></content>
-      <categories>
-        <category>汽车</category>
-      </categories>
-      <tags>
-        <tag>Audi</tag>
-        <tag>A4</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Arduino Basic Connections</title>
-    <url>/2016/10/26/Arduino-Basic-Connections/</url>
-    <content><![CDATA[<p>这里分享一下来自 <a href="http://www.pighixxx.com/">www.pighixxx.com</a> 的 Arduino 基础接线图（ABC，Arduino Basic Connections），希望对大家有用。</p>
-<p><img src="/images/arduino_basic_connections/1.jpg" alt="1">  </p>
-<span id="more"></span>
-<p><img src="/images/arduino_basic_connections/2.jpg" alt="2"><br><img src="/images/arduino_basic_connections/3.jpg" alt="3"><br><img src="/images/arduino_basic_connections/4.jpg" alt="4"><br><img src="/images/arduino_basic_connections/5.jpg" alt="5"><br><img src="/images/arduino_basic_connections/6.jpg" alt="6"><br><img src="/images/arduino_basic_connections/7.jpg" alt="7"><br><img src="/images/arduino_basic_connections/8.jpg" alt="8"><br><img src="/images/arduino_basic_connections/9.jpg" alt="9"><br><img src="/images/arduino_basic_connections/10.jpg" alt="10"><br><img src="/images/arduino_basic_connections/11.jpg" alt="11"><br><img src="/images/arduino_basic_connections/12.jpg" alt="12"><br><img src="/images/arduino_basic_connections/13.jpg" alt="13"><br><img src="/images/arduino_basic_connections/14.jpg" alt="14"><br><img src="/images/arduino_basic_connections/15.jpg" alt="15"><br><img src="/images/arduino_basic_connections/16.jpg" alt="16"><br><img src="/images/arduino_basic_connections/17.jpg" alt="17"><br><img src="/images/arduino_basic_connections/18.jpg" alt="18"><br><img src="/images/arduino_basic_connections/19.jpg" alt="19"><br><img src="/images/arduino_basic_connections/20.jpg" alt="20"></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>单片机</tag>
-        <tag>Arduino</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Audi B6 A4 DIY 教程网站</title>
     <url>/2016/11/30/Audi-B6-A4-DIY-%E6%95%99%E7%A8%8B%E7%BD%91%E7%AB%99/</url>
     <content><![CDATA[<p>有几个非常有用的Audi B6 A4 网站，想到在2016 年的今天还能找到这些2005 年的修复网站实在是非常不容易。我刚刚好打印下载了这些文章，以供大家以后的参考。如果大家想要更多的修复资料，我这里还有一些。  </p>
@@ -89,26 +89,26 @@
         <category>汽车</category>
       </categories>
       <tags>
-        <tag>3hBWpYhdsX5C</tag>
+        <tag>Audi</tag>
       </tags>
   </entry>
   <entry>
     <title>给塑料充电器喷漆</title>
     <url>/2016/10/25/Audi-B6-A4-Spary-car-charger/</url>
-    <content><![CDATA[<p>或许你在发愁没有找到合适颜色的商品，或许你在烦恼不同颜色的不搭调。没有问题！现在你只需要一个喷漆，就能够马上转换你的心情！</p>
-<p>其实在我上个月的时候就开始研究喷漆了，原因是有一辆古老的变速单车，而他的主人又舍不得丢掉它，纠结之下就开始了我的改装单车计划。但是到了现在这个单车我还只是停留在拆卸状态，如果遇到周末的话就可以进行了。但是平时呢，需要学习一下如何提升自己的喷漆技巧，为了让上色更加沉着，还是需要 100 小时的基本训练，1000小时的熟练之路。</p>
-<p>现在手头上有一个红色的充电器插头，一看下去我十分不满意，这个红色看上去太艳了，和我车内黑色的内饰不搭调，蓝色指示灯也就算了，但是这个红色实在是没法忍受……于是一气之下就开喷了。</p>
-<p>这个是Amazon 当时的购买图片：<br><img src="/images/spary_carcharger/1.jpg" alt="Vinsic® USB Type C Car Charger ">  </p>
+    <content><![CDATA[<p>或许你在发愁没有找到合适颜色的商品，或许你在烦恼不同颜色的不搭调。没有问题！现在你只需要一罐喷漆，就能马上转换你的心情。</p>
 <span id="more"></span>
-<p><img src="/images/spary_carcharger/2.jpg" alt="Vinsic® USB Type C Car Charger "></p>
-<p>看上去太鲜艳了。</p>
-<p>于是我拿起我的喷漆……<br>喷漆这个东西切记需要耐心，给东西上色一次是不会成功的，特别是这种有塑料保护膜的东西。必须要先用砂纸打磨掉外面的保护漆。之后第一次上色，上色要喷均匀，喷好第一次Coating 就视情况闲置15-30分钟，等色干之后就可以进行第二次上色了，同样的，喷均匀之后需要等等。如果你不满意的话，可以进行第三次coating。其实我觉得两次就可以了。</p>
+
+<p>其实我上个月就开始研究喷漆了，起因是一辆古老的变速单车——车主舍不得丢，纠结之下我揽下了改装计划，只是目前还停留在拆卸状态，得等周末才能继续推进。平时没空动手，就先练练喷漆手感：想让上色均匀持久，怎么也得攒够 100 小时的基本功、1000 小时的熟练度才敢说入门。</p>
+<p>刚好手头有一个红色的车载充电器插头，越看越不顺眼——红得太艳，和车内黑色内饰完全不搭，蓝色指示灯还能忍，但这个红色实在受不了了，于是一气之下就拿它练手。</p>
+<p>这是 Amazon 上当时的购买图片：<br><img src="/images/spary_carcharger/1.jpg" alt="Vinsic® USB Type C Car Charger "><br><img src="/images/spary_carcharger/2.jpg" alt="Vinsic® USB Type C Car Charger "></p>
+<p>看上去确实太鲜艳了，动手的理由更充分了。</p>
+<p>于是我拿起喷漆开工了。喷漆这东西最讲究耐心，一次上色基本不可能成功，尤其是这种带塑料保护膜的表面——必须先用砂纸把外层保护漆打磨掉。第一次喷要均匀，喷完视情况晾 15–30 分钟，等干透了再上第二遍，同样要喷均匀、同样要等。不满意的话可以喷第三遍，不过我觉得两遍基本就够了。</p>
 <p><img src="/images/spary_carcharger/3.jpg" alt="coating 3"><br><img src="/images/spary_carcharger/4.jpg" alt="coating after"><br><img src="/images/spary_carcharger/5.jpg" alt="coating done"></p>
-<p>这样一来就是完全的成品了，看上去还不错，起码原先的红色被覆盖了。</p>
+<p>这样就算完工了，成品看上去还不错，起码原来那个刺眼的红色被盖得干干净净。</p>
 <p><img src="/images/spary_carcharger/6.jpg" alt="fullview1"><br><img src="/images/spary_carcharger/7.jpg" alt="fullview2"></p>
-<p>之后放到车上看看车内的效果，和黑色的内饰搭调了，很好，这个研究完成了！</p>
+<p>装回车上看效果，和黑色内饰终于搭调了，这次的小研究就算完成了。</p>
 <p><img src="/images/spary_carcharger/8.jpg" alt="fullview3"><br><img src="/images/spary_carcharger/9.jpg" alt="fullview4"></p>
-<p>Thanks.</p>
+<p>以上就是这次喷漆的全部过程，感谢看到这里。</p>
 ]]></content>
       <categories>
         <category>汽车</category>
@@ -142,16 +142,33 @@
       </tags>
   </entry>
   <entry>
+    <title>Audi B6 A4 切换温度单位</title>
+    <url>/2016/11/02/Audi-B6-A4-%E5%88%87%E6%8D%A2%E6%B8%A9%E5%BA%A6%E5%8D%95%E4%BD%8D/</url>
+    <content><![CDATA[<p>美规车的仪表和空调面板默认显示华氏度，看惯了摄氏度的人开着会有点别扭，其实 Audi B6 A4 以及同平台的车型都藏了一个隐藏开关，不用进 4S 店也能自己切换显示单位。</p>
+<span id="more"></span>
+
+<p>方法很简单：打开空调，同时按住内循环键以及温度减少键三秒。松手之后观察显示台控制中心，就能看到已经切换为摄氏度显示方式了。如果想切回华氏度，同样的操作再做一遍就行，两种单位来回切换没有次数限制。</p>
+]]></content>
+      <categories>
+        <category>汽车</category>
+      </categories>
+      <tags>
+        <tag>Audi</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Audi B6 A4 彩色中控屏幕</title>
     <url>/2016/10/29/Audi-B6-A4-%E5%BD%A9%E8%89%B2%E4%B8%AD%E6%8E%A7%E5%B1%8F%E5%B9%95/</url>
-    <content><![CDATA[<p>在YouTube上看到了一个战斗民族的开发者，给老款的B6 A4 添加了一个彩色的新款中控屏幕，还添加了很多自检功能，十分想要这个套装，但是在eBay上并没有找到这个商品，看起来要去战斗民族的老窝里面寻找一下了。</p>
+    <content><![CDATA[<p>在YouTube上看到了一个战斗民族的开发者，给老款的B6 A4 添加了一个彩色的新款中控屏幕，还加了很多自检功能，做得相当专业，十分想要这个套装。可惜在eBay上翻了一圈都没找到卖家，看起来得去战斗民族的老窝里面寻找一下了。</p>
+<span id="more"></span>
+
 <div class="video-container"><iframe allowfullscreen="" frameborder="0" src="//www.youtube.com/embed/x4rM9b3M8FY"></iframe></div>
 
 <p><a href="https://www.youtube.com/watch?v=x4rM9b3M8FY">视频可能有点小，点我去YouTube上看</a></p>
 <p>还有它们的研发网站：</p>
 <p><a href="https://vk.com/colormfa">Color MFA Autopilot</a></p>
-<p>这个是它们的博客，我看了一下AutoPilot 这个公司，貌似给很多汽车厂提供中控屏幕？<br><a href="https://www.drive2.ru/o/MultiMFA">Color MFA Blog</a></p>
-<p>暂时就这些。</p>
+<p>这个是它们的博客，我看了一下AutoPilot 这个公司，貌似给不少汽车厂提供中控屏幕方案，看来不只是个人作品那么简单。<br><a href="https://www.drive2.ru/o/MultiMFA">Color MFA Blog</a></p>
+<p>暂时先搜集到这些资料，等真的淘到货了再更新装车体验。</p>
 ]]></content>
       <categories>
         <category>汽车</category>
@@ -165,14 +182,16 @@
   <entry>
     <title>Audi B6 A4 重置保养周期 Service Light Reset</title>
     <url>/2016/11/09/Audi-B6-A4-%E9%87%8D%E7%BD%AE%E4%BF%9D%E5%85%BB%E5%91%A8%E6%9C%9F/</url>
-    <content><![CDATA[<p>A4 开着开着就到了100000 mile 了，毕竟也是几十年的车了，这个去4S 店保养肯定会被人坑，但是每次启动保养灯都会提醒所以有点烦。在网上找了一下方法，发现挺简单，在这里分享一下。</p>
+    <content><![CDATA[<p>A4 开着开着就到了 100000 mile 了，车龄不小了，这种老车去 4S 店保养肯定会被坑一笔手续费。问题是每次启动保养灯都会跳出来提醒，看着心烦，于是上网查了下怎么自己清零，发现方法很简单，在这里分享一下。</p>
+<span id="more"></span>
+
 <h3 id="步骤-Steps"><a href="#步骤-Steps" class="headerlink" title="步骤 Steps"></a>步骤 Steps</h3><ol>
 <li>把钥匙插进去打开汽车但不需要点火</li>
 <li>长按维修保养按钮</li>
 <li>当屏幕出现维修信息的时候按下0.0 （清零里程）按钮</li>
 <li>如果屏幕出现—，说明重置完成。</li>
 <li>关上汽车，清零完成。</li>
-<li>新的保养周期可能需要等待几天才会出现。<span id="more"></span></li>
+<li>新的保养周期可能需要等待几天才会出现。</li>
 </ol>
 <h3 id="English-Manual"><a href="#English-Manual" class="headerlink" title="English Manual"></a>English Manual</h3><ol>
 <li>Turn ignition on while holding wrench button.</li>
@@ -196,7 +215,9 @@
   <entry>
     <title>Audition 消除伴奏获取人声的办法</title>
     <url>/2016/10/21/AuditionTakeVoice/</url>
-    <content><![CDATA[<p>如果你正为找不到一首歌曲的清唱人声版本发愁，为什么不下载完整的歌曲，自己动手分离出来呢？</p>
+    <content><![CDATA[<p>很多时候网上根本找不到一首歌的伴奏或者清唱人声版本，与其到处找资源，不如用 Adobe Audition 自己动手把人声从完整的歌曲里分离出来——原理是利用左右声道的相位差，把居中的人声单独抠出来，虽然效果比不上专业分轨，但日常使用完全够了。</p>
+<span id="more"></span>
+
 <h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
 <li>使用Audition 打开你的歌曲</li>
 <li>在Effects里面找到 Stereo Imagery</li>
@@ -218,11 +239,11 @@
   <entry>
     <title>BiliBili live Danmu on Mac (OS X)</title>
     <url>/2016/06/09/BiliBili-live-Danmu-on-Mac-OS-X/</url>
-    <content><![CDATA[<h2 id="Start-up"><a href="#Start-up" class="headerlink" title="Start up"></a>Start up</h2><p>Recently, BiliBili is in a boost of the user watching live channel, also many people start their business of using how to get started using the live broadcast softwares. Such as the OBS, and CopyLiu’s Danmu for Windows operating system. As a matter of fact, some user has Macbook or some Linux computer, they are facing a severe condition of unfriendly Chinese Software developing environment. Windows is also in the highest priority than other systems, and user of Mac the face become :( So I am one of them, after a few days struggling, I found some replaceable ways to access the Danmu function like in Windows. Let’s have a look.</p>
-<p>I found the project of <a href="https://github.com/OctavianLee/Barrage">Octavian</a>. He uses Python to make a command line tool which shows : User Message &amp; Live Channel Count. (in Terminal).</p>
-<p>Here is the installation tutorial:  </p>
+    <content><![CDATA[<h2 id="Start-up"><a href="#Start-up" class="headerlink" title="Start up"></a>Start up</h2><p>BiliBili live streaming has been booming lately, and plenty of people are getting into broadcast tools like OBS and CopyLiu’s Danmu client for Windows. The catch: those tools only really target Windows. Users on a Macbook or Linux box are stuck with an unfriendly, mostly Windows-first software ecosystem — so we don’t get the same Danmu experience out of the box.</p>
+<p>I’m one of those Mac users, and after a few days of digging I found a workaround. <a href="https://github.com/OctavianLee/Barrage">Octavian’s project</a> uses Python to build a command-line tool that shows the user message feed and live channel count right in your Terminal — basically a lightweight Danmu client that works anywhere Python runs.</p>
 <span id="more"></span>
 
+<p>Here’s the installation tutorial:</p>
 <h3 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h3><p>Open your Terminal, Use the command to enter your unzip folder:  </p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> YOUR-FOLDER-LOCATION</span><br></pre></td></tr></table></figure>
 
@@ -234,11 +255,8 @@
 <h3 id="Step-4"><a href="#Step-4" class="headerlink" title="Step 4"></a>Step 4</h3><p>Run the python command line(NO GUI).  </p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python main.py</span><br></pre></td></tr></table></figure>
 
-<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><p>If you successfully run those commands above. You should see the selection menu on the screen.</p>
-<p>Type “1” to select the room number, and receive the message from that channel.</p>
-<p>Type “2” to login Bilibili, and find out the part to get access to your account and send messages. (But this function havn’t successed yet. BiliBili always changes their API)</p>
-<p>If you’ve done those, you should have your Danmu Machine working in your Terminal. In every 5 seconds it shows the count of live channel watcher. Also receiving the message.</p>
-<p>Nice day.</p>
+<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><p>If you successfully run those commands above, you should see a selection menu on the screen. Type “1” to pick a room number and start receiving messages from that channel, or type “2” to log into Bilibili and send messages from your own account — though that second option hasn’t worked reliably for me, since BiliBili keeps changing their API.</p>
+<p>Once you’ve got it running, your Danmu Machine will sit in the Terminal refreshing the live channel watcher count every 5 seconds while streaming in the message feed. Nice day.</p>
 ]]></content>
       <categories>
         <category>技术</category>
@@ -248,59 +266,6 @@
         <tag>直播</tag>
         <tag>弹幕</tag>
         <tag>科技</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CIS 22C Labs</title>
-    <url>/2016/10/24/CIS-22C-Labs/</url>
-    <content><![CDATA[<p>CIS 22C 是 De Anza College 秋季学期的数据结构课，Delia 教授的班。这门课一共五个 Lab，从链表写到优先队列，记录一下每个 Lab 实现的内容，方便自己以后回顾，也给同样在上这门课的同学一个参考。</p>
-<span id="more"></span>
-
-<h2 id="Lab-1：链表（Linked-List）"><a href="#Lab-1：链表（Linked-List）" class="headerlink" title="Lab 1：链表（Linked List）"></a>Lab 1：链表（Linked List）</h2><p>用链表维护一份城市记录（City），实现读取、打印、按条件查找和删除节点，练手链表最基础的增删查操作。</p>
-<h2 id="Lab-2：类的链表管理"><a href="#Lab-2：类的链表管理" class="headerlink" title="Lab 2：类的链表管理"></a>Lab 2：类的链表管理</h2><p>在 Lab 1 的基础上，把节点换成课程班级信息（ClassNode），练习面向对象的节点设计和链表操作的封装。</p>
-<h2 id="Lab-3：栈与队列判断回文"><a href="#Lab-3：栈与队列判断回文" class="headerlink" title="Lab 3：栈与队列判断回文"></a>Lab 3：栈与队列判断回文</h2><p>用自己实现的 Stack 和 Queue 判断一个单词是不是回文——把字符依次压栈、入队，再对比出栈和出队的顺序是否一致，是这门课里最直观的一次栈&#x2F;队列应用练习。</p>
-<h2 id="Lab-4：二叉搜索树（BST）"><a href="#Lab-4：二叉搜索树（BST）" class="headerlink" title="Lab 4：二叉搜索树（BST）"></a>Lab 4：二叉搜索树（BST）</h2><p>用二叉搜索树维护员工记录（Employee），实现插入、中序遍历输出、以及基于姓名的查找，是五个 Lab 里代码量最大的一个。</p>
-<h2 id="Lab-5：优先队列"><a href="#Lab-5：优先队列" class="headerlink" title="Lab 5：优先队列"></a>Lab 5：优先队列</h2><p>用堆实现的优先队列模拟一个超售（overbooking）场景下的顾客排队逻辑，按优先级取出顾客，练习堆的插入和调整。</p>
-<hr>
-<p>完整代码当时是直接贴在这篇文章里的，现在整理博客的时候把大段代码都拿掉了，只保留了每个 Lab 的思路记录——毕竟几千行代码扔在一篇博客里，除了占地方也没什么可读性。如果有同学也在上这门课想要参考代码，可以在评论区留言。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Audi B6 A4 切换温度单位</title>
-    <url>/2016/11/02/Audi-B6-A4-%E5%88%87%E6%8D%A2%E6%B8%A9%E5%BA%A6%E5%8D%95%E4%BD%8D/</url>
-    <content><![CDATA[<p>如何切换Audi B6 A4 以及同类型的温度显示？</p>
-<p>打开空调，同时按住内循环键以及温度减少键三秒。</p>
-<p>观察显示台控制中心，看看是否切换为摄氏度显示方式？</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>汽车</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Chromebook Pixel 2013 Lightbar Switch</title>
-    <url>/2017/01/06/Chromebook-Pixel-2013-Lightbar-Switch/</url>
-    <content><![CDATA[<p>Chromebook Pixel 2013 顶盖上有一条灯带（lightbar），开机、充电、干活的时候都会一闪一闪，设计感是有了，但晚上在暗处用电脑的时候真的挺刺眼。找了一下发现这条灯带其实是可以手动开关的，记录一下方法。</p>
-<span id="more"></span>
-
-<p>进入开发者模式之后，在 crosh（<code>Ctrl+Alt+T</code> 打开 Crosh，输入 <code>shell</code> 进入 Linux shell）里可以直接用 <code>ectool</code> 控制灯带：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ectool lightbar off   # 关闭灯带</span><br><span class="line">sudo ectool lightbar on    # 恢复默认显示</span><br></pre></td></tr></table></figure>
-
-<p>如果只是想在开会、看电影这种场合临时关一下，用这条命令比每次都进系统设置里翻半天方便多了。缺点是重启之后会恢复默认状态，想要开机自动关闭的话，得把这条命令写进启动脚本里。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>Pixel</tag>
-        <tag>ChromenOS</tag>
       </tags>
   </entry>
   <entry>
@@ -328,9 +293,44 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Pixel</tag>
         <tag>Chromebook</tag>
         <tag>Chrome</tag>
+        <tag>Pixel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Chromebook Pixel 2013 Lightbar Switch</title>
+    <url>/2017/01/06/Chromebook-Pixel-2013-Lightbar-Switch/</url>
+    <content><![CDATA[<p>Chromebook Pixel 2013 顶盖上有一条灯带（lightbar），开机、充电、干活的时候都会一闪一闪，设计感是有了，但晚上在暗处用电脑的时候真的挺刺眼。找了一下发现这条灯带其实是可以手动开关的，记录一下方法。</p>
+<span id="more"></span>
+
+<p>进入开发者模式之后，在 crosh（<code>Ctrl+Alt+T</code> 打开 Crosh，输入 <code>shell</code> 进入 Linux shell）里可以直接用 <code>ectool</code> 控制灯带：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ectool lightbar off   # 关闭灯带</span><br><span class="line">sudo ectool lightbar on    # 恢复默认显示</span><br></pre></td></tr></table></figure>
+
+<p>如果只是想在开会、看电影这种场合临时关一下，用这条命令比每次都进系统设置里翻半天方便多了。缺点是重启之后会恢复默认状态，想要开机自动关闭的话，得把这条命令写进启动脚本里。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Pixel</tag>
+        <tag>ChromenOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HP Veer + Project Fi?枯木逢春?</title>
+    <url>/2016/11/08/HP-Veer-Project-Fi-%E6%9E%AF%E6%9C%A8%E9%80%A2%E6%98%A5/</url>
+    <content><![CDATA[<p>HP Veer 是 2011 年 HP 收购 Palm 之后推出的一款迷你 webOS 手机，比巴掌大不了多少，算是 webOS 生态临死前最后的几款机器之一。HP 当年砍掉 Palm 部门之后，webOS 这条线基本就宣告死亡了，Veer 也跟着变成一台没有系统更新、没有像样App Store 的孤儿机。</p>
+<span id="more"></span>
+
+<p>前阵子论坛里有人提了个脑洞：Google 的 Project Fi（现在叫 Google Fi）主打的是一张能在多个运营商网络间自动切换的 SIM 卡，而且对设备的要求相对宽松，只要支持基本的 LTE 制式，插上就能用数据。于是有人开始幻想，是不是可以把这张卡塞进 HP Veer 这种老古董里，让它蹭上现代网络，”枯木逢春”续一秒命。</p>
+<p>并没有这样的事情。<br>该凉的东西迟早要凉——Project Fi 能给的只是一张卡和一张网，给不回 webOS 已经停更好几年的系统和生态。硬件插上卡是能用，但那也就是一台能上网的老古董，仅此而已。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>webOS</tag>
       </tags>
   </entry>
   <entry>
@@ -349,22 +349,6 @@
       </categories>
       <tags>
         <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HP Veer + Project Fi?枯木逢春?</title>
-    <url>/2016/11/08/HP-Veer-Project-Fi-%E6%9E%AF%E6%9C%A8%E9%80%A2%E6%98%A5/</url>
-    <content><![CDATA[<p>HP Veer 是 2011 年 HP 收购 Palm 之后推出的一款迷你 webOS 手机，比巴掌大不了多少，算是 webOS 生态临死前最后的几款机器之一。HP 当年砍掉 Palm 部门之后，webOS 这条线基本就宣告死亡了，Veer 也跟着变成一台没有系统更新、没有像样App Store 的孤儿机。</p>
-<span id="more"></span>
-
-<p>前阵子论坛里有人提了个脑洞：Google 的 Project Fi（现在叫 Google Fi）主打的是一张能在多个运营商网络间自动切换的 SIM 卡，而且对设备的要求相对宽松，只要支持基本的 LTE 制式，插上就能用数据。于是有人开始幻想，是不是可以把这张卡塞进 HP Veer 这种老古董里，让它蹭上现代网络，”枯木逢春”续一秒命。</p>
-<p>并没有这样的事情。<br>该凉的东西迟早要凉——Project Fi 能给的只是一张卡和一张网，给不回 webOS 已经停更好几年的系统和生态。硬件插上卡是能用，但那也就是一台能上网的老古董，仅此而已。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>webOS</tag>
       </tags>
   </entry>
   <entry>
@@ -395,61 +379,25 @@
       </categories>
   </entry>
   <entry>
-    <title>洛杉矶生活指南</title>
-    <url>/2018/08/07/LA%E7%94%9F%E6%B4%BB%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h3 id="城市简介"><a href="#城市简介" class="headerlink" title="城市简介"></a>城市简介</h3><p>洛杉矶位于美国加利福尼亚州南部的都市，人口约397万，为加州第一大城，同时也是美国人口第二大都市。为全美国第二大都会区。（别名GTA5，堵车之城）美国大城市好啊，我这个农村人终于进城了。还是可喜可贺的9.25%的消费税。在美国已经活了快4个年头了，对于大城市的厌恶感还是挺强的。因为贵，消费水平高还有堵车， 这是我对这个城市不满意的地方，但是相反的，多元文化，餐饮口味丰富，还有全球资源的收集。这也是大城市必不可少的特点。</p>
+    <title>CIS 22C Labs</title>
+    <url>/2016/10/24/CIS-22C-Labs/</url>
+    <content><![CDATA[<p>CIS 22C 是 De Anza College 秋季学期的数据结构课，Delia 教授的班。这门课一共五个 Lab，从链表写到优先队列，记录一下每个 Lab 实现的内容，方便自己以后回顾，也给同样在上这门课的同学一个参考。</p>
 <span id="more"></span>
 
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">洛杉矶位于地中海型气候带，气候温和。</span><br><span class="line">大体上终年干燥少雨，只是在冬季降雨稍多。</span><br><span class="line">全年阳光明媚，基本上极少机会会在冰点以下，</span><br><span class="line">因此降雪的机率可说是绝无仅有。</span><br><span class="line">年降水量仅379毫米，以冬雨为主。</span><br><span class="line">洛杉矶日夜温差较大，日间比较炎热，</span><br><span class="line">就算是冬季，日间气温经常也有摄氏20度，</span><br><span class="line">夏季日间温度则常超越35度，</span><br><span class="line">甚至常因热浪袭击而造成山林失火的情况。</span><br></pre></td></tr></table></figure>
-
-<p>其实是天天火灾也不为过。</p>
-<h3 id="洛杉矶机场（LAX）"><a href="#洛杉矶机场（LAX）" class="headerlink" title="洛杉矶机场（LAX）"></a>洛杉矶机场（LAX）</h3><p>四跑道国际机场 24L&#x2F;24R 25L&#x2F;25R<br>机场平面图<br><img src="/images/LAinfo/LAX_airport_map.png" alt="机场平面图"><br><img src="/images/LAinfo/00237IL24L.jpg" alt="机场平面图"></p>
-<h3 id="住房"><a href="#住房" class="headerlink" title="住房"></a>住房</h3><p>洛杉矶租房价格因区域差异很大，市中心和西边（Santa Monica、Culver City 这一带）贵得离谱，一个单间轻轻松松 2000 刀往上；往东边或者 San Fernando Valley 那边找，同样的钱能租到大不少的公寓。找房子建议直接看小区周边治安和通勤时间，价格便宜的地方往往是因为离市区远，算上油费和过路费之后不一定真划算。</p>
-<h3 id="交通"><a href="#交通" class="headerlink" title="交通"></a>交通</h3><p>洛杉矶是典型的”车轮上的城市”，公共交通覆盖有限，地铁线路也不成体系，基本上没车寸步难行。高速公路四通八达但也堵得出名，早晚高峰 405、10 号这些主干线基本就是停车场，出门前查一下实时路况是刚需。停车费也是隐藏成本，市中心和景区不少地方停车比吃饭还贵。</p>
-<h3 id="治安"><a href="#治安" class="headerlink" title="治安"></a>治安</h3><p>治安整体因区而异，差异非常大，市中心（Downtown）某些街区和好莱坞周边晚上要留心，相对的，西边和南边一些住宅区就很安全。总的原则是提前查一下目标区域的治安记录，别贪便宜租到治安差的地方。</p>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>洛杉矶</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>被入侵之后：一次意外的DDoS脚本</title>
-    <url>/2016/11/26/HttpDoser-Python-%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/</url>
-    <content><![CDATA[<p>网站在我还没做好安全措施的时候就被黑客入侵了，密码被改，还被拿这台主机当肉鸡对其他网站发起了 DDoS 攻击，说起来还挺有意思的一次经历。</p>
-<span id="more"></span>
-
-<p>黑客留下的脚本叫 HttpDoser，用法很简单：<code>python HttpDoser.py 目标网站</code>。出于好奇，我在自己另一个网站 rednik.pw 上试了一下，跑完之后网站直接打不开了——效果是真实的。</p>
-<p>脚本本身没什么复杂逻辑：伪造大量带随机参数的 HTTP 请求、配上一批伪造的 User-Agent 和 Referer，开几百个线程同时打过去，把目标服务器的连接和带宽都占满。这类脚本网上并不难找，攻击原理也没什么新意，就不贴完整代码了。</p>
-<p>事后复盘，被入侵这件事本身不道德归不道德，但根源还是在自己：用了弱口令。后来改了新密码，之后也打算换成密钥登录，从根上堵住这个漏洞。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>网络安全</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MacOS 里面的一个简易C++编译器</title>
-    <url>/2016/10/28/MacOS-%E9%87%8C%E9%9D%A2%E7%9A%84%E4%B8%80%E4%B8%AA%E7%AE%80%E6%98%93C-%E7%BC%96%E8%AF%91%E5%99%A8/</url>
-    <content><![CDATA[<h2 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h2><p>其实现在大家使用习惯了GUI界面的IDE， 一旦回归到没有GUI时候就感觉到很不习惯。可是Terminal 形式的界面简洁轻量加载快是普通的IDE 不能比较的。有时候需要向大家演示小程序的时候，还是值得一试。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p><code>touch code.cpp</code><br>新建一个code.cpp文件</p>
-<p><code>nano code.cpp</code><br>编辑你的C++文件</p>
-<p><code>g++ -o code code.cpp</code><br>编译你的文件 并且保存名为code</p>
-<p><code>./code</code><br>运行code  </p>
-<span id="more"></span>
-
-<h3 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h3><p>是不是很简单呢，如果有错误的话，在Terminal也会提醒，大家快来试一下吧。</p>
+<h2 id="Lab-1：链表（Linked-List）"><a href="#Lab-1：链表（Linked-List）" class="headerlink" title="Lab 1：链表（Linked List）"></a>Lab 1：链表（Linked List）</h2><p>用链表维护一份城市记录（City），实现读取、打印、按条件查找和删除节点，练手链表最基础的增删查操作。</p>
+<h2 id="Lab-2：类的链表管理"><a href="#Lab-2：类的链表管理" class="headerlink" title="Lab 2：类的链表管理"></a>Lab 2：类的链表管理</h2><p>在 Lab 1 的基础上，把节点换成课程班级信息（ClassNode），练习面向对象的节点设计和链表操作的封装。</p>
+<h2 id="Lab-3：栈与队列判断回文"><a href="#Lab-3：栈与队列判断回文" class="headerlink" title="Lab 3：栈与队列判断回文"></a>Lab 3：栈与队列判断回文</h2><p>用自己实现的 Stack 和 Queue 判断一个单词是不是回文——把字符依次压栈、入队，再对比出栈和出队的顺序是否一致，是这门课里最直观的一次栈&#x2F;队列应用练习。</p>
+<h2 id="Lab-4：二叉搜索树（BST）"><a href="#Lab-4：二叉搜索树（BST）" class="headerlink" title="Lab 4：二叉搜索树（BST）"></a>Lab 4：二叉搜索树（BST）</h2><p>用二叉搜索树维护员工记录（Employee），实现插入、中序遍历输出、以及基于姓名的查找，是五个 Lab 里代码量最大的一个。</p>
+<h2 id="Lab-5：优先队列"><a href="#Lab-5：优先队列" class="headerlink" title="Lab 5：优先队列"></a>Lab 5：优先队列</h2><p>用堆实现的优先队列模拟一个超售（overbooking）场景下的顾客排队逻辑，按优先级取出顾客，练习堆的插入和调整。</p>
+<hr>
+<p>完整代码当时是直接贴在这篇文章里的，现在整理博客的时候把大段代码都拿掉了，只保留了每个 Lab 的思路记录——毕竟几千行代码扔在一篇博客里，除了占地方也没什么可读性。如果有同学也在上这门课想要参考代码，可以在评论区留言。</p>
 ]]></content>
       <categories>
         <category>技术</category>
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>MacOS</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -480,28 +428,91 @@
       </tags>
   </entry>
   <entry>
-    <title>ShadowSocks on Chromebook</title>
-    <url>/2017/01/13/ShadowSocks-on-Chromebook/</url>
-    <content><![CDATA[<h3 id="本文章转载自-http-www-zhyi828-com-shadowsocks-on-chromebook-html-comment-259"><a href="#本文章转载自-http-www-zhyi828-com-shadowsocks-on-chromebook-html-comment-259" class="headerlink" title="本文章转载自 http://www.zhyi828.com/shadowsocks-on-chromebook.html#comment-259"></a>本文章转载自 <a href="http://www.zhyi828.com/shadowsocks-on-chromebook.html#comment-259">http://www.zhyi828.com/shadowsocks-on-chromebook.html#comment-259</a></h3><h2 id="本文介绍如何在chromebook上利用shadowsock进行科学上网。"><a href="#本文介绍如何在chromebook上利用shadowsock进行科学上网。" class="headerlink" title="本文介绍如何在chromebook上利用shadowsock进行科学上网。"></a>本文介绍如何在chromebook上利用shadowsock进行科学上网。</h2><p>当然前提是你要有自己的SS账号，详情不表。</p>
-<p>在CB上利用SS科学上网有以下两种方法：</p>
-<h3 id="一、在crouton或Dev-OS中开启SS"><a href="#一、在crouton或Dev-OS中开启SS" class="headerlink" title="一、在crouton或Dev OS中开启SS"></a>一、在crouton或Dev OS中开启SS</h3><p>这种方法需要在CB上通过crouton安装有linux或安装有直接安装有Dev OS并已成功连接SS，如图。</p>
-<p>1、回到chromeos，在chrome商店中找到Proxy SwitchyOmega并添加至Chrome。</p>
-<p>2、添加成功后，chrome又上角会出现SwitchyOmega标志，进入SwitchyOmega选项，点击左边栏新建情景模式，名称自选，选择代理服务器模式。  </p>
+    <title>被入侵之后：一次意外的DDoS脚本</title>
+    <url>/2016/11/26/HttpDoser-Python-%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/</url>
+    <content><![CDATA[<p>网站在我还没做好安全措施的时候就被黑客入侵了，密码被改，还被拿这台主机当肉鸡对其他网站发起了 DDoS 攻击，说起来还挺有意思的一次经历。</p>
 <span id="more"></span>
 
-<p>选择ss for cb解压后的文件夹</p>
-<p>3、如图选择代理协议SOCK5，代理服务器为本地地址127.0.0.1，端口与SS的本地代理端口相同，此处以1080为例。</p>
-<p>4、保存后再次新建，选择自动切换模式，规则列表规则选之前配置好的SS，规则列表格式选AutoProxy，规则列表网址，填<br><code>https://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt</code><br> ，然后点立即更新情景模式。正文中出现地址列表即为成功。</p>
-<p>5、需要科学上网时选择刚刚这个自动切换模式即可。</p>
-<h3 id="二、在原生Chrome-OS中开启SS"><a href="#二、在原生Chrome-OS中开启SS" class="headerlink" title="二、在原生Chrome OS中开启SS"></a>二、在原生Chrome OS中开启SS</h3><p>安装 shadowsocks for chromebook，源码在 <a href="https://github.com/shadowsocks/shadowsocks-chromeapp">Github</a>，国内也有 zohead 编译好的版本可以直接用：<a href="http://pan.baidu.com/s/1e1i4Q">Baidu Pan</a>，下载解压即可。</p>
-<p>在扩展程序里 chrome:&#x2F;&#x2F;extensions&#x2F;，将“开发者模式”勾上，就可以安装自己下载的第三方app了，点“加载正在开发的扩展程序”。</p>
-<p>填入服务器、端口、密码，save后窗口不会关闭，请将其最小化</p>
-<p>之后下载安装switchyomega，配置，就能FQ了。</p>
-<p>至此两种方法已经介绍完毕，感谢Unee Wang和Zohead两位大神的帮助！</p>
-<h3 id="声明：本文仅供学术讨论之用，任何利用本文提到之方法做出的违反我国法律法规等行为，本人概不负责。"><a href="#声明：本文仅供学术讨论之用，任何利用本文提到之方法做出的违反我国法律法规等行为，本人概不负责。" class="headerlink" title="声明：本文仅供学术讨论之用，任何利用本文提到之方法做出的违反我国法律法规等行为，本人概不负责。"></a>声明：本文仅供学术讨论之用，任何利用本文提到之方法做出的违反我国法律法规等行为，本人概不负责。</h3>]]></content>
+<p>黑客留下的脚本叫 HttpDoser，用法很简单：<code>python HttpDoser.py 目标网站</code>。出于好奇，我在自己另一个网站 rednik.pw 上试了一下，跑完之后网站直接打不开了——效果是真实的。</p>
+<p>脚本本身没什么复杂逻辑：伪造大量带随机参数的 HTTP 请求、配上一批伪造的 User-Agent 和 Referer，开几百个线程同时打过去，把目标服务器的连接和带宽都占满。这类脚本网上并不难找，攻击原理也没什么新意，就不贴完整代码了。</p>
+<p>事后复盘，被入侵这件事本身不道德归不道德，但根源还是在自己：用了弱口令。后来改了新密码，之后也打算换成密钥登录，从根上堵住这个漏洞。</p>
+]]></content>
       <categories>
         <category>技术</category>
       </categories>
+      <tags>
+        <tag>网络安全</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>洛杉矶生活指南</title>
+    <url>/2018/08/07/LA%E7%94%9F%E6%B4%BB%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h3 id="城市简介"><a href="#城市简介" class="headerlink" title="城市简介"></a>城市简介</h3><p>洛杉矶位于美国加利福尼亚州南部的都市，人口约397万，为加州第一大城，同时也是美国人口第二大都市。为全美国第二大都会区。（别名GTA5，堵车之城）美国大城市好啊，我这个农村人终于进城了。还是可喜可贺的9.25%的消费税。在美国已经活了快4个年头了，对于大城市的厌恶感还是挺强的。因为贵，消费水平高还有堵车， 这是我对这个城市不满意的地方，但是相反的，多元文化，餐饮口味丰富，还有全球资源的收集。这也是大城市必不可少的特点。</p>
+<span id="more"></span>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">洛杉矶位于地中海型气候带，气候温和。</span><br><span class="line">大体上终年干燥少雨，只是在冬季降雨稍多。</span><br><span class="line">全年阳光明媚，基本上极少机会会在冰点以下，</span><br><span class="line">因此降雪的机率可说是绝无仅有。</span><br><span class="line">年降水量仅379毫米，以冬雨为主。</span><br><span class="line">洛杉矶日夜温差较大，日间比较炎热，</span><br><span class="line">就算是冬季，日间气温经常也有摄氏20度，</span><br><span class="line">夏季日间温度则常超越35度，</span><br><span class="line">甚至常因热浪袭击而造成山林失火的情况。</span><br></pre></td></tr></table></figure>
+
+<p>其实是天天火灾也不为过。</p>
+<h3 id="洛杉矶机场（LAX）"><a href="#洛杉矶机场（LAX）" class="headerlink" title="洛杉矶机场（LAX）"></a>洛杉矶机场（LAX）</h3><p>四跑道国际机场 24L&#x2F;24R 25L&#x2F;25R<br>机场平面图<br><img src="/images/LAinfo/LAX_airport_map.png" alt="机场平面图"><br><img src="/images/LAinfo/00237IL24L.jpg" alt="机场平面图"></p>
+<h3 id="住房"><a href="#住房" class="headerlink" title="住房"></a>住房</h3><p>洛杉矶租房价格因区域差异很大，市中心和西边（Santa Monica、Culver City 这一带）贵得离谱，一个单间轻轻松松 2000 刀往上；往东边或者 San Fernando Valley 那边找，同样的钱能租到大不少的公寓。找房子建议直接看小区周边治安和通勤时间，价格便宜的地方往往是因为离市区远，算上油费和过路费之后不一定真划算。</p>
+<h3 id="交通"><a href="#交通" class="headerlink" title="交通"></a>交通</h3><p>洛杉矶是典型的”车轮上的城市”，公共交通覆盖有限，地铁线路也不成体系，基本上没车寸步难行。高速公路四通八达但也堵得出名，早晚高峰 405、10 号这些主干线基本就是停车场，出门前查一下实时路况是刚需。停车费也是隐藏成本，市中心和景区不少地方停车比吃饭还贵。</p>
+<h3 id="治安"><a href="#治安" class="headerlink" title="治安"></a>治安</h3><p>治安整体因区而异，差异非常大，市中心（Downtown）某些街区和好莱坞周边晚上要留心，相对的，西边和南边一些住宅区就很安全。总的原则是提前查一下目标区域的治安记录，别贪便宜租到治安差的地方。</p>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>洛杉矶</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ShadowSocks on Chromebook</title>
+    <url>/2017/01/13/ShadowSocks-on-Chromebook/</url>
+    <content><![CDATA[<p>本文转载自 <a href="http://www.zhyi828.com/shadowsocks-on-chromebook.html#comment-259">http://www.zhyi828.com/shadowsocks-on-chromebook.html#comment-259</a>，介绍如何在 Chromebook 上用 ShadowSocks 科学上网。前提是你已经有自己的 SS 账号，账号怎么来的这里不展开。在 CB 上用 SS 科学上网主要有以下两种方法。</p>
+<span id="more"></span>
+
+<h2 id="一、在-crouton-或-Dev-OS-中开启-SS"><a href="#一、在-crouton-或-Dev-OS-中开启-SS" class="headerlink" title="一、在 crouton 或 Dev OS 中开启 SS"></a>一、在 crouton 或 Dev OS 中开启 SS</h2><p>这种方法需要在 CB 上通过 crouton 装好 Linux，或者直接装好 Dev OS，并且已经在里面成功连接了 SS。</p>
+<ol>
+<li>回到 ChromeOS，在 Chrome 商店里找到 Proxy SwitchyOmega 并添加至 Chrome。</li>
+<li>添加成功后，Chrome 右上角会出现 SwitchyOmega 标志，进入选项，点击左边栏新建情景模式，名称自选，选择”代理服务器”模式，选择 ss for cb 解压后的文件夹。</li>
+<li>代理协议选 SOCKS5，代理服务器填本地地址 127.0.0.1，端口与 SS 的本地代理端口相同，这里以 1080 为例。</li>
+<li>保存后再次新建，选择”自动切换”模式，规则列表选之前配置好的 SS，规则列表格式选 AutoProxy，规则列表网址填 <code>https://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt</code>，然后点”立即更新情景模式”，正文中出现地址列表即为成功。</li>
+<li>需要科学上网的时候，选择刚刚这个自动切换模式即可。</li>
+</ol>
+<h2 id="二、在原生-Chrome-OS-中开启-SS"><a href="#二、在原生-Chrome-OS-中开启-SS" class="headerlink" title="二、在原生 Chrome OS 中开启 SS"></a>二、在原生 Chrome OS 中开启 SS</h2><p>安装 shadowsocks for chromebook，源码在 <a href="https://github.com/shadowsocks/shadowsocks-chromeapp">Github</a>，国内也有 zohead 编译好的版本可以直接用：<a href="http://pan.baidu.com/s/1e1i4Q">Baidu Pan</a>，下载解压即可。</p>
+<p>在扩展程序页面 <code>chrome://extensions/</code> 里勾上”开发者模式”，就能安装自己下载的第三方 app 了，点”加载正在开发的扩展程序”，选中刚刚解压的文件夹。填入服务器、端口、密码，保存后窗口不会自动关闭，把它最小化就行。之后再下载安装 SwitchyOmega，配置好切换规则，就能科学上网了。</p>
+<p>至此两种方法已经介绍完毕，感谢 Unee Wang 和 Zohead 两位大神的帮助！</p>
+<blockquote>
+<p>声明：本文仅供学术讨论之用，任何利用本文提到之方法做出的违反我国法律法规等行为，本人概不负责。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Chromebook</tag>
+        <tag>ShadowSocks</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MacOS 里面的一个简易C++编译器</title>
+    <url>/2016/10/28/MacOS-%E9%87%8C%E9%9D%A2%E7%9A%84%E4%B8%80%E4%B8%AA%E7%AE%80%E6%98%93C-%E7%BC%96%E8%AF%91%E5%99%A8/</url>
+    <content><![CDATA[<h2 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h2><p>其实现在大家使用习惯了GUI界面的IDE， 一旦回归到没有GUI时候就感觉到很不习惯。可是Terminal 形式的界面简洁轻量加载快是普通的IDE 不能比较的。有时候需要向大家演示小程序的时候，还是值得一试。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p><code>touch code.cpp</code><br>新建一个code.cpp文件</p>
+<p><code>nano code.cpp</code><br>编辑你的C++文件</p>
+<p><code>g++ -o code code.cpp</code><br>编译你的文件 并且保存名为code</p>
+<p><code>./code</code><br>运行code  </p>
+<span id="more"></span>
+
+<h3 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h3><p>是不是很简单呢，如果有错误的话，在Terminal也会提醒，大家快来试一下吧。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>MacOS</tag>
+      </tags>
   </entry>
   <entry>
     <title>Windows 10 Chinese Display Error Fix</title>
@@ -550,22 +561,6 @@
       </tags>
   </entry>
   <entry>
-    <title>加州五号高速公路驾驶手册</title>
-    <url>/2018/08/14/interstate5/</url>
-    <content><![CDATA[<p>加州最有名的公路除了风景优美的一号之外， 其实还有一条更高速快捷的五号公路。在2018 年之前，五号高速公路路况极差。由于<a href="http://rebuildingca.ca.gov/">SB－1法案</a>的实施，外加上没日没夜的墨西哥人辛苦劳动。以及消耗了我们纳税人巨额资金。这条高速公路终于得到了改善。</p>
-<p>简介：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Interstate 5 (I-5) is the main </span><br><span class="line">Interstate Highway on the West </span><br><span class="line">Coast of the United States, </span><br><span class="line">running largely parallel to the </span><br><span class="line">Pacific coast of the continental </span><br><span class="line">U.S. from Mexico to Canada</span><br></pre></td></tr></table></figure>
-
-<h2 id="早上"><a href="#早上" class="headerlink" title="早上"></a>早上</h2><p>早上的开车应该算是比较正常的操作，没有什么注意的事项。靠近Bakersfield 的地方就会有很多警察蹲在天桥底下。开车的时候路过天桥就要注意点。其余的没什么，路上的人开车算正常，急着赶路的人照样赶路，80-90 这样地开着，如果自己开的慢的话就到右边的车道慢慢开吧。</p>
-<p>就我个人来看这条公路还是十分有魅力的。</p>
-<h2 id="中午"><a href="#中午" class="headerlink" title="中午"></a>中午</h2><p>中午的路况就完全不一样了，太阳直射，柏油路面反光刺眼，中央山谷（Central Valley）这一段基本上前不着村后不着店，除了两边望不到头的农田就是偶尔路过的加油站。天气热的时候仪表盘水温都会跳得比平时高一些，建议开着开着找个服务区歇一下，顺便灌点水。路过Kettleman City 的时候有个In-N-Out，几乎是这条公路上最出名的地标了，路过的人基本都会停一下。</p>
-<h2 id="晚上"><a href="#晚上" class="headerlink" title="晚上"></a>晚上</h2><p>平时晚上都是很多货车。大车司机基本上都是靠夜里赶路，白天休息，所以天一黑车流里大车的比例明显变高，跟车的时候要留足距离，视线也容易被大车的车灯晃到看不清路。晚上开这条路其实比白天轻松，警察少了很多，车流也稀，唯一麻烦的就是容易犯困，服务区基本都是24小时营业，实在困了就进去歇一会，别硬撑。</p>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Windows To Go on Macbook</title>
     <url>/2016/11/09/Windows-To-Go-on-Macbook/</url>
     <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Macbook的用户难免会有Windows 的需求，然而又不想划分一块宝贵的SSD 空间给没什么卵用的微软。那该怎么办呢？ 下面就用我的电脑来做示范，mid-2014 的 Macbook Pro 13 Retina 配合使用U盘进行Windows To Go 搭建Windows 环境（非虚拟机）。  </p>
@@ -608,19 +603,18 @@
       <tags>
         <tag>生活</tag>
         <tag>Telegram</tag>
-        <tag>公众号</tag>
-        <tag>测试</tag>
       </tags>
   </entry>
   <entry>
     <title>为树莓派安装Chromeium</title>
     <url>/2016/09/21/%E4%B8%BA%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85Chromeium/</url>
-    <content><![CDATA[<h3 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h3><p>关于Debain 环境下的linux相信大家并不陌生，<br>树莓派就是其一。由于原来系统中的自带浏览器并不能满足主流的浏览需求，所以我们要切换到Chromeium</p>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>只需要把下面代码复制到Terminal 然后运行就可以了</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">wget https://dl.dropboxusercontent.com/u/87113035/chromium-browser-l10n_45.0.2454.85-0ubuntu0.15.04.1.1181_all.deb</span><br><span class="line"></span><br><span class="line">wget https://dl.dropboxusercontent.com/u/87113035/chromium-browser_45.0.2454.85-0ubuntu0.15.04.1.1181_armhf.deb</span><br><span class="line"></span><br><span class="line">wget https://dl.dropboxusercontent.com/u/87113035/chromium-codecs-ffmpeg-extra_45.0.2454.85-0ubuntu0.15.04.1.1181_armhf.deb</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> dpkg -i chromium-codecs-ffmpeg-extra_45.0.2454.85-0ubuntu0.15.04.1.1181_armhf.deb</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> dpkg -i chromium-browser-l10n_45.0.2454.85-0ubuntu0.15.04.1.1181_all.deb chromium-browser_45.0.2454.85-0ubuntu0.15.04.1.1181_armhf.deb</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h3 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h3><p>基于 Debian 的 Linux 发行版大家应该都不陌生，树莓派自带的系统就是其中之一。问题是它自带的浏览器体验实在跟不上主流网页的需求，卡顿、兼容性差是常态，所以还是得把它换成 Chromium。</p>
 <span id="more"></span>
 
-<p>之后在启动菜单里面的Internet里面选择Chromeium就好了</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>只需要把下面代码复制到 Terminal 里运行就可以了：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">wget https://dl.dropboxusercontent.com/u/87113035/chromium-browser-l10n_45.0.2454.85-0ubuntu0.15.04.1.1181_all.deb</span><br><span class="line"></span><br><span class="line">wget https://dl.dropboxusercontent.com/u/87113035/chromium-browser_45.0.2454.85-0ubuntu0.15.04.1.1181_armhf.deb</span><br><span class="line"></span><br><span class="line">wget https://dl.dropboxusercontent.com/u/87113035/chromium-codecs-ffmpeg-extra_45.0.2454.85-0ubuntu0.15.04.1.1181_armhf.deb</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> dpkg -i chromium-codecs-ffmpeg-extra_45.0.2454.85-0ubuntu0.15.04.1.1181_armhf.deb</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> dpkg -i chromium-browser-l10n_45.0.2454.85-0ubuntu0.15.04.1.1181_all.deb chromium-browser_45.0.2454.85-0ubuntu0.15.04.1.1181_armhf.deb</span><br></pre></td></tr></table></figure>
+
+<p>之后在启动菜单里面的 Internet 分类里选择 Chromium 就好了。</p>
 <h3 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h3><p>关于版本号，这个是算一个比较旧的版本，如果链接失效了或者无法下载，还请各位告知一下我。</p>
 ]]></content>
       <categories>
@@ -633,39 +627,36 @@
       </tags>
   </entry>
   <entry>
-    <title>使用现有无线网络进行Wi-Fi二级中继方案</title>
-    <url>/2016/09/15/%E4%BD%BF%E7%94%A8%E7%8E%B0%E6%9C%89%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E8%BF%9B%E8%A1%8CWi-Fi%E4%BA%8C%E7%BA%A7%E4%B8%AD%E7%BB%A7%E6%96%B9%E6%A1%88/</url>
-    <content><![CDATA[<h2 id="引语"><a href="#引语" class="headerlink" title="引语"></a>引语</h2><p>这是我的一个突发奇想，在一次旅途中，我的Macbook连接上了某个有条件才能连接的Wi-Fi，怎么样才能够使用我的Macbook（PC），让我所有的电子设备（Android ＋ iOS）都能够限制特定设备享用的Wifi呢？</p>
-<p>或许大家会感到束手无策，但是只要使用了PC平台，和一个USB的Wi-Fi 网卡，这个问题就能够迎刃而解。</p>
-<h2 id="使用的实例"><a href="#使用的实例" class="headerlink" title="使用的实例"></a>使用的实例</h2><ol>
-<li>某美国航班可以在飞机上使用Wi-Fi，而这个连接的要求是需要T-Mobile的手机用户才能够获得无线连接，使用PC作为接入设备，能够让飞机上的游客享受免费的Wi-Fi。</li>
-<li>Xfinity Wi-Fi 有免费一小时的网络连接，但是每月对MAC地址的限制，如何使用有限的电子设备，来享用全设备接入的Wi-Fi服务？</li>
-<li>某些校园网络只对学生开放网络连接，如何让拜访你学区的家人，使用学校的互联网呢？<span id="more"></span>
+    <title>加州五号高速公路驾驶手册</title>
+    <url>/2018/08/14/interstate5/</url>
+    <content><![CDATA[<p>加州最有名的公路除了风景优美的一号之外， 其实还有一条更高速快捷的五号公路。在2018 年之前，五号高速公路路况极差。由于<a href="http://rebuildingca.ca.gov/">SB－1法案</a>的实施，外加上没日没夜的墨西哥人辛苦劳动。以及消耗了我们纳税人巨额资金。这条高速公路终于得到了改善。</p>
+<p>简介：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Interstate 5 (I-5) is the main </span><br><span class="line">Interstate Highway on the West </span><br><span class="line">Coast of the United States, </span><br><span class="line">running largely parallel to the </span><br><span class="line">Pacific coast of the continental </span><br><span class="line">U.S. from Mexico to Canada</span><br></pre></td></tr></table></figure>
 
-<h2 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h2>好了，问题就提到这里。现在是实际操作的时间。</li>
-</ol>
-<p>我现在有一台Macbook，一个无线网卡。电脑里面已经装好了Windows 10 的VirtualBox虚拟机。</p>
-<p>现在我的思路是，让Windows虚拟机连接USB 网卡，建立Windows 下的无线网络。</p>
-<p>在这里，本VirtualBox虚拟机的内建互联网已经连接上OSX的无线网络。</p>
-<ol>
-<li>在VirtualBox上边栏里面选择 Devices–&gt; USB –&gt; WLAN （选择你的USB网卡）</li>
-<li>若无需驱动就能自动识别，那是最好的情况。打开CMD 输入<br><code>netsh wlan set hostednetwork mode=allow ssid=你的路由名称 key=你的密码</code></li>
-<li>之后需要打开这个虚拟的AP<br><code>netsh wlan start hostednetwork</code></li>
-<li>然后在控制面板，找到 Network and Internet –&gt; Network Connections</li>
-<li>选择Ethernet 右键属性 选择在上面的选项卡点击 共享</li>
-<li>勾选第一个，然后选择你的虚拟AP 名称：Local Area Connection ** （可能不同）</li>
-<li>这样就设置好了Wi-Fi的转发了。</li>
-</ol>
-<p>使用你的手机或者其他电子设备检验Wi-Fi是不是已经开始运作。</p>
-<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>这是一个简单的多网卡Wi-Fi应用实例，通过现有的无线网络进行Wi-Fi二级中继。这个只适合个人使用，希望这个教程对各位有帮助。</p>
+<h2 id="早上"><a href="#早上" class="headerlink" title="早上"></a>早上</h2><p>早上的开车应该算是比较正常的操作，没有什么注意的事项。靠近Bakersfield 的地方就会有很多警察蹲在天桥底下。开车的时候路过天桥就要注意点。其余的没什么，路上的人开车算正常，急着赶路的人照样赶路，80-90 这样地开着，如果自己开的慢的话就到右边的车道慢慢开吧。</p>
+<p>就我个人来看这条公路还是十分有魅力的。</p>
+<h2 id="中午"><a href="#中午" class="headerlink" title="中午"></a>中午</h2><p>中午的路况就完全不一样了，太阳直射，柏油路面反光刺眼，中央山谷（Central Valley）这一段基本上前不着村后不着店，除了两边望不到头的农田就是偶尔路过的加油站。天气热的时候仪表盘水温都会跳得比平时高一些，建议开着开着找个服务区歇一下，顺便灌点水。路过Kettleman City 的时候有个In-N-Out，几乎是这条公路上最出名的地标了，路过的人基本都会停一下。</p>
+<h2 id="晚上"><a href="#晚上" class="headerlink" title="晚上"></a>晚上</h2><p>平时晚上都是很多货车。大车司机基本上都是靠夜里赶路，白天休息，所以天一黑车流里大车的比例明显变高，跟车的时候要留足距离，视线也容易被大车的车灯晃到看不清路。晚上开这条路其实比白天轻松，警察少了很多，车流也稀，唯一麻烦的就是容易犯困，服务区基本都是24小时营业，实在困了就进去歇一会，别硬撑。</p>
 ]]></content>
       <categories>
-        <category>技术</category>
+        <category>生活</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>新的博客主题</title>
+    <url>/2018/08/07/%E6%96%B0%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/</url>
+    <content><![CDATA[<p>很久都没有维护这个博客了，现在的我刚从之前的社区大学毕业，正式转到了UC。</p>
+<p>现在算是从社区大学过渡到UC之间的转学假期，是我这几年感觉最轻松的一段日子了。</p>
+<p>把之前的服务器关掉了，因为以后住的地方应该也不会给我放服务器机房所以就把hexo 博客转到了Github Pages上。之前的树莓派当作SS节点使用。</p>
+<p>想尝试一下Ghost 但是很多时候Ghost 需要一台服务器，想基于Github 给我省一台服务器的钱。毕竟免费的东西很多都过期了，现在要开始节约运营成本了。于是想了想更新hexo 博客的主题也是一次不错的选择。这次博客主题是 Next。简洁高效，动画也还算炫酷，我也不需要那么多花里胡哨的东西，写写技术的白皮书就够了。  </p>
+<span id="more"></span>
+<p>程序员假期也不能忘记开发东西！</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
       </categories>
       <tags>
-        <tag>网络</tag>
-        <tag>无线</tag>
-        <tag>Wi-Fi</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -678,18 +669,15 @@
 <p>首先，NovaDNG有一篇文章说的很有趣，<a href="http://www.phonekr.com/chinese-user/">《[吐槽向]中国用户长啥样》</a>，NovaDNG本身在美国留过学，见过颇多的美国的中国人。让我值得思考的是，我和他共同对这一类的中国人发出特有的厌恶之情。这源于什么？坦白来说，我们之前属于同一个博客团队，虽然在网址博客内容方面我毫无建树，但在思想层面上还是有很多共通之处。</p>
 <p>若翻墙只是思想探路，那么厌恶的东西才是逃避的共趋。  </p>
 <span id="more"></span>
-<p>我和很多中国学生相处过，但是作为一个介于学习外国文化的中国学生，以一种上帝视角观看他们的时候。 总会有那么一点的感觉不舒服。中国学生十分聪明，中国学生十分精明。他们会选择适合于他们的规则去获得想要的目标。以最省力的方法完成最困难的事情。这是我很欣赏的地方。</p>
-<p>但是机智和聪明用过了头，有时候就会变味了。</p>
-<p>我在微信的聊天群里面见过一群人要Paper的。见过很多人为了一件小事吵起来而不注意周围的人。有时候不注重环境的保护，思想保守固化。个人主义（并没有贬义，只是我个人的描述）</p>
-<p>在礼节方面，中国学生有时还是做得没有外国人好。</p>
-<p>而且，更有趣的是，中国人在外面并不会团结起来，相反的，而是为了各自的利益所趋势从而获得自己最大化的有利地位。我见过留学生坑新留学生的钱的，之后这些新的留学生又去坑下一届新生的钱，虽然这种情况在美国白人中也不少见，但是没有像我们这么有民族普遍性。</p>
+<p>我和很多中国学生相处过，但作为一个同样在学习外国文化的中国学生，以一种上帝视角观看他们的时候，总会有那么一点不舒服的感觉。中国学生十分聪明，也十分精明，他们会选择适合自己的规则去获得想要的目标，以最省力的方法完成最困难的事情——这是我很欣赏的地方。但机智和聪明用过了头，有时候就会变味了。</p>
+<p>我在微信群里见过一群人张口就要别人的 Paper；见过很多人为了一件小事当众吵起来，完全不顾周围的人；也见过不注重公共环境、思想保守固化的个人主义（这里没有贬义，只是我个人的描述）。在礼节方面，中国学生有时候确实做得没有外国人好。</p>
+<p>更有趣的是，中国人在外面并不会因为身处异乡而团结起来，相反，大家更倾向于各自为了利益博弈，获取自己最大化的有利地位。我见过留学生坑新留学生的钱，转头这些新留学生又去坑下一届新生的钱——这种情况在其他族裔里也不少见，但很少有像我们这么普遍的。</p>
 <p>自给自足的农耕社会，小农经济，导致了利益的趋向。可能时间并不是改变一个民族主流价值观的力量，相反的，而是加固和塑造的一个过程，如果说闭关锁国是自大的固化思想，那么互联网的防火墙是自我思想最好的耳塞眼罩。</p>
 <blockquote>
 <p>最适合这个民族的其实是一群小白围着大大转，大大通过小白的夸奖获得自我满足，然后小白的吃喝拉撒都包给大大解决的模式。通过这个项目我感觉我已经彻底认识到这个民族的前面为什么会有一堵墙了。没有墙哪来的大大。所以到处都是什么附件回帖可见，等级多少用户组可见，一个论坛一个大大供小白跪舔，不需要政府造墙，网民也会自发造墙。这尼玛连做个翻墙软件都要造墙，真是令人叹为观止。这是一个造了几千年墙的保守的农耕民族，缺乏对别人的基本尊重，不愿意分享，喜欢遮遮掩掩，喜欢小圈子抱团，大概这些传统是改不掉了吧。</p>
 <p>现在维护这些项目已经越来越让我感到无趣。我还是努力工作，好好养家，早日肉翻吧。<br>clowwindy commented on Aug 18, 2015</p>
 </blockquote>
-<p><a href="https://github.com/shadowsocks/shadowsocks-windows/issues/293">AppData &amp; temp &amp; 当前目录</a></p>
-<p>暂时写到这里。</p>
+<p>这段吐槽出自 ShadowSocks Windows 版一个 issue 下的讨论：<a href="https://github.com/shadowsocks/shadowsocks-windows/issues/293">AppData &amp; temp &amp; 当前目录</a>，放在这里再合适不过。暂时先写到这里，想到更多再补。</p>
 ]]></content>
       <categories>
         <category>生活</category>
@@ -720,20 +708,40 @@
       </tags>
   </entry>
   <entry>
-    <title>新的博客主题</title>
-    <url>/2018/08/07/%E6%96%B0%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/</url>
-    <content><![CDATA[<p>很久都没有维护这个博客了，现在的我刚从之前的社区大学毕业，正式转到了UC。</p>
-<p>现在算是从社区大学过渡到UC之间的转学假期，是我这几年感觉最轻松的一段日子了。</p>
-<p>把之前的服务器关掉了，因为以后住的地方应该也不会给我放服务器机房所以就把hexo 博客转到了Github Pages上。之前的树莓派当作SS节点使用。</p>
-<p>想尝试一下Ghost 但是很多时候Ghost 需要一台服务器，想基于Github 给我省一台服务器的钱。毕竟免费的东西很多都过期了，现在要开始节约运营成本了。于是想了想更新hexo 博客的主题也是一次不错的选择。这次博客主题是 Next。简洁高效，动画也还算炫酷，我也不需要那么多花里胡哨的东西，写写技术的白皮书就够了。  </p>
+    <title>使用现有无线网络进行Wi-Fi二级中继方案</title>
+    <url>/2016/09/15/%E4%BD%BF%E7%94%A8%E7%8E%B0%E6%9C%89%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E8%BF%9B%E8%A1%8CWi-Fi%E4%BA%8C%E7%BA%A7%E4%B8%AD%E7%BB%A7%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[<h2 id="引语"><a href="#引语" class="headerlink" title="引语"></a>引语</h2><p>这是我的一个突发奇想，在一次旅途中，我的Macbook连接上了某个有条件才能连接的Wi-Fi，怎么样才能够使用我的Macbook（PC），让我所有的电子设备（Android ＋ iOS）都能够限制特定设备享用的Wifi呢？</p>
+<p>或许大家会感到束手无策，但是只要使用了PC平台，和一个USB的Wi-Fi 网卡，这个问题就能够迎刃而解。</p>
+<h2 id="使用的实例"><a href="#使用的实例" class="headerlink" title="使用的实例"></a>使用的实例</h2><ol>
+<li>某美国航班可以在飞机上使用Wi-Fi，而这个连接的要求是需要T-Mobile的手机用户才能够获得无线连接，使用PC作为接入设备，能够让飞机上的游客享受免费的Wi-Fi。</li>
+<li>Xfinity Wi-Fi 有免费一小时的网络连接，但是每月对MAC地址的限制，如何使用有限的电子设备，来享用全设备接入的Wi-Fi服务？</li>
+<li>某些校园网络只对学生开放网络连接，如何让拜访你学区的家人，使用学校的互联网呢？</li>
+</ol>
 <span id="more"></span>
-<p>程序员假期也不能忘记开发东西！</p>
+
+<h2 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h2><p>好了，问题就提到这里。现在是实际操作的时间。</p>
+<p>我现在有一台Macbook，一个无线网卡。电脑里面已经装好了Windows 10 的VirtualBox虚拟机。</p>
+<p>现在我的思路是，让Windows虚拟机连接USB 网卡，建立Windows 下的无线网络。</p>
+<p>在这里，本VirtualBox虚拟机的内建互联网已经连接上OSX的无线网络。</p>
+<ol>
+<li>在VirtualBox上边栏里面选择 Devices–&gt; USB –&gt; WLAN （选择你的USB网卡）</li>
+<li>若无需驱动就能自动识别，那是最好的情况。打开CMD 输入<br><code>netsh wlan set hostednetwork mode=allow ssid=你的路由名称 key=你的密码</code></li>
+<li>之后需要打开这个虚拟的AP<br><code>netsh wlan start hostednetwork</code></li>
+<li>然后在控制面板，找到 Network and Internet –&gt; Network Connections</li>
+<li>选择Ethernet 右键属性 选择在上面的选项卡点击 共享</li>
+<li>勾选第一个，然后选择你的虚拟AP 名称：Local Area Connection ** （可能不同）</li>
+<li>这样就设置好了Wi-Fi的转发了。</li>
+</ol>
+<p>使用你的手机或者其他电子设备检验Wi-Fi是不是已经开始运作。</p>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>这是一个简单的多网卡Wi-Fi应用实例，通过现有的无线网络进行Wi-Fi二级中继。这个只适合个人使用，希望这个教程对各位有帮助。</p>
 ]]></content>
       <categories>
-        <category>随笔</category>
+        <category>技术</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>Wi-Fi</tag>
+        <tag>网络</tag>
+        <tag>无线</tag>
       </tags>
   </entry>
 </search>
