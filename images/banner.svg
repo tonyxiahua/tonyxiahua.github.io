@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c1730"/>
+      <stop offset="42%" stop-color="#173863"/>
+      <stop offset="72%" stop-color="#2c6a9e"/>
+      <stop offset="100%" stop-color="#4e98c6"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffe3a3" stop-opacity="0.95"/>
+      <stop offset="55%" stop-color="#ffb46b" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ffb46b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c1626"/>
+      <stop offset="100%" stop-color="#1a2c46"/>
+    </linearGradient>
+    <linearGradient id="hillFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3c6d97"/>
+      <stop offset="100%" stop-color="#2b527a"/>
+    </linearGradient>
+    <linearGradient id="hillNear" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#234872"/>
+      <stop offset="100%" stop-color="#152e4d"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+
+  <!-- circuit-board trace pattern, echoed symmetrically so it survives left/right cropping -->
+  <g stroke="#8fd0ff" stroke-width="2.5" fill="none" opacity="0.16">
+    <path d="M120 160 H340 V230 H520"/>
+    <path d="M150 320 H280 V390 H460 V440"/>
+    <path d="M120 520 H240 V470 H420"/>
+    <path d="M1800 160 H1580 V230 H1400"/>
+    <path d="M1770 320 H1640 V390 H1460 V440"/>
+    <path d="M1800 520 H1680 V470 H1500"/>
+  </g>
+  <g fill="#8fd0ff" opacity="0.35">
+    <circle cx="340" cy="160" r="6"/><circle cx="520" cy="230" r="6"/>
+    <circle cx="280" cy="320" r="6"/><circle cx="460" cy="440" r="6"/>
+    <circle cx="240" cy="520" r="6"/><circle cx="420" cy="470" r="6"/>
+    <circle cx="1580" cy="160" r="6"/><circle cx="1400" cy="230" r="6"/>
+    <circle cx="1640" cy="320" r="6"/><circle cx="1460" cy="440" r="6"/>
+    <circle cx="1680" cy="520" r="6"/><circle cx="1500" cy="470" r="6"/>
+  </g>
+
+  <!-- sun glow, dead center -->
+  <circle cx="960" cy="560" r="320" fill="url(#sun)"/>
+  <circle cx="960" cy="560" r="90" fill="#fff1cf" opacity="0.92"/>
+
+  <!-- rolling hills, centered horizon -->
+  <path d="M0 700 Q 320 610 720 680 T 1200 660 T 1920 700 V1080 H0 Z" fill="url(#hillFar)" opacity="0.85"/>
+  <path d="M0 760 Q 380 700 800 750 T 1400 735 T 1920 760 V1080 H0 Z" fill="url(#hillNear)"/>
+
+  <!-- palm trees flanking the sun, close enough to center to survive cropping -->
+  <g fill="#132a48">
+    <g transform="translate(660,600) scale(1.05)">
+      <rect x="-6" y="0" width="12" height="110" rx="5"/>
+      <path d="M0 0 C -12 -22 -55 -27 -80 -12 C -48 -17 -22 -7 0 10 Z"/>
+      <path d="M0 0 C 12 -27 60 -34 90 -17 C 53 -19 22 -7 0 12 Z"/>
+      <path d="M0 0 C -5 -32 -27 -56 -22 -80 C -5 -56 5 -29 7 0 Z"/>
+      <path d="M0 0 C 10 -29 36 -49 36 -73 C 17 -51 2 -27 -5 2 Z"/>
+    </g>
+    <g transform="translate(1270,610) scale(0.85) scale(-1,1)">
+      <rect x="-6" y="0" width="12" height="110" rx="5"/>
+      <path d="M0 0 C -12 -22 -55 -27 -80 -12 C -48 -17 -22 -7 0 10 Z"/>
+      <path d="M0 0 C 12 -27 60 -34 90 -17 C 53 -19 22 -7 0 12 Z"/>
+      <path d="M0 0 C -5 -32 -27 -56 -22 -80 C -5 -56 5 -29 7 0 Z"/>
+    </g>
+  </g>
+
+  <!-- highway, centered vanishing point -->
+  <path d="M-200 1080 L740 800 H1180 L2120 1080 Z" fill="url(#road)"/>
+  <path d="M-200 1080 L740 800 H800 L120 1080 Z" fill="#0a1424" opacity="0.6"/>
+  <path d="M2120 1080 L1180 800 H1120 L1800 1080 Z" fill="#0a1424" opacity="0.6"/>
+
+  <!-- lane dashes -->
+  <g fill="#f4c96b" opacity="0.85">
+    <rect x="944" y="815" width="16" height="24" rx="3"/>
+    <rect x="918" y="858" width="22" height="28" rx="3"/>
+    <rect x="884" y="912" width="30" height="34" rx="3"/>
+    <rect x="838" y="972" width="38" height="40" rx="3"/>
+    <rect x="780" y="1040" width="46" height="42" rx="3"/>
+  </g>
+
+  <!-- sedan silhouette, side profile, centered on the road -->
+  <g transform="translate(830,900)">
+    <ellipse cx="130" cy="92" rx="160" ry="11" fill="#04070d" opacity="0.35"/>
+    <path d="M2 74
+             C -4 49 15 43 36 41
+             L 59 17
+             C 70 6 87 0 106 0
+             L 178 0
+             C 199 0 216 8 227 23
+             L 246 42
+             C 265 44 278 53 278 70
+             L 278 74
+             C 278 82 271 87 263 87
+             L 244 87
+             A 28 28 0 1 0 189 87
+             L 102 87
+             A 28 28 0 1 0 47 87
+             L 17 87
+             C 8 87 2 82 2 74 Z"
+          fill="#eef2f7"/>
+    <path d="M68 41 L87 19 C 93 13 102 8 112 8 L165 8 C 176 8 184 13 190 21 L207 41 Z"
+          fill="#173863" opacity="0.88"/>
+    <line x1="137" y1="8" x2="137" y2="41" stroke="#eef2f7" stroke-width="4"/>
+    <circle cx="74" cy="87" r="26" fill="#0f2038"/>
+    <circle cx="74" cy="87" r="11" fill="#c7d3e0"/>
+    <circle cx="216" cy="87" r="26" fill="#0f2038"/>
+    <circle cx="216" cy="87" r="11" fill="#c7d3e0"/>
+    <rect x="262" y="55" width="11" height="9" rx="2" fill="#ffd27a"/>
+  </g>
+
+  <!-- code bracket accents, mirrored near-center so at least one survives most crops -->
+  <text x="330" y="900" font-family="Menlo, Consolas, monospace" font-size="110" fill="#bfe4ff" opacity="0.16">&lt;/&gt;</text>
+  <text x="1450" y="900" font-family="Menlo, Consolas, monospace" font-size="110" fill="#bfe4ff" opacity="0.16">{ }</text>
+</svg>
