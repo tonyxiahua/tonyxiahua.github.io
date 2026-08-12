@@ -17,28 +17,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Audi B6 A4 故障码扫描记录：待维修</title>
-    <url>/2016/11/16/Audi-B6-A4-Fault-Code-%E6%95%85%E9%9A%9C%E4%BB%A3%E7%A0%81%E5%BE%85%E7%BB%B4%E4%BF%AE/</url>
-    <content><![CDATA[<p>用 VAS-5053 对车子（底盘 8E，Audi A4 B6&#x2F;B7）做了一次全模块扫描，一共扫了 20 个控制单元，记一下真正有问题的几个，留着以后修的时候对照。</p>
-<span id="more"></span>
-
-<p>扫描结果里绝大部分模块（发动机、变速箱、暖风空调、安全气囊、组合仪表等）都是”未找到故障码”，正常。真正有故障的只有这三处：</p>
-<ul>
-<li><strong>地址 03（ABS制动）</strong>：00526 制动灯开关故障，间歇性开路。</li>
-<li><strong>地址 0F（数码音响）</strong>：02635 调谐器启动&#x2F;激活异常。</li>
-<li><strong>地址 46（中央便利系统）</strong>：左右后车门（01561 &#x2F; 01562）都报”不能解锁 - 间歇”，大概率是车门锁执行器或者线路接触的问题。</li>
-<li><strong>地址 56（收音机）</strong>：00858 收音机中频输出与天线放大器之间的连接，报了对地短路和开路两种间歇故障，估计是天线放大器那段线束老化了。</li>
-</ul>
-<p>后视这几个故障点，两组车门锁和收音机天线放大器的线路问题看起来是同一类”老车线束接触不良”的毛病，下次一起修可能更划算。</p>
-]]></content>
-      <categories>
-        <category>汽车</category>
-      </categories>
-      <tags>
-        <tag>Audi</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Arduino UNO R3 上手测试</title>
     <url>/2016/07/29/Arduino-UNO-R3-%E4%B8%8A%E6%89%8B%E6%B5%8B%E8%AF%95/</url>
     <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Arduino 作为一款偏向硬件控制的单片机，相比Raspberry Pi 3，我当时购入的Starter kit 有很多有趣的控，比如NFC卡，JoyStick，Speaker，一堆我都不知道怎么玩的东西qwq。感觉就是一个很强大的控制模块。经过几天的捣鼓，暂时知道了一些基本的玩法，现在向大家介绍一下。</p>
@@ -72,38 +50,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Audi B6 A4 DIY 教程网站</title>
-    <url>/2016/11/30/Audi-B6-A4-DIY-%E6%95%99%E7%A8%8B%E7%BD%91%E7%AB%99/</url>
-    <content><![CDATA[<p>有几个非常有用的Audi B6 A4 网站，想到在2016 年的今天还能找到这些2005 年的修复网站实在是非常不容易。我刚刚好打印下载了这些文章，以供大家以后的参考。如果大家想要更多的修复资料，我这里还有一些。  </p>
-<span id="more"></span>
-<p><a href="http://www.audiworld.com/tech-articles/">Tech Articles</a></p>
-<p><a href="http://www.audizine.com/forum/showthread.php/59749-B6-A4-S4-Symphony-II-to-RNS-E-(OEM-DVD-based-Navigation)">B6 A4&#x2F;S4 - Symphony II to RNS-E (OEM DVD based Navigation)</a></p>
-<p><a href="http://www.audidiy.com/b6a4.php">Audi DIY</a></p>
-<p><a href="http://www.audizine.com/forum/showthread.php/146166-B6-A4-1-8T-Timing-Belt-and-Water-Pump-DIY">B6 A4 1.8T: Timing Belt and Water Pump DIY</a></p>
-<p><a href="http://www.audiworld.com/tech/elec3.shtml">把最后的数字调整一下可以获得意想不到的教程</a></p>
-<p><a href="http://www.audiworld.com/tech/elec177.shtml">Self adding Heated Seat</a></p>
-<p><a href="http://www.audiworld.com/tech/eng117.shtml">Coolant Temperature Sensor replacement ‘02 S6</a></p>
-]]></content>
-      <categories>
-        <category>汽车</category>
-      </categories>
-      <tags>
-        <tag>3hBWpYhdsX5C</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Audi B6 A4 切换温度单位</title>
-    <url>/2016/11/02/Audi-B6-A4-%E5%88%87%E6%8D%A2%E6%B8%A9%E5%BA%A6%E5%8D%95%E4%BD%8D/</url>
-    <content><![CDATA[<p>如何切换Audi B6 A4 以及同类型的温度显示？</p>
-<p>打开空调，同时按住内循环键以及温度减少键三秒。</p>
-<p>观察显示台控制中心，看看是否切换为摄氏度显示方式？</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>汽车</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Audi B6 A4 刹车液报警：只在冷天出现</title>
     <url>/2016/12/08/Audi-B6-A4-Break-Fluid-Warning-on-cold-days/</url>
     <content><![CDATA[<p>冬天一冷，车就开始出毛病。这次是刹车系统报警——嘀嘀响、手刹灯闪三下——但只在天冷的时候出现，暖和了就正常，运气不好还会持续报个不停。上网一查，发现不少车友都遇到过同样的问题。</p>
@@ -124,6 +70,26 @@
       <tags>
         <tag>Audi</tag>
         <tag>A4</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Audi B6 A4 DIY 教程网站</title>
+    <url>/2016/11/30/Audi-B6-A4-DIY-%E6%95%99%E7%A8%8B%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<p>有几个非常有用的Audi B6 A4 网站，想到在2016 年的今天还能找到这些2005 年的修复网站实在是非常不容易。我刚刚好打印下载了这些文章，以供大家以后的参考。如果大家想要更多的修复资料，我这里还有一些。  </p>
+<span id="more"></span>
+<p><a href="http://www.audiworld.com/tech-articles/">Tech Articles</a></p>
+<p><a href="http://www.audizine.com/forum/showthread.php/59749-B6-A4-S4-Symphony-II-to-RNS-E-(OEM-DVD-based-Navigation)">B6 A4&#x2F;S4 - Symphony II to RNS-E (OEM DVD based Navigation)</a></p>
+<p><a href="http://www.audidiy.com/b6a4.php">Audi DIY</a></p>
+<p><a href="http://www.audizine.com/forum/showthread.php/146166-B6-A4-1-8T-Timing-Belt-and-Water-Pump-DIY">B6 A4 1.8T: Timing Belt and Water Pump DIY</a></p>
+<p><a href="http://www.audiworld.com/tech/elec3.shtml">把最后的数字调整一下可以获得意想不到的教程</a></p>
+<p><a href="http://www.audiworld.com/tech/elec177.shtml">Self adding Heated Seat</a></p>
+<p><a href="http://www.audiworld.com/tech/eng117.shtml">Coolant Temperature Sensor replacement ‘02 S6</a></p>
+]]></content>
+      <categories>
+        <category>汽车</category>
+      </categories>
+      <tags>
+        <tag>3hBWpYhdsX5C</tag>
       </tags>
   </entry>
   <entry>
@@ -154,6 +120,40 @@
       </tags>
   </entry>
   <entry>
+    <title>Audi B6 A4 切换温度单位</title>
+    <url>/2016/11/02/Audi-B6-A4-%E5%88%87%E6%8D%A2%E6%B8%A9%E5%BA%A6%E5%8D%95%E4%BD%8D/</url>
+    <content><![CDATA[<p>如何切换Audi B6 A4 以及同类型的温度显示？</p>
+<p>打开空调，同时按住内循环键以及温度减少键三秒。</p>
+<p>观察显示台控制中心，看看是否切换为摄氏度显示方式？</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>汽车</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Audi B6 A4 故障码扫描记录：待维修</title>
+    <url>/2016/11/16/Audi-B6-A4-Fault-Code-%E6%95%85%E9%9A%9C%E4%BB%A3%E7%A0%81%E5%BE%85%E7%BB%B4%E4%BF%AE/</url>
+    <content><![CDATA[<p>用 VAS-5053 对车子（底盘 8E，Audi A4 B6&#x2F;B7）做了一次全模块扫描，一共扫了 20 个控制单元，记一下真正有问题的几个，留着以后修的时候对照。</p>
+<span id="more"></span>
+
+<p>扫描结果里绝大部分模块（发动机、变速箱、暖风空调、安全气囊、组合仪表等）都是”未找到故障码”，正常。真正有故障的只有这三处：</p>
+<ul>
+<li><strong>地址 03（ABS制动）</strong>：00526 制动灯开关故障，间歇性开路。</li>
+<li><strong>地址 0F（数码音响）</strong>：02635 调谐器启动&#x2F;激活异常。</li>
+<li><strong>地址 46（中央便利系统）</strong>：左右后车门（01561 &#x2F; 01562）都报”不能解锁 - 间歇”，大概率是车门锁执行器或者线路接触的问题。</li>
+<li><strong>地址 56（收音机）</strong>：00858 收音机中频输出与天线放大器之间的连接，报了对地短路和开路两种间歇故障，估计是天线放大器那段线束老化了。</li>
+</ul>
+<p>后视这几个故障点，两组车门锁和收音机天线放大器的线路问题看起来是同一类”老车线束接触不良”的毛病，下次一起修可能更划算。</p>
+]]></content>
+      <categories>
+        <category>汽车</category>
+      </categories>
+      <tags>
+        <tag>Audi</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Audition 消除伴奏获取人声的办法</title>
     <url>/2016/10/21/AuditionTakeVoice/</url>
     <content><![CDATA[<p>如果你正为找不到一首歌曲的清唱人声版本发愁，为什么不下载完整的歌曲，自己动手分离出来呢？</p>
@@ -167,7 +167,7 @@
 <h3 id="尾语"><a href="#尾语" class="headerlink" title="尾语"></a>尾语</h3><p>其实是自己稍微记录一下Audition的一些常用功能。希望对大家有用。</p>
 ]]></content>
       <categories>
-        <category>汽车</category>
+        <category>技术</category>
       </categories>
       <tags>
         <tag>后期处理</tag>
@@ -176,26 +176,16 @@
       </tags>
   </entry>
   <entry>
-    <title>Audi B6 A4 重置保养周期 Service Light Reset</title>
-    <url>/2016/11/09/Audi-B6-A4-%E9%87%8D%E7%BD%AE%E4%BF%9D%E5%85%BB%E5%91%A8%E6%9C%9F/</url>
-    <content><![CDATA[<p>A4 开着开着就到了100000 mile 了，毕竟也是几十年的车了，这个去4S 店保养肯定会被人坑，但是每次启动保养灯都会提醒所以有点烦。在网上找了一下方法，发现挺简单，在这里分享一下。</p>
-<h3 id="步骤-Steps"><a href="#步骤-Steps" class="headerlink" title="步骤 Steps"></a>步骤 Steps</h3><ol>
-<li>把钥匙插进去打开汽车但不需要点火</li>
-<li>长按维修保养按钮</li>
-<li>当屏幕出现维修信息的时候按下0.0 （清零里程）按钮</li>
-<li>如果屏幕出现—，说明重置完成。</li>
-<li>关上汽车，清零完成。</li>
-<li>新的保养周期可能需要等待几天才会出现。<span id="more"></span></li>
-</ol>
-<h3 id="English-Manual"><a href="#English-Manual" class="headerlink" title="English Manual"></a>English Manual</h3><ol>
-<li>Turn ignition on while holding wrench button.</li>
-<li>Release button when service information appears.</li>
-<li>Press 0.0 button.</li>
-<li>If — appears on your screen, reset is complete.</li>
-<li>Turn ignition off and reset done.</li>
-<li>New service cycle might take couple days to show up.</li>
-</ol>
-<p>本文章出自于Rednik Tech。转载请注明出处。</p>
+    <title>Audi B6 A4 彩色中控屏幕</title>
+    <url>/2016/10/29/Audi-B6-A4-%E5%BD%A9%E8%89%B2%E4%B8%AD%E6%8E%A7%E5%B1%8F%E5%B9%95/</url>
+    <content><![CDATA[<p>在YouTube上看到了一个战斗民族的开发者，给老款的B6 A4 添加了一个彩色的新款中控屏幕，还添加了很多自检功能，十分想要这个套装，但是在eBay上并没有找到这个商品，看起来要去战斗民族的老窝里面寻找一下了。</p>
+<div class="video-container"><iframe allowfullscreen="" frameborder="0" src="//www.youtube.com/embed/x4rM9b3M8FY"></iframe></div>
+
+<p><a href="https://www.youtube.com/watch?v=x4rM9b3M8FY">视频可能有点小，点我去YouTube上看</a></p>
+<p>还有它们的研发网站：</p>
+<p><a href="https://vk.com/colormfa">Color MFA Autopilot</a></p>
+<p>这个是它们的博客，我看了一下AutoPilot 这个公司，貌似给很多汽车厂提供中控屏幕？<br><a href="https://www.drive2.ru/o/MultiMFA">Color MFA Blog</a></p>
+<p>暂时就这些。</p>
 ]]></content>
       <categories>
         <category>汽车</category>
@@ -203,46 +193,7 @@
       <tags>
         <tag>Audi</tag>
         <tag>A4</tag>
-        <tag>保养</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CIS 22C Labs</title>
-    <url>/2016/10/24/CIS-22C-Labs/</url>
-    <content><![CDATA[<p>CIS 22C 是 De Anza College 秋季学期的数据结构课，Delia 教授的班。这门课一共五个 Lab，从链表写到优先队列，记录一下每个 Lab 实现的内容，方便自己以后回顾，也给同样在上这门课的同学一个参考。</p>
-<span id="more"></span>
-
-<h2 id="Lab-1：链表（Linked-List）"><a href="#Lab-1：链表（Linked-List）" class="headerlink" title="Lab 1：链表（Linked List）"></a>Lab 1：链表（Linked List）</h2><p>用链表维护一份城市记录（City），实现读取、打印、按条件查找和删除节点，练手链表最基础的增删查操作。</p>
-<h2 id="Lab-2：类的链表管理"><a href="#Lab-2：类的链表管理" class="headerlink" title="Lab 2：类的链表管理"></a>Lab 2：类的链表管理</h2><p>在 Lab 1 的基础上，把节点换成课程班级信息（ClassNode），练习面向对象的节点设计和链表操作的封装。</p>
-<h2 id="Lab-3：栈与队列判断回文"><a href="#Lab-3：栈与队列判断回文" class="headerlink" title="Lab 3：栈与队列判断回文"></a>Lab 3：栈与队列判断回文</h2><p>用自己实现的 Stack 和 Queue 判断一个单词是不是回文——把字符依次压栈、入队，再对比出栈和出队的顺序是否一致，是这门课里最直观的一次栈&#x2F;队列应用练习。</p>
-<h2 id="Lab-4：二叉搜索树（BST）"><a href="#Lab-4：二叉搜索树（BST）" class="headerlink" title="Lab 4：二叉搜索树（BST）"></a>Lab 4：二叉搜索树（BST）</h2><p>用二叉搜索树维护员工记录（Employee），实现插入、中序遍历输出、以及基于姓名的查找，是五个 Lab 里代码量最大的一个。</p>
-<h2 id="Lab-5：优先队列"><a href="#Lab-5：优先队列" class="headerlink" title="Lab 5：优先队列"></a>Lab 5：优先队列</h2><p>用堆实现的优先队列模拟一个超售（overbooking）场景下的顾客排队逻辑，按优先级取出顾客，练习堆的插入和调整。</p>
-<hr>
-<p>完整代码当时是直接贴在这篇文章里的，现在整理博客的时候把大段代码都拿掉了，只保留了每个 Lab 的思路记录——毕竟几千行代码扔在一篇博客里，除了占地方也没什么可读性。如果有同学也在上这门课想要参考代码，可以在评论区留言。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Chromebook Pixel 2013 Developer Mode</title>
-    <url>/2016/12/04/Chromebook-Pixel-2013-Developer-Mode/</url>
-    <content><![CDATA[<h2 id="Why-should-I-write-this"><a href="#Why-should-I-write-this" class="headerlink" title="Why should I write this?"></a>Why should I write this?</h2><p>More and more people get stuck trying to gain superuser access to make changes on their computer.<br>Those functions are disabled by the OEM by default — we need root access to unlock full functionality.</p>
-<p>Here are some resources worth checking out:  </p>
-<span id="more"></span>
-<p>(3G)[<a href="http://www.techulator.com/resources/13041-How-to-configure-3G-in-Chromebook-using-SIM-cards.aspx">http://www.techulator.com/resources/13041-How-to-configure-3G-in-Chromebook-using-SIM-cards.aspx</a>]<br>(4G)[<a href="https://productforums.google.com/forum/#!topic/chromebook-central/oCDcUz0XUx0">https://productforums.google.com/forum/#!topic/chromebook-central/oCDcUz0XUx0</a>]<br>(Crouton)[<a href="https://www.linux.com/learn/how-easily-install-ubuntu-chromebook-crouton%20">https://www.linux.com/learn/how-easily-install-ubuntu-chromebook-crouton%20</a>]</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>Chromebook</tag>
-        <tag>Chrome</tag>
-        <tag>Pixel</tag>
+        <tag>B6</tag>
       </tags>
   </entry>
   <entry>
@@ -281,6 +232,28 @@
       </tags>
   </entry>
   <entry>
+    <title>CIS 22C Labs</title>
+    <url>/2016/10/24/CIS-22C-Labs/</url>
+    <content><![CDATA[<p>CIS 22C 是 De Anza College 秋季学期的数据结构课，Delia 教授的班。这门课一共五个 Lab，从链表写到优先队列，记录一下每个 Lab 实现的内容，方便自己以后回顾，也给同样在上这门课的同学一个参考。</p>
+<span id="more"></span>
+
+<h2 id="Lab-1：链表（Linked-List）"><a href="#Lab-1：链表（Linked-List）" class="headerlink" title="Lab 1：链表（Linked List）"></a>Lab 1：链表（Linked List）</h2><p>用链表维护一份城市记录（City），实现读取、打印、按条件查找和删除节点，练手链表最基础的增删查操作。</p>
+<h2 id="Lab-2：类的链表管理"><a href="#Lab-2：类的链表管理" class="headerlink" title="Lab 2：类的链表管理"></a>Lab 2：类的链表管理</h2><p>在 Lab 1 的基础上，把节点换成课程班级信息（ClassNode），练习面向对象的节点设计和链表操作的封装。</p>
+<h2 id="Lab-3：栈与队列判断回文"><a href="#Lab-3：栈与队列判断回文" class="headerlink" title="Lab 3：栈与队列判断回文"></a>Lab 3：栈与队列判断回文</h2><p>用自己实现的 Stack 和 Queue 判断一个单词是不是回文——把字符依次压栈、入队，再对比出栈和出队的顺序是否一致，是这门课里最直观的一次栈&#x2F;队列应用练习。</p>
+<h2 id="Lab-4：二叉搜索树（BST）"><a href="#Lab-4：二叉搜索树（BST）" class="headerlink" title="Lab 4：二叉搜索树（BST）"></a>Lab 4：二叉搜索树（BST）</h2><p>用二叉搜索树维护员工记录（Employee），实现插入、中序遍历输出、以及基于姓名的查找，是五个 Lab 里代码量最大的一个。</p>
+<h2 id="Lab-5：优先队列"><a href="#Lab-5：优先队列" class="headerlink" title="Lab 5：优先队列"></a>Lab 5：优先队列</h2><p>用堆实现的优先队列模拟一个超售（overbooking）场景下的顾客排队逻辑，按优先级取出顾客，练习堆的插入和调整。</p>
+<hr>
+<p>完整代码当时是直接贴在这篇文章里的，现在整理博客的时候把大段代码都拿掉了，只保留了每个 Lab 的思路记录——毕竟几千行代码扔在一篇博客里，除了占地方也没什么可读性。如果有同学也在上这门课想要参考代码，可以在评论区留言。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Chromebook Pixel 2013 Lightbar Switch</title>
     <url>/2017/01/06/Chromebook-Pixel-2013-Lightbar-Switch/</url>
     <content><![CDATA[<p>Chromebook Pixel 2013 顶盖上有一条灯带（lightbar），开机、充电、干活的时候都会一闪一闪，设计感是有了，但晚上在暗处用电脑的时候真的挺刺眼。找了一下发现这条灯带其实是可以手动开关的，记录一下方法。</p>
@@ -300,21 +273,33 @@
       </tags>
   </entry>
   <entry>
-    <title>De Anza Voyager 系统：几个常用 Unix 命令</title>
-    <url>/2016/11/16/DeAnza-Voyager-e-Mail-System/</url>
-    <content><![CDATA[<p>学校的 Voyager 是一台跑 Unix 的教学服务器，课程作业里练了一遍终端邮件、远程登录和文件传输相关的命令，整理几个用得上的记一下。</p>
+    <title>Chromebook Pixel 2013 Developer Mode</title>
+    <url>/2016/12/04/Chromebook-Pixel-2013-Developer-Mode/</url>
+    <content><![CDATA[<h2 id="Why-should-I-write-this"><a href="#Why-should-I-write-this" class="headerlink" title="Why should I write this?"></a>Why should I write this?</h2><p>More and more people get stuck trying to gain superuser access to make changes on their computer.<br>Those functions are disabled by the OEM by default — we need root access to unlock full functionality.</p>
 <span id="more"></span>
 
-<p><strong>站内通讯</strong>：<code>mesg y</code> 打开消息接收权限后，<code>talk 用户名</code> 可以和同一台服务器上的其他人实时对话，<code>write 用户名</code> 则是单向发一条消息过去。</p>
-<p><strong>站内邮件</strong>：<code>mail 用户名</code> 发邮件，命令行里可以直接写标题和正文；收到的邮件默认存在 <code>/var/spool/mail/用户名</code> 里，用 <code>more</code> 直接看，或者用 <code>mail</code> 命令进收件箱逐条处理。</p>
-<p><strong>远程登录与文件操作</strong>：<code>ssh 用户名@voyager.deanza.edu</code> 远程登录之后，操作和本地终端没有区别，<code>logout</code> 退出连接。<code>sftp 用户名@voyager.deanza.edu</code> 用来传文件，进去之后 <code>put</code> 上传、<code>get</code> 下载、<code>rm</code> 删除远端文件，<code>quit</code> 退出。</p>
-<p>值得记一下的一点是：SSH&#x2F;SFTP 都是安全传输通道，一旦断开连接，未保存的内容不会自动留下来——这也是为什么用 <code>vi</code> 现建的文件如果没有正常保存退出，重新连上去看就找不到了。</p>
+<h2 id="How-to-enable-Developer-Mode"><a href="#How-to-enable-Developer-Mode" class="headerlink" title="How to enable Developer Mode"></a>How to enable Developer Mode</h2><ol>
+<li>Power off the Chromebook.</li>
+<li>Hold <code>Esc</code> + <code>Refresh</code>（F3）, then press the power button — this boots into the recovery screen.</li>
+<li>Press <code>Ctrl</code> + <code>D</code>, then confirm when it asks to turn off OS verification.</li>
+<li>The device will wipe local data and re-provision itself. This takes a few minutes, don’t interrupt it.</li>
+<li>From now on, every boot shows an “OS verification is off” warning screen — press <code>Ctrl</code> + <code>D</code> (or just wait ~30s) to continue booting.</li>
+</ol>
+<p>Once you’re in Developer Mode, <code>Ctrl</code> + <code>Alt</code> + <code>T</code> opens Crosh, and typing <code>shell</code> drops you into a real Linux shell with root access via <code>sudo</code>. That’s the gate you need before doing anything below.</p>
+<h2 id="Resources-worth-checking-out"><a href="#Resources-worth-checking-out" class="headerlink" title="Resources worth checking out"></a>Resources worth checking out</h2><p>With root access unlocked, here’s what people are actually doing with it:</p>
+<ul>
+<li><a href="http://www.techulator.com/resources/13041-How-to-configure-3G-in-Chromebook-using-SIM-cards.aspx">Configuring 3G in Chromebook using SIM cards</a></li>
+<li><a href="https://productforums.google.com/forum/#!topic/chromebook-central/oCDcUz0XUx0">Chromebook 4G discussion thread</a></li>
+<li><a href="https://www.linux.com/learn/how-easily-install-ubuntu-chromebook-crouton%20">Crouton</a> — runs a full Ubuntu chroot alongside ChromeOS, probably the most useful one of the three.</li>
+</ul>
 ]]></content>
       <categories>
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
+        <tag>Pixel</tag>
+        <tag>Chromebook</tag>
+        <tag>Chrome</tag>
       </tags>
   </entry>
   <entry>
@@ -334,16 +319,26 @@
       </tags>
   </entry>
   <entry>
-    <title>Audi B6 A4 彩色中控屏幕</title>
-    <url>/2016/10/29/Audi-B6-A4-%E5%BD%A9%E8%89%B2%E4%B8%AD%E6%8E%A7%E5%B1%8F%E5%B9%95/</url>
-    <content><![CDATA[<p>在YouTube上看到了一个战斗民族的开发者，给老款的B6 A4 添加了一个彩色的新款中控屏幕，还添加了很多自检功能，十分想要这个套装，但是在eBay上并没有找到这个商品，看起来要去战斗民族的老窝里面寻找一下了。</p>
-<div class="video-container"><iframe allowfullscreen="" frameborder="0" src="//www.youtube.com/embed/x4rM9b3M8FY"></iframe></div>
-
-<p><a href="https://www.youtube.com/watch?v=x4rM9b3M8FY">视频可能有点小，点我去YouTube上看</a></p>
-<p>还有它们的研发网站：</p>
-<p><a href="https://vk.com/colormfa">Color MFA Autopilot</a></p>
-<p>这个是它们的博客，我看了一下AutoPilot 这个公司，貌似给很多汽车厂提供中控屏幕？<br><a href="https://www.drive2.ru/o/MultiMFA">Color MFA Blog</a></p>
-<p>暂时就这些。</p>
+    <title>Audi B6 A4 重置保养周期 Service Light Reset</title>
+    <url>/2016/11/09/Audi-B6-A4-%E9%87%8D%E7%BD%AE%E4%BF%9D%E5%85%BB%E5%91%A8%E6%9C%9F/</url>
+    <content><![CDATA[<p>A4 开着开着就到了100000 mile 了，毕竟也是几十年的车了，这个去4S 店保养肯定会被人坑，但是每次启动保养灯都会提醒所以有点烦。在网上找了一下方法，发现挺简单，在这里分享一下。</p>
+<h3 id="步骤-Steps"><a href="#步骤-Steps" class="headerlink" title="步骤 Steps"></a>步骤 Steps</h3><ol>
+<li>把钥匙插进去打开汽车但不需要点火</li>
+<li>长按维修保养按钮</li>
+<li>当屏幕出现维修信息的时候按下0.0 （清零里程）按钮</li>
+<li>如果屏幕出现—，说明重置完成。</li>
+<li>关上汽车，清零完成。</li>
+<li>新的保养周期可能需要等待几天才会出现。<span id="more"></span></li>
+</ol>
+<h3 id="English-Manual"><a href="#English-Manual" class="headerlink" title="English Manual"></a>English Manual</h3><ol>
+<li>Turn ignition on while holding wrench button.</li>
+<li>Release button when service information appears.</li>
+<li>Press 0.0 button.</li>
+<li>If — appears on your screen, reset is complete.</li>
+<li>Turn ignition off and reset done.</li>
+<li>New service cycle might take couple days to show up.</li>
+</ol>
+<p>本文章出自于Rednik Tech。转载请注明出处。</p>
 ]]></content>
       <categories>
         <category>汽车</category>
@@ -351,35 +346,29 @@
       <tags>
         <tag>Audi</tag>
         <tag>A4</tag>
-        <tag>B6</tag>
+        <tag>保养</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hexo With Cyberduck Blog Post</title>
-    <url>/2016/11/22/Hexo-With-Cyberduck-Blog-Post/</url>
-    <content><![CDATA[<p>这个网站是基于Linux的服务器，如何远程管理你的服务器是一节必修课。我的解决方案是使用Cyberduck + Putty（Windows平台）。 这两个工具几乎可以满足日常的博客维护需求。  </p>
+    <title>洛杉矶生活指南</title>
+    <url>/2018/08/07/LA%E7%94%9F%E6%B4%BB%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h3 id="城市简介"><a href="#城市简介" class="headerlink" title="城市简介"></a>城市简介</h3><p>洛杉矶位于美国加利福尼亚州南部的都市，人口约397万，为加州第一大城，同时也是美国人口第二大都市。为全美国第二大都会区。（别名GTA5，堵车之城）美国大城市好啊，我这个农村人终于进城了。还是可喜可贺的9.25%的消费税。在美国已经活了快4个年头了，对于大城市的厌恶感还是挺强的。因为贵，消费水平高还有堵车， 这是我对这个城市不满意的地方，但是相反的，多元文化，餐饮口味丰富，还有全球资源的收集。这也是大城市必不可少的特点。</p>
 <span id="more"></span>
 
-<h3 id="Cyberduck-配置"><a href="#Cyberduck-配置" class="headerlink" title="Cyberduck 配置"></a>Cyberduck 配置</h3><p>Cyberduck 主要用来管理博客的静态文件，本质上就是一个带界面的SFTP客户端。</p>
-<ol>
-<li>打开Cyberduck，点击左上角”打开连接”</li>
-<li>协议选择SFTP（SSH File Transfer Protocol）</li>
-<li>填入服务器地址、端口（默认22）、用户名</li>
-<li>如果用密钥登录，在”SSH私钥”里选择你的private key文件</li>
-<li>连接成功之后就能像本地文件夹一样拖拽上传&#x2F;下载hexo生成的public目录了</li>
-</ol>
-<h3 id="Putty-配置"><a href="#Putty-配置" class="headerlink" title="Putty 配置"></a>Putty 配置</h3><p>Putty 是用来远程登录服务器执行命令的，比如重启Nginx、看日志之类的操作。</p>
-<ol>
-<li>Host Name填服务器IP</li>
-<li>Port默认22，Connection type选SSH</li>
-<li>如果要用密钥登录，在Connection -&gt; SSH -&gt; Auth里加载你的.ppk私钥文件</li>
-<li>点Open就能连接，第一次连接会提示确认服务器指纹，选Yes就行</li>
-</ol>
-<p>这两个工具一个管文件，一个管命令行，配合起来基本能覆盖日常的博客维护需求了。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">洛杉矶位于地中海型气候带，气候温和。</span><br><span class="line">大体上终年干燥少雨，只是在冬季降雨稍多。</span><br><span class="line">全年阳光明媚，基本上极少机会会在冰点以下，</span><br><span class="line">因此降雪的机率可说是绝无仅有。</span><br><span class="line">年降水量仅379毫米，以冬雨为主。</span><br><span class="line">洛杉矶日夜温差较大，日间比较炎热，</span><br><span class="line">就算是冬季，日间气温经常也有摄氏20度，</span><br><span class="line">夏季日间温度则常超越35度，</span><br><span class="line">甚至常因热浪袭击而造成山林失火的情况。</span><br></pre></td></tr></table></figure>
+
+<p>其实是天天火灾也不为过。</p>
+<h3 id="洛杉矶机场（LAX）"><a href="#洛杉矶机场（LAX）" class="headerlink" title="洛杉矶机场（LAX）"></a>洛杉矶机场（LAX）</h3><p>四跑道国际机场 24L&#x2F;24R 25L&#x2F;25R<br>机场平面图<br><img src="/images/LAinfo/LAX_airport_map.png" alt="机场平面图"><br><img src="/images/LAinfo/00237IL24L.jpg" alt="机场平面图"></p>
+<h3 id="住房"><a href="#住房" class="headerlink" title="住房"></a>住房</h3><p>洛杉矶租房价格因区域差异很大，市中心和西边（Santa Monica、Culver City 这一带）贵得离谱，一个单间轻轻松松 2000 刀往上；往东边或者 San Fernando Valley 那边找，同样的钱能租到大不少的公寓。找房子建议直接看小区周边治安和通勤时间，价格便宜的地方往往是因为离市区远，算上油费和过路费之后不一定真划算。</p>
+<h3 id="交通"><a href="#交通" class="headerlink" title="交通"></a>交通</h3><p>洛杉矶是典型的”车轮上的城市”，公共交通覆盖有限，地铁线路也不成体系，基本上没车寸步难行。高速公路四通八达但也堵得出名，早晚高峰 405、10 号这些主干线基本就是停车场，出门前查一下实时路况是刚需。停车费也是隐藏成本，市中心和景区不少地方停车比吃饭还贵。</p>
+<h3 id="治安"><a href="#治安" class="headerlink" title="治安"></a>治安</h3><p>治安整体因区而异，差异非常大，市中心（Downtown）某些街区和好莱坞周边晚上要留心，相对的，西边和南边一些住宅区就很安全。总的原则是提前查一下目标区域的治安记录，别贪便宜租到治安差的地方。</p>
 ]]></content>
       <categories>
-        <category>技术</category>
+        <category>生活</category>
       </categories>
+      <tags>
+        <tag>洛杉矶</tag>
+      </tags>
   </entry>
   <entry>
     <title>被入侵之后：一次意外的DDoS脚本</title>
@@ -399,30 +388,21 @@
       </tags>
   </entry>
   <entry>
-    <title>Kip Irvine Developing Environment Setup</title>
-    <url>/2016/11/20/Kip-Irvine-Developing-Environment-Setup/</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>基于Assembly 的复杂性和死板性，配置Assembly的编程环境也充满了困难。这篇文章针对《Assembly Language For x86 Processors, 7th Edition》（by Kip Irvine）做出一系列配置环境教程，简化大家的配置方法。</p>
-<p><img src="https://images-na.ssl-images-amazon.com/images/I/51MPP7tSICL._SX381_BO1,204,203,200_.jpg" alt="Book picture"><br>这个是这本书的封面 购买地址：<a href="https://www.amazon.com/Assembly-Language-x86-Processors-7th/dp/0133769402">https://www.amazon.com/Assembly-Language-x86-Processors-7th/dp/0133769402</a>  </p>
+    <title>De Anza Voyager 系统：几个常用 Unix 命令</title>
+    <url>/2016/11/16/DeAnza-Voyager-e-Mail-System/</url>
+    <content><![CDATA[<p>学校的 Voyager 是一台跑 Unix 的教学服务器，课程作业里练了一遍终端邮件、远程登录和文件传输相关的命令，整理几个用得上的记一下。</p>
 <span id="more"></span>
 
-<h2 id="教程视频"><a href="#教程视频" class="headerlink" title="教程视频"></a>教程视频</h2><p>这里有个很笼统的教程视频，英文好的同学可以直接观看，观看好的话基本上是没什么设置问题了。  </p>
-<div class="video-container"><iframe allowfullscreen="" frameborder="0" src="//www.youtube.com/embed/9e1ER2o83N0"></iframe></div>
-
-<h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><p>对于Kip Irvine 的资料不可以自己编译，所有的环境文件都需要在网站上下载下来这里是网址：</p>
-<ol>
-<li><a href="http://kipirvine.com/asm/">http://kipirvine.com/asm/</a> 这个是最主要的页面</li>
-<li><a href="http://kipirvine.com/asm/gettingStartedVS2015/index.htm">http://kipirvine.com/asm/gettingStartedVS2015/index.htm</a> 使用Visual Studio 2015 来对Assembly 进行编译的主要教程页面。</li>
-</ol>
-<h2 id="必须下载的文件"><a href="#必须下载的文件" class="headerlink" title="必须下载的文件"></a>必须下载的文件</h2><ul>
-<li>由于我们只讨论32 位的Assembly程序所以一切都以32位版本的为准！<br>Code文件的安装包（为了防止以后采用路径有误，必须安装在C:&#x2F;Irvine）：<br><a href="http://kipirvine.com/asm/examples/Irvine_7th_Edition.msi">http://kipirvine.com/asm/examples/Irvine_7th_Edition.msi</a></li>
-</ul>
+<p><strong>站内通讯</strong>：<code>mesg y</code> 打开消息接收权限后，<code>talk 用户名</code> 可以和同一台服务器上的其他人实时对话，<code>write 用户名</code> 则是单向发一条消息过去。</p>
+<p><strong>站内邮件</strong>：<code>mail 用户名</code> 发邮件，命令行里可以直接写标题和正文；收到的邮件默认存在 <code>/var/spool/mail/用户名</code> 里，用 <code>more</code> 直接看，或者用 <code>mail</code> 命令进收件箱逐条处理。</p>
+<p><strong>远程登录与文件操作</strong>：<code>ssh 用户名@voyager.deanza.edu</code> 远程登录之后，操作和本地终端没有区别，<code>logout</code> 退出连接。<code>sftp 用户名@voyager.deanza.edu</code> 用来传文件，进去之后 <code>put</code> 上传、<code>get</code> 下载、<code>rm</code> 删除远端文件，<code>quit</code> 退出。</p>
+<p>值得记一下的一点是：SSH&#x2F;SFTP 都是安全传输通道，一旦断开连接，未保存的内容不会自动留下来——这也是为什么用 <code>vi</code> 现建的文件如果没有正常保存退出，重新连上去看就找不到了。</p>
 ]]></content>
       <categories>
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Assembly</tag>
-        <tag>Environment</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -446,18 +426,50 @@
       </tags>
   </entry>
   <entry>
-    <title>洛杉矶生活指南</title>
-    <url>/2018/08/07/LA%E7%94%9F%E6%B4%BB%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h3 id="城市简介"><a href="#城市简介" class="headerlink" title="城市简介"></a>城市简介</h3><p>洛杉矶位于美国加利福尼亚州南部的都市，人口约397万，为加州第一大城，同时也是美国人口第二大都市。为全美国第二大都会区。（别名GTA5，堵车之城）美国大城市好啊，我这个农村人终于进城了。还是可喜可贺的9.25%的消费税。在美国已经活了快4个年头了，对于大城市的厌恶感还是挺强的。因为贵，消费水平高还有堵车， 这是我对这个城市不满意的地方，但是相反的，多元文化，餐饮口味丰富，还有全球资源的收集。这也是大城市必不可少的特点。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">洛杉矶位于地中海型气候带，气候温和。</span><br><span class="line">大体上终年干燥少雨，只是在冬季降雨稍多。</span><br><span class="line">全年阳光明媚，基本上极少机会会在冰点以下，</span><br><span class="line">因此降雪的机率可说是绝无仅有。</span><br><span class="line">年降水量仅379毫米，以冬雨为主。</span><br><span class="line">洛杉矶日夜温差较大，日间比较炎热，</span><br><span class="line">就算是冬季，日间气温经常也有摄氏20度，</span><br><span class="line">夏季日间温度则常超越35度，</span><br><span class="line">甚至常因热浪袭击而造成山林失火的情况。</span><br></pre></td></tr></table></figure>
-
-<p>其实是天天火灾也不为过</p>
-<h3 id="洛杉矶机场（LAX）"><a href="#洛杉矶机场（LAX）" class="headerlink" title="洛杉矶机场（LAX）"></a>洛杉矶机场（LAX）</h3><p>四跑道国际机场 24L&#x2F;24R 25L&#x2F;25R<br>机场平面图<br><img src="/images/LAinfo/LAX_airport_map.png" alt="机场平面图"><br><img src="/images/LAinfo/00237IL24L.jpg" alt="机场平面图"></p>
+    <title>Windows 10 Chinese Display Error Fix</title>
+    <url>/2016/11/22/Windows-10-Chinese-Display-Error-Fix/</url>
+    <content><![CDATA[<h3 id="烦人的乱码"><a href="#烦人的乱码" class="headerlink" title="烦人的乱码"></a>烦人的乱码</h3><p>在Windows下显示其他国家的语言出现乱码已经不是一件新鲜的事情了。多语言支持难道就这么差劲吗？来，我们一步一步解决。</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
+<li>打开控制面板，选择“区域和语言设置”（Clock, Language, Region）</li>
+</ul>
+<p><img src="/images/WindowsLanguageSetting/1.jpg" alt="控制面板">  </p>
 <span id="more"></span>
+
+<ul>
+<li>选择国家（Region）</li>
+</ul>
+<p><img src="/images/WindowsLanguageSetting/2.png" alt="控制面板"></p>
+<ul>
+<li>在上面的选项卡选择最右边的（Administrative）</li>
+</ul>
+<p><img src="/images/WindowsLanguageSetting/3.png" alt="控制面板"></p>
+<ul>
+<li>选择“改变你的系统位置”（Change your system locate）</li>
+</ul>
+<p><img src="/images/WindowsLanguageSetting/4.png" alt="控制面板"></p>
+<ul>
+<li>选择你需要的国家语言。</li>
+</ul>
+<p><img src="/images/WindowsLanguageSetting/5.png" alt="控制面板"><br><img src="/images/WindowsLanguageSetting/6.png" alt="控制面板"></p>
+<ul>
+<li>在左下角 搜索Language(语言)，打开第一个选项，进入Windows 控制面板的语言管理界面。</li>
+</ul>
+<p><img src="/images/WindowsLanguageSetting/7.png" alt="控制面板"></p>
+<ul>
+<li>点击中间选项卡的Add Language（添加语言），之后选择你想要的语言就好了</li>
+</ul>
+<p><img src="/images/WindowsLanguageSetting/8.png" alt="控制面板"></p>
+<ul>
+<li>漫长的下载等待＋重启， 新的语言就可以正常显示了。</li>
+</ul>
 ]]></content>
       <categories>
-        <category>生活</category>
+        <category>技术</category>
       </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>故障</tag>
+      </tags>
   </entry>
   <entry>
     <title>ShadowSocks on Chromebook</title>
@@ -515,65 +527,57 @@
       </categories>
   </entry>
   <entry>
-    <title>Windows 10 Chinese Display Error Fix</title>
-    <url>/2016/11/22/Windows-10-Chinese-Display-Error-Fix/</url>
-    <content><![CDATA[<h3 id="烦人的乱码"><a href="#烦人的乱码" class="headerlink" title="烦人的乱码"></a>烦人的乱码</h3><p>在Windows下显示其他国家的语言出现乱码已经不是一件新鲜的事情了。多语言支持难道就这么差劲吗？来，我们一步一步解决。</p>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
-<li>打开控制面板，选择“区域和语言设置”（Clock, Language, Region）</li>
-</ul>
-<p><img src="/images/WindowsLanguageSetting/1.jpg" alt="控制面板">  </p>
+    <title>Kip Irvine Developing Environment Setup</title>
+    <url>/2016/11/20/Kip-Irvine-Developing-Environment-Setup/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>基于Assembly 的复杂性和死板性，配置Assembly的编程环境也充满了困难。这篇文章针对《Assembly Language For x86 Processors, 7th Edition》（by Kip Irvine）做出一系列配置环境教程，简化大家的配置方法。</p>
+<p><img src="https://images-na.ssl-images-amazon.com/images/I/51MPP7tSICL._SX381_BO1,204,203,200_.jpg" alt="Book picture"><br>这个是这本书的封面 购买地址：<a href="https://www.amazon.com/Assembly-Language-x86-Processors-7th/dp/0133769402">https://www.amazon.com/Assembly-Language-x86-Processors-7th/dp/0133769402</a>  </p>
 <span id="more"></span>
 
-<ul>
-<li>选择国家（Region）</li>
-</ul>
-<p><img src="/images/WindowsLanguageSetting/2.png" alt="控制面板"></p>
-<ul>
-<li>在上面的选项卡选择最右边的（Administrative）</li>
-</ul>
-<p><img src="/images/WindowsLanguageSetting/3.png" alt="控制面板"></p>
-<ul>
-<li>选择“改变你的系统位置”（Change your system locate）</li>
-</ul>
-<p><img src="/images/WindowsLanguageSetting/4.png" alt="控制面板"></p>
-<ul>
-<li>选择你需要的国家语言。</li>
-</ul>
-<p><img src="/images/WindowsLanguageSetting/5.png" alt="控制面板"><br><img src="/images/WindowsLanguageSetting/6.png" alt="控制面板"></p>
-<ul>
-<li>在左下角 搜索Language(语言)，打开第一个选项，进入Windows 控制面板的语言管理界面。</li>
-</ul>
-<p><img src="/images/WindowsLanguageSetting/7.png" alt="控制面板"></p>
-<ul>
-<li>点击中间选项卡的Add Language（添加语言），之后选择你想要的语言就好了</li>
-</ul>
-<p><img src="/images/WindowsLanguageSetting/8.png" alt="控制面板"></p>
-<ul>
-<li>漫长的下载等待＋重启， 新的语言就可以正常显示了。</li>
+<h2 id="教程视频"><a href="#教程视频" class="headerlink" title="教程视频"></a>教程视频</h2><p>这里有个很笼统的教程视频，英文好的同学可以直接观看，观看好的话基本上是没什么设置问题了。  </p>
+<div class="video-container"><iframe allowfullscreen="" frameborder="0" src="//www.youtube.com/embed/9e1ER2o83N0"></iframe></div>
+
+<h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><p>对于Kip Irvine 的资料不可以自己编译，所有的环境文件都需要在网站上下载下来这里是网址：</p>
+<ol>
+<li><a href="http://kipirvine.com/asm/">http://kipirvine.com/asm/</a> 这个是最主要的页面</li>
+<li><a href="http://kipirvine.com/asm/gettingStartedVS2015/index.htm">http://kipirvine.com/asm/gettingStartedVS2015/index.htm</a> 使用Visual Studio 2015 来对Assembly 进行编译的主要教程页面。</li>
+</ol>
+<h2 id="必须下载的文件"><a href="#必须下载的文件" class="headerlink" title="必须下载的文件"></a>必须下载的文件</h2><ul>
+<li>由于我们只讨论32 位的Assembly程序所以一切都以32位版本的为准！<br>Code文件的安装包（为了防止以后采用路径有误，必须安装在C:&#x2F;Irvine）：<br><a href="http://kipirvine.com/asm/examples/Irvine_7th_Edition.msi">http://kipirvine.com/asm/examples/Irvine_7th_Edition.msi</a></li>
 </ul>
 ]]></content>
       <categories>
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
-        <tag>故障</tag>
+        <tag>Assembly</tag>
+        <tag>Environment</tag>
       </tags>
   </entry>
   <entry>
-    <title>加州五号高速公路驾驶手册</title>
-    <url>/2018/08/14/interstate5/</url>
-    <content><![CDATA[<p>加州最有名的公路除了风景优美的一号之外， 其实还有一条更高速快捷的五号公路。在2018 年之前，五号高速公路路况极差。由于<a href="http://rebuildingca.ca.gov/">SB－1法案</a>的实施，外加上没日没夜的墨西哥人辛苦劳动。以及消耗了我们纳税人巨额资金。这条高速公路终于得到了改善。</p>
-<p>简介：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Interstate 5 (I-5) is the main </span><br><span class="line">Interstate Highway on the West </span><br><span class="line">Coast of the United States, </span><br><span class="line">running largely parallel to the </span><br><span class="line">Pacific coast of the continental </span><br><span class="line">U.S. from Mexico to Canada</span><br></pre></td></tr></table></figure>
+    <title>Hexo With Cyberduck Blog Post</title>
+    <url>/2016/11/22/Hexo-With-Cyberduck-Blog-Post/</url>
+    <content><![CDATA[<p>这个网站是基于Linux的服务器，如何远程管理你的服务器是一节必修课。我的解决方案是使用Cyberduck + Putty（Windows平台）。 这两个工具几乎可以满足日常的博客维护需求。  </p>
+<span id="more"></span>
 
-<h2 id="早上"><a href="#早上" class="headerlink" title="早上"></a>早上</h2><p>早上的开车应该算是比较正常的操作，没有什么注意的事项。靠近Bakersfield 的地方就会有很多警察蹲在天桥底下。开车的时候路过天桥就要注意点。其余的没什么，路上的人开车算正常，急着赶路的人照样赶路，80-90 这样地开着，如果自己开的慢的话就到右边的车道慢慢开吧。</p>
-<p>就我个人来看这条公路还是十分有魅力的。</p>
-<h2 id="中午"><a href="#中午" class="headerlink" title="中午"></a>中午</h2><p>中午的路况就完全不一样了，太阳直射，柏油路面反光刺眼，中央山谷（Central Valley）这一段基本上前不着村后不着店，除了两边望不到头的农田就是偶尔路过的加油站。天气热的时候仪表盘水温都会跳得比平时高一些，建议开着开着找个服务区歇一下，顺便灌点水。路过Kettleman City 的时候有个In-N-Out，几乎是这条公路上最出名的地标了，路过的人基本都会停一下。</p>
-<h2 id="晚上"><a href="#晚上" class="headerlink" title="晚上"></a>晚上</h2><p>平时晚上都是很多货车。大车司机基本上都是靠夜里赶路，白天休息，所以天一黑车流里大车的比例明显变高，跟车的时候要留足距离，视线也容易被大车的车灯晃到看不清路。晚上开这条路其实比白天轻松，警察少了很多，车流也稀，唯一麻烦的就是容易犯困，服务区基本都是24小时营业，实在困了就进去歇一会，别硬撑。</p>
+<h3 id="Cyberduck-配置"><a href="#Cyberduck-配置" class="headerlink" title="Cyberduck 配置"></a>Cyberduck 配置</h3><p>Cyberduck 主要用来管理博客的静态文件，本质上就是一个带界面的SFTP客户端。</p>
+<ol>
+<li>打开Cyberduck，点击左上角”打开连接”</li>
+<li>协议选择SFTP（SSH File Transfer Protocol）</li>
+<li>填入服务器地址、端口（默认22）、用户名</li>
+<li>如果用密钥登录，在”SSH私钥”里选择你的private key文件</li>
+<li>连接成功之后就能像本地文件夹一样拖拽上传&#x2F;下载hexo生成的public目录了</li>
+</ol>
+<h3 id="Putty-配置"><a href="#Putty-配置" class="headerlink" title="Putty 配置"></a>Putty 配置</h3><p>Putty 是用来远程登录服务器执行命令的，比如重启Nginx、看日志之类的操作。</p>
+<ol>
+<li>Host Name填服务器IP</li>
+<li>Port默认22，Connection type选SSH</li>
+<li>如果要用密钥登录，在Connection -&gt; SSH -&gt; Auth里加载你的.ppk私钥文件</li>
+<li>点Open就能连接，第一次连接会提示确认服务器指纹，选Yes就行</li>
+</ol>
+<p>这两个工具一个管文件，一个管命令行，配合起来基本能覆盖日常的博客维护需求了。</p>
 ]]></content>
       <categories>
-        <category>生活</category>
+        <category>技术</category>
       </categories>
   </entry>
   <entry>
@@ -715,5 +719,21 @@
       <tags>
         <tag>hexo</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>加州五号高速公路驾驶手册</title>
+    <url>/2018/08/14/interstate5/</url>
+    <content><![CDATA[<p>加州最有名的公路除了风景优美的一号之外， 其实还有一条更高速快捷的五号公路。在2018 年之前，五号高速公路路况极差。由于<a href="http://rebuildingca.ca.gov/">SB－1法案</a>的实施，外加上没日没夜的墨西哥人辛苦劳动。以及消耗了我们纳税人巨额资金。这条高速公路终于得到了改善。</p>
+<p>简介：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Interstate 5 (I-5) is the main </span><br><span class="line">Interstate Highway on the West </span><br><span class="line">Coast of the United States, </span><br><span class="line">running largely parallel to the </span><br><span class="line">Pacific coast of the continental </span><br><span class="line">U.S. from Mexico to Canada</span><br></pre></td></tr></table></figure>
+
+<h2 id="早上"><a href="#早上" class="headerlink" title="早上"></a>早上</h2><p>早上的开车应该算是比较正常的操作，没有什么注意的事项。靠近Bakersfield 的地方就会有很多警察蹲在天桥底下。开车的时候路过天桥就要注意点。其余的没什么，路上的人开车算正常，急着赶路的人照样赶路，80-90 这样地开着，如果自己开的慢的话就到右边的车道慢慢开吧。</p>
+<p>就我个人来看这条公路还是十分有魅力的。</p>
+<h2 id="中午"><a href="#中午" class="headerlink" title="中午"></a>中午</h2><p>中午的路况就完全不一样了，太阳直射，柏油路面反光刺眼，中央山谷（Central Valley）这一段基本上前不着村后不着店，除了两边望不到头的农田就是偶尔路过的加油站。天气热的时候仪表盘水温都会跳得比平时高一些，建议开着开着找个服务区歇一下，顺便灌点水。路过Kettleman City 的时候有个In-N-Out，几乎是这条公路上最出名的地标了，路过的人基本都会停一下。</p>
+<h2 id="晚上"><a href="#晚上" class="headerlink" title="晚上"></a>晚上</h2><p>平时晚上都是很多货车。大车司机基本上都是靠夜里赶路，白天休息，所以天一黑车流里大车的比例明显变高，跟车的时候要留足距离，视线也容易被大车的车灯晃到看不清路。晚上开这条路其实比白天轻松，警察少了很多，车流也稀，唯一麻烦的就是容易犯困，服务区基本都是24小时营业，实在困了就进去歇一会，别硬撑。</p>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
   </entry>
 </search>
