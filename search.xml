@@ -17,6 +17,28 @@
       </tags>
   </entry>
   <entry>
+    <title>Audi B6 A4 故障码扫描记录：待维修</title>
+    <url>/2016/11/16/Audi-B6-A4-Fault-Code-%E6%95%85%E9%9A%9C%E4%BB%A3%E7%A0%81%E5%BE%85%E7%BB%B4%E4%BF%AE/</url>
+    <content><![CDATA[<p>用 VAS-5053 对车子（底盘 8E，Audi A4 B6&#x2F;B7）做了一次全模块扫描，一共扫了 20 个控制单元，记一下真正有问题的几个，留着以后修的时候对照。</p>
+<span id="more"></span>
+
+<p>扫描结果里绝大部分模块（发动机、变速箱、暖风空调、安全气囊、组合仪表等）都是”未找到故障码”，正常。真正有故障的只有这三处：</p>
+<ul>
+<li><strong>地址 03（ABS制动）</strong>：00526 制动灯开关故障，间歇性开路。</li>
+<li><strong>地址 0F（数码音响）</strong>：02635 调谐器启动&#x2F;激活异常。</li>
+<li><strong>地址 46（中央便利系统）</strong>：左右后车门（01561 &#x2F; 01562）都报”不能解锁 - 间歇”，大概率是车门锁执行器或者线路接触的问题。</li>
+<li><strong>地址 56（收音机）</strong>：00858 收音机中频输出与天线放大器之间的连接，报了对地短路和开路两种间歇故障，估计是天线放大器那段线束老化了。</li>
+</ul>
+<p>后视这几个故障点，两组车门锁和收音机天线放大器的线路问题看起来是同一类”老车线束接触不良”的毛病，下次一起修可能更划算。</p>
+]]></content>
+      <categories>
+        <category>汽车</category>
+      </categories>
+      <tags>
+        <tag>Audi</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Arduino UNO R3 上手测试</title>
     <url>/2016/07/29/Arduino-UNO-R3-%E4%B8%8A%E6%89%8B%E6%B5%8B%E8%AF%95/</url>
     <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Arduino 作为一款偏向硬件控制的单片机，相比Raspberry Pi 3，我当时购入的Starter kit 有很多有趣的控，比如NFC卡，JoyStick，Speaker，一堆我都不知道怎么玩的东西qwq。感觉就是一个很强大的控制模块。经过几天的捣鼓，暂时知道了一些基本的玩法，现在向大家介绍一下。</p>
@@ -47,51 +69,6 @@
         <tag>单片机</tag>
         <tag>研究</tag>
         <tag>技术</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Audi B6 A4 刹车液报警：只在冷天出现</title>
-    <url>/2016/12/08/Audi-B6-A4-Break-Fluid-Warning-on-cold-days/</url>
-    <content><![CDATA[<p>冬天一冷，车就开始出毛病。这次是刹车系统报警——嘀嘀响、手刹灯闪三下——但只在天冷的时候出现，暖和了就正常，运气不好还会持续报个不停。上网一查，发现不少车友都遇到过同样的问题。</p>
-<span id="more"></span>
-
-<p>翻了一圈车友论坛，大家给出的可能原因主要集中在这几个方向：</p>
-<ul>
-<li><strong>卡钳泄漏</strong>：某个卡钳的放气阀（bleeder screw）密封不好，转弯时因为离心力，刹车液被甩到某一侧导致液位报警，换掉那个卡钳就能解决。</li>
-<li><strong>传感器故障</strong>：也有车友是每次启动车子就报警、开起来却完全正常，怀疑是液位传感器接触不良，跟真实液位没关系。</li>
-<li><strong>和 ESP 联动</strong>：ABS&#x2F;ESP 属于同一套系统，如果 ESP 故障灯也一起亮，说明可能是 ALB 模块或传感器的问题，建议用 VAG-COM 读一下故障码，能更精确定位问题出在哪。</li>
-</ul>
-<p>对我来说，因为刹车片、刹车盘、刹车液这些部件本来就快到了该换的里程，所以没有再深挖具体故障点，先把这件事放一放。</p>
-<p><strong>更新</strong>：后来确认就是刹车片磨损导致刹车液面下降，触发了报警。冲洗了整套刹车系统、换上新液体之后，报警就再也没出现过。</p>
-]]></content>
-      <categories>
-        <category>汽车</category>
-      </categories>
-      <tags>
-        <tag>Audi</tag>
-        <tag>A4</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Audi B6 A4 故障码扫描记录：待维修</title>
-    <url>/2016/11/16/Audi-B6-A4-Fault-Code-%E6%95%85%E9%9A%9C%E4%BB%A3%E7%A0%81%E5%BE%85%E7%BB%B4%E4%BF%AE/</url>
-    <content><![CDATA[<p>用 VAS-5053 对车子（底盘 8E，Audi A4 B6&#x2F;B7）做了一次全模块扫描，一共扫了 20 个控制单元，记一下真正有问题的几个，留着以后修的时候对照。</p>
-<span id="more"></span>
-
-<p>扫描结果里绝大部分模块（发动机、变速箱、暖风空调、安全气囊、组合仪表等）都是”未找到故障码”，正常。真正有故障的只有这三处：</p>
-<ul>
-<li><strong>地址 03（ABS制动）</strong>：00526 制动灯开关故障，间歇性开路。</li>
-<li><strong>地址 0F（数码音响）</strong>：02635 调谐器启动&#x2F;激活异常。</li>
-<li><strong>地址 46（中央便利系统）</strong>：左右后车门（01561 &#x2F; 01562）都报”不能解锁 - 间歇”，大概率是车门锁执行器或者线路接触的问题。</li>
-<li><strong>地址 56（收音机）</strong>：00858 收音机中频输出与天线放大器之间的连接，报了对地短路和开路两种间歇故障，估计是天线放大器那段线束老化了。</li>
-</ul>
-<p>后视这几个故障点，两组车门锁和收音机天线放大器的线路问题看起来是同一类”老车线束接触不良”的毛病，下次一起修可能更划算。</p>
-]]></content>
-      <categories>
-        <category>汽车</category>
-      </categories>
-      <tags>
-        <tag>Audi</tag>
       </tags>
   </entry>
   <entry>
@@ -127,16 +104,19 @@
       </categories>
   </entry>
   <entry>
-    <title>Audi B6 A4 彩色中控屏幕</title>
-    <url>/2016/10/29/Audi-B6-A4-%E5%BD%A9%E8%89%B2%E4%B8%AD%E6%8E%A7%E5%B1%8F%E5%B9%95/</url>
-    <content><![CDATA[<p>在YouTube上看到了一个战斗民族的开发者，给老款的B6 A4 添加了一个彩色的新款中控屏幕，还添加了很多自检功能，十分想要这个套装，但是在eBay上并没有找到这个商品，看起来要去战斗民族的老窝里面寻找一下了。</p>
-<div class="video-container"><iframe allowfullscreen="" frameborder="0" src="//www.youtube.com/embed/x4rM9b3M8FY"></iframe></div>
+    <title>Audi B6 A4 刹车液报警：只在冷天出现</title>
+    <url>/2016/12/08/Audi-B6-A4-Break-Fluid-Warning-on-cold-days/</url>
+    <content><![CDATA[<p>冬天一冷，车就开始出毛病。这次是刹车系统报警——嘀嘀响、手刹灯闪三下——但只在天冷的时候出现，暖和了就正常，运气不好还会持续报个不停。上网一查，发现不少车友都遇到过同样的问题。</p>
+<span id="more"></span>
 
-<p><a href="https://www.youtube.com/watch?v=x4rM9b3M8FY">视频可能有点小，点我去YouTube上看</a></p>
-<p>还有它们的研发网站：</p>
-<p><a href="https://vk.com/colormfa">Color MFA Autopilot</a></p>
-<p>这个是它们的博客，我看了一下AutoPilot 这个公司，貌似给很多汽车厂提供中控屏幕？<br><a href="https://www.drive2.ru/o/MultiMFA">Color MFA Blog</a></p>
-<p>暂时就这些。</p>
+<p>翻了一圈车友论坛，大家给出的可能原因主要集中在这几个方向：</p>
+<ul>
+<li><strong>卡钳泄漏</strong>：某个卡钳的放气阀（bleeder screw）密封不好，转弯时因为离心力，刹车液被甩到某一侧导致液位报警，换掉那个卡钳就能解决。</li>
+<li><strong>传感器故障</strong>：也有车友是每次启动车子就报警、开起来却完全正常，怀疑是液位传感器接触不良，跟真实液位没关系。</li>
+<li><strong>和 ESP 联动</strong>：ABS&#x2F;ESP 属于同一套系统，如果 ESP 故障灯也一起亮，说明可能是 ALB 模块或传感器的问题，建议用 VAG-COM 读一下故障码，能更精确定位问题出在哪。</li>
+</ul>
+<p>对我来说，因为刹车片、刹车盘、刹车液这些部件本来就快到了该换的里程，所以没有再深挖具体故障点，先把这件事放一放。</p>
+<p><strong>更新</strong>：后来确认就是刹车片磨损导致刹车液面下降，触发了报警。冲洗了整套刹车系统、换上新液体之后，报警就再也没出现过。</p>
 ]]></content>
       <categories>
         <category>汽车</category>
@@ -144,7 +124,6 @@
       <tags>
         <tag>Audi</tag>
         <tag>A4</tag>
-        <tag>B6</tag>
       </tags>
   </entry>
   <entry>
@@ -172,6 +151,28 @@
         <tag>充电器</tag>
         <tag>汽车研究</tag>
         <tag>喷漆</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Audition 消除伴奏获取人声的办法</title>
+    <url>/2016/10/21/AuditionTakeVoice/</url>
+    <content><![CDATA[<p>如果你正为找不到一首歌曲的清唱人声版本发愁，为什么不下载完整的歌曲，自己动手分离出来呢？</p>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li>使用Audition 打开你的歌曲</li>
+<li>在Effects里面找到 Stereo Imagery</li>
+<li>选择 Center Channel Extractor</li>
+<li>之后在里面的弹出的窗口第二个Tab里拉下选项，里面有你想要保留的项目，例如男声，女声，bass，还有noise。</li>
+<li>最后按Apply</li>
+</ol>
+<h3 id="尾语"><a href="#尾语" class="headerlink" title="尾语"></a>尾语</h3><p>其实是自己稍微记录一下Audition的一些常用功能。希望对大家有用。</p>
+]]></content>
+      <categories>
+        <category>汽车</category>
+      </categories>
+      <tags>
+        <tag>后期处理</tag>
+        <tag>Audition</tag>
+        <tag>Adobe</tag>
       </tags>
   </entry>
   <entry>
@@ -206,25 +207,42 @@
       </tags>
   </entry>
   <entry>
-    <title>Audition 消除伴奏获取人声的办法</title>
-    <url>/2016/10/21/AuditionTakeVoice/</url>
-    <content><![CDATA[<p>如果你正为找不到一首歌曲的清唱人声版本发愁，为什么不下载完整的歌曲，自己动手分离出来呢？</p>
-<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
-<li>使用Audition 打开你的歌曲</li>
-<li>在Effects里面找到 Stereo Imagery</li>
-<li>选择 Center Channel Extractor</li>
-<li>之后在里面的弹出的窗口第二个Tab里拉下选项，里面有你想要保留的项目，例如男声，女声，bass，还有noise。</li>
-<li>最后按Apply</li>
-</ol>
-<h3 id="尾语"><a href="#尾语" class="headerlink" title="尾语"></a>尾语</h3><p>其实是自己稍微记录一下Audition的一些常用功能。希望对大家有用。</p>
+    <title>CIS 22C Labs</title>
+    <url>/2016/10/24/CIS-22C-Labs/</url>
+    <content><![CDATA[<p>CIS 22C 是 De Anza College 秋季学期的数据结构课，Delia 教授的班。这门课一共五个 Lab，从链表写到优先队列，记录一下每个 Lab 实现的内容，方便自己以后回顾，也给同样在上这门课的同学一个参考。</p>
+<span id="more"></span>
+
+<h2 id="Lab-1：链表（Linked-List）"><a href="#Lab-1：链表（Linked-List）" class="headerlink" title="Lab 1：链表（Linked List）"></a>Lab 1：链表（Linked List）</h2><p>用链表维护一份城市记录（City），实现读取、打印、按条件查找和删除节点，练手链表最基础的增删查操作。</p>
+<h2 id="Lab-2：类的链表管理"><a href="#Lab-2：类的链表管理" class="headerlink" title="Lab 2：类的链表管理"></a>Lab 2：类的链表管理</h2><p>在 Lab 1 的基础上，把节点换成课程班级信息（ClassNode），练习面向对象的节点设计和链表操作的封装。</p>
+<h2 id="Lab-3：栈与队列判断回文"><a href="#Lab-3：栈与队列判断回文" class="headerlink" title="Lab 3：栈与队列判断回文"></a>Lab 3：栈与队列判断回文</h2><p>用自己实现的 Stack 和 Queue 判断一个单词是不是回文——把字符依次压栈、入队，再对比出栈和出队的顺序是否一致，是这门课里最直观的一次栈&#x2F;队列应用练习。</p>
+<h2 id="Lab-4：二叉搜索树（BST）"><a href="#Lab-4：二叉搜索树（BST）" class="headerlink" title="Lab 4：二叉搜索树（BST）"></a>Lab 4：二叉搜索树（BST）</h2><p>用二叉搜索树维护员工记录（Employee），实现插入、中序遍历输出、以及基于姓名的查找，是五个 Lab 里代码量最大的一个。</p>
+<h2 id="Lab-5：优先队列"><a href="#Lab-5：优先队列" class="headerlink" title="Lab 5：优先队列"></a>Lab 5：优先队列</h2><p>用堆实现的优先队列模拟一个超售（overbooking）场景下的顾客排队逻辑，按优先级取出顾客，练习堆的插入和调整。</p>
+<hr>
+<p>完整代码当时是直接贴在这篇文章里的，现在整理博客的时候把大段代码都拿掉了，只保留了每个 Lab 的思路记录——毕竟几千行代码扔在一篇博客里，除了占地方也没什么可读性。如果有同学也在上这门课想要参考代码，可以在评论区留言。</p>
 ]]></content>
       <categories>
-        <category>汽车</category>
+        <category>技术</category>
       </categories>
       <tags>
-        <tag>后期处理</tag>
-        <tag>Audition</tag>
-        <tag>Adobe</tag>
+        <tag>C++</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Chromebook Pixel 2013 Developer Mode</title>
+    <url>/2016/12/04/Chromebook-Pixel-2013-Developer-Mode/</url>
+    <content><![CDATA[<h2 id="Why-should-I-write-this"><a href="#Why-should-I-write-this" class="headerlink" title="Why should I write this?"></a>Why should I write this?</h2><p>More and more people get stuck trying to gain superuser access to make changes on their computer.<br>Those functions are disabled by the OEM by default — we need root access to unlock full functionality.</p>
+<p>Here are some resources worth checking out:  </p>
+<span id="more"></span>
+<p>(3G)[<a href="http://www.techulator.com/resources/13041-How-to-configure-3G-in-Chromebook-using-SIM-cards.aspx">http://www.techulator.com/resources/13041-How-to-configure-3G-in-Chromebook-using-SIM-cards.aspx</a>]<br>(4G)[<a href="https://productforums.google.com/forum/#!topic/chromebook-central/oCDcUz0XUx0">https://productforums.google.com/forum/#!topic/chromebook-central/oCDcUz0XUx0</a>]<br>(Crouton)[<a href="https://www.linux.com/learn/how-easily-install-ubuntu-chromebook-crouton%20">https://www.linux.com/learn/how-easily-install-ubuntu-chromebook-crouton%20</a>]</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Chromebook</tag>
+        <tag>Chrome</tag>
+        <tag>Pixel</tag>
       </tags>
   </entry>
   <entry>
@@ -263,31 +281,16 @@
       </tags>
   </entry>
   <entry>
-    <title>CIS 22C Labs</title>
-    <url>/2016/10/24/CIS-22C-Labs/</url>
-    <content><![CDATA[<p>CIS 22C 是 De Anza College 秋季学期的数据结构课，Delia 教授的班。这门课一共五个 Lab，从链表写到优先队列，记录一下每个 Lab 实现的内容，方便自己以后回顾，也给同样在上这门课的同学一个参考。</p>
-<span id="more"></span>
-
-<h2 id="Lab-1：链表（Linked-List）"><a href="#Lab-1：链表（Linked-List）" class="headerlink" title="Lab 1：链表（Linked List）"></a>Lab 1：链表（Linked List）</h2><p>用链表维护一份城市记录（City），实现读取、打印、按条件查找和删除节点，练手链表最基础的增删查操作。</p>
-<h2 id="Lab-2：类的链表管理"><a href="#Lab-2：类的链表管理" class="headerlink" title="Lab 2：类的链表管理"></a>Lab 2：类的链表管理</h2><p>在 Lab 1 的基础上，把节点换成课程班级信息（ClassNode），练习面向对象的节点设计和链表操作的封装。</p>
-<h2 id="Lab-3：栈与队列判断回文"><a href="#Lab-3：栈与队列判断回文" class="headerlink" title="Lab 3：栈与队列判断回文"></a>Lab 3：栈与队列判断回文</h2><p>用自己实现的 Stack 和 Queue 判断一个单词是不是回文——把字符依次压栈、入队，再对比出栈和出队的顺序是否一致，是这门课里最直观的一次栈&#x2F;队列应用练习。</p>
-<h2 id="Lab-4：二叉搜索树（BST）"><a href="#Lab-4：二叉搜索树（BST）" class="headerlink" title="Lab 4：二叉搜索树（BST）"></a>Lab 4：二叉搜索树（BST）</h2><p>用二叉搜索树维护员工记录（Employee），实现插入、中序遍历输出、以及基于姓名的查找，是五个 Lab 里代码量最大的一个。</p>
-<h2 id="Lab-5：优先队列"><a href="#Lab-5：优先队列" class="headerlink" title="Lab 5：优先队列"></a>Lab 5：优先队列</h2><p>用堆实现的优先队列模拟一个超售（overbooking）场景下的顾客排队逻辑，按优先级取出顾客，练习堆的插入和调整。</p>
-<hr>
-<p>完整代码当时是直接贴在这篇文章里的，现在整理博客的时候把大段代码都拿掉了，只保留了每个 Lab 的思路记录——毕竟几千行代码扔在一篇博客里，除了占地方也没什么可读性。如果有同学也在上这门课想要参考代码，可以在评论区留言。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Chromebook Pixel 2013 Lightbar Switch</title>
     <url>/2017/01/06/Chromebook-Pixel-2013-Lightbar-Switch/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p>Chromebook Pixel 2013 顶盖上有一条灯带（lightbar），开机、充电、干活的时候都会一闪一闪，设计感是有了，但晚上在暗处用电脑的时候真的挺刺眼。找了一下发现这条灯带其实是可以手动开关的，记录一下方法。</p>
+<span id="more"></span>
+
+<p>进入开发者模式之后，在 crosh（<code>Ctrl+Alt+T</code> 打开 Crosh，输入 <code>shell</code> 进入 Linux shell）里可以直接用 <code>ectool</code> 控制灯带：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ectool lightbar off   # 关闭灯带</span><br><span class="line">sudo ectool lightbar on    # 恢复默认显示</span><br></pre></td></tr></table></figure>
+
+<p>如果只是想在开会、看电影这种场合临时关一下，用这条命令比每次都进系统设置里翻半天方便多了。缺点是重启之后会恢复默认状态，想要开机自动关闭的话，得把这条命令写进启动脚本里。</p>
+]]></content>
       <categories>
         <category>技术</category>
       </categories>
@@ -295,32 +298,6 @@
         <tag>Pixel</tag>
         <tag>ChromenOS</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Chromebook Pixel 2013 Developer Mode</title>
-    <url>/2016/12/04/Chromebook-Pixel-2013-Developer-Mode/</url>
-    <content><![CDATA[<h2 id="Why-should-I-write-this"><a href="#Why-should-I-write-this" class="headerlink" title="Why should I write this?"></a>Why should I write this?</h2><p>More and more people get stuck trying to gain superuser access to make changes on their computer.<br>Those functions are disabled by the OEM by default — we need root access to unlock full functionality.</p>
-<p>Here are some resources worth checking out:  </p>
-<span id="more"></span>
-<p>(3G)[<a href="http://www.techulator.com/resources/13041-How-to-configure-3G-in-Chromebook-using-SIM-cards.aspx">http://www.techulator.com/resources/13041-How-to-configure-3G-in-Chromebook-using-SIM-cards.aspx</a>]<br>(4G)[<a href="https://productforums.google.com/forum/#!topic/chromebook-central/oCDcUz0XUx0">https://productforums.google.com/forum/#!topic/chromebook-central/oCDcUz0XUx0</a>]<br>(Crouton)[<a href="https://www.linux.com/learn/how-easily-install-ubuntu-chromebook-crouton%20">https://www.linux.com/learn/how-easily-install-ubuntu-chromebook-crouton%20</a>]</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>Pixel</tag>
-        <tag>Chromebook</tag>
-        <tag>Chrome</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HP Veer + Project Fi?枯木逢春?</title>
-    <url>/2016/11/08/HP-Veer-Project-Fi-%E6%9E%AF%E6%9C%A8%E9%80%A2%E6%98%A5/</url>
-    <content><![CDATA[<p>并没有这样的事情。<br>该凉的东西迟早要凉</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
   </entry>
   <entry>
     <title>De Anza Voyager 系统：几个常用 Unix 命令</title>
@@ -338,6 +315,43 @@
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HP Veer + Project Fi?枯木逢春?</title>
+    <url>/2016/11/08/HP-Veer-Project-Fi-%E6%9E%AF%E6%9C%A8%E9%80%A2%E6%98%A5/</url>
+    <content><![CDATA[<p>HP Veer 是 2011 年 HP 收购 Palm 之后推出的一款迷你 webOS 手机，比巴掌大不了多少，算是 webOS 生态临死前最后的几款机器之一。HP 当年砍掉 Palm 部门之后，webOS 这条线基本就宣告死亡了，Veer 也跟着变成一台没有系统更新、没有像样App Store 的孤儿机。</p>
+<span id="more"></span>
+
+<p>前阵子论坛里有人提了个脑洞：Google 的 Project Fi（现在叫 Google Fi）主打的是一张能在多个运营商网络间自动切换的 SIM 卡，而且对设备的要求相对宽松，只要支持基本的 LTE 制式，插上就能用数据。于是有人开始幻想，是不是可以把这张卡塞进 HP Veer 这种老古董里，让它蹭上现代网络，”枯木逢春”续一秒命。</p>
+<p>并没有这样的事情。<br>该凉的东西迟早要凉——Project Fi 能给的只是一张卡和一张网，给不回 webOS 已经停更好几年的系统和生态。硬件插上卡是能用，但那也就是一台能上网的老古董，仅此而已。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>webOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Audi B6 A4 彩色中控屏幕</title>
+    <url>/2016/10/29/Audi-B6-A4-%E5%BD%A9%E8%89%B2%E4%B8%AD%E6%8E%A7%E5%B1%8F%E5%B9%95/</url>
+    <content><![CDATA[<p>在YouTube上看到了一个战斗民族的开发者，给老款的B6 A4 添加了一个彩色的新款中控屏幕，还添加了很多自检功能，十分想要这个套装，但是在eBay上并没有找到这个商品，看起来要去战斗民族的老窝里面寻找一下了。</p>
+<div class="video-container"><iframe allowfullscreen="" frameborder="0" src="//www.youtube.com/embed/x4rM9b3M8FY"></iframe></div>
+
+<p><a href="https://www.youtube.com/watch?v=x4rM9b3M8FY">视频可能有点小，点我去YouTube上看</a></p>
+<p>还有它们的研发网站：</p>
+<p><a href="https://vk.com/colormfa">Color MFA Autopilot</a></p>
+<p>这个是它们的博客，我看了一下AutoPilot 这个公司，貌似给很多汽车厂提供中控屏幕？<br><a href="https://www.drive2.ru/o/MultiMFA">Color MFA Blog</a></p>
+<p>暂时就这些。</p>
+]]></content>
+      <categories>
+        <category>汽车</category>
+      </categories>
+      <tags>
+        <tag>Audi</tag>
+        <tag>A4</tag>
+        <tag>B6</tag>
       </tags>
   </entry>
   <entry>
@@ -470,6 +484,37 @@
       </categories>
   </entry>
   <entry>
+    <title>Windows To Go on Macbook</title>
+    <url>/2016/11/09/Windows-To-Go-on-Macbook/</url>
+    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Macbook的用户难免会有Windows 的需求，然而又不想划分一块宝贵的SSD 空间给没什么卵用的微软。那该怎么办呢？ 下面就用我的电脑来做示范，mid-2014 的 Macbook Pro 13 Retina 配合使用U盘进行Windows To Go 搭建Windows 环境（非虚拟机）。  </p>
+<span id="more"></span>
+
+<h2 id="准备资源"><a href="#准备资源" class="headerlink" title="准备资源"></a>准备资源</h2><p>你需要准备以下这些材料，才能保证操作顺利进行：</p>
+<ul>
+<li>一个至少32GB、读写速度足够快的USB 3.0 U盘（强烈建议用USB 3.0接口，USB 2.0速度太慢，用起来会很难受）</li>
+<li>一份Windows 10 Enterprise 镜像，Windows To Go 官方只支持企业版</li>
+<li>Windows 企业版自带的Windows To Go Creator 工具，或者用Rufus这类第三方工具</li>
+<li>一台能正常从U盘启动的Macbook（Boot Camp 或者EFI引导都可以）</li>
+</ul>
+<h2 id="制作启动盘"><a href="#制作启动盘" class="headerlink" title="制作启动盘"></a>制作启动盘</h2><p>材料备齐之后，制作过程其实很简单：</p>
+<ol>
+<li>在一台 Windows 电脑上打开 Windows To Go Creator（企业版自带，路径在控制面板 -&gt; Windows To Go），或者用 Rufus 也行</li>
+<li>选择你的 U 盘和 Windows 10 Enterprise 镜像</li>
+<li>一路默认设置往下走，工具会自动分区、写入系统文件，等进度条跑完就行，U 盘越慢这一步越煎熬</li>
+</ol>
+<h2 id="在-Macbook-上启动"><a href="#在-Macbook-上启动" class="headerlink" title="在 Macbook 上启动"></a>在 Macbook 上启动</h2><p>U 盘做好之后插到 Macbook 上：</p>
+<ol>
+<li>开机的时候按住 <code>Option</code>（Alt）键，进入启动盘选择界面</li>
+<li>选择那个 U 盘（EFI Boot 或者标着 Windows 的那个选项）</li>
+<li>正常情况下会直接进入 Windows 的安装&#x2F;首次配置流程，跟着走完就能进桌面了</li>
+</ol>
+<p>Macbook 的硬件驱动（触控板、Wi-Fi、显卡这些）Windows 10 不一定全都自带，进系统之后建议用 Boot Camp 助理生成一份驱动包，装上之后触控板和 Wi-Fi 基本就都正常了。速度取决于 U 盘本身的读写速度，用 USB 3.0 的高速盘体验会比普通 U 盘好很多。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Windows 10 Chinese Display Error Fix</title>
     <url>/2016/11/22/Windows-10-Chinese-Display-Error-Fix/</url>
     <content><![CDATA[<h3 id="烦人的乱码"><a href="#烦人的乱码" class="headerlink" title="烦人的乱码"></a>烦人的乱码</h3><p>在Windows下显示其他国家的语言出现乱码已经不是一件新鲜的事情了。多语言支持难道就这么差劲吗？来，我们一步一步解决。</p>
@@ -516,24 +561,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows To Go on Macbook</title>
-    <url>/2016/11/09/Windows-To-Go-on-Macbook/</url>
-    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Macbook的用户难免会有Windows 的需求，然而又不想划分一块宝贵的SSD 空间给没什么卵用的微软。那该怎么办呢？ 下面就用我的电脑来做示范，mid-2014 的 Macbook Pro 13 Retina 配合使用U盘进行Windows To Go 搭建Windows 环境（非虚拟机）。  </p>
-<span id="more"></span>
-
-<h2 id="准备资源"><a href="#准备资源" class="headerlink" title="准备资源"></a>准备资源</h2><p>你需要准备以下这些材料，才能保证操作顺利进行：</p>
-<ul>
-<li>一个至少32GB、读写速度足够快的USB 3.0 U盘（强烈建议用USB 3.0接口，USB 2.0速度太慢，用起来会很难受）</li>
-<li>一份Windows 10 Enterprise 镜像，Windows To Go 官方只支持企业版</li>
-<li>Windows 企业版自带的Windows To Go Creator 工具，或者用Rufus这类第三方工具</li>
-<li>一台能正常从U盘启动的Macbook（Boot Camp 或者EFI引导都可以）</li>
-</ul>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-  </entry>
-  <entry>
     <title>加州五号高速公路驾驶手册</title>
     <url>/2018/08/14/interstate5/</url>
     <content><![CDATA[<p>加州最有名的公路除了风景优美的一号之外， 其实还有一条更高速快捷的五号公路。在2018 年之前，五号高速公路路况极差。由于<a href="http://rebuildingca.ca.gov/">SB－1法案</a>的实施，外加上没日没夜的墨西哥人辛苦劳动。以及消耗了我们纳税人巨额资金。这条高速公路终于得到了改善。</p>
@@ -548,6 +575,22 @@
       <categories>
         <category>生活</category>
       </categories>
+  </entry>
+  <entry>
+    <title>一个湾区Berkeley新闻频道 （中文）</title>
+    <url>/2016/10/17/%E4%B8%80%E4%B8%AA%E6%B9%BE%E5%8C%BABerkeley%E6%96%B0%E9%97%BB%E9%A2%91%E9%81%93/</url>
+    <content><![CDATA[<p>在写代码之余，几个Bug 一直修不好，跟Ben聊起Telegram的时候，发现他居然有个挺有趣的频道，感兴趣的朋友可以关注一下。<br>频道内容包括：湾区Berkeley中文校园新闻、抗议游行、LGBTQ话题讨论，还有各种日常，想了解美国湾区文化的话可以订阅。</p>
+<p>链接：<br><a href="https://telegram.me/bayareanichijou">四只饼干跑得快 - San Francisco Bay Area Nichijou</a></p>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>Telegram</tag>
+        <tag>公众号</tag>
+        <tag>测试</tag>
+      </tags>
   </entry>
   <entry>
     <title>为树莓派安装Chromeium</title>
@@ -567,22 +610,6 @@
         <tag>Linux</tag>
         <tag>树莓派</tag>
         <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一个湾区Berkeley新闻频道 （中文）</title>
-    <url>/2016/10/17/%E4%B8%80%E4%B8%AA%E6%B9%BE%E5%8C%BABerkeley%E6%96%B0%E9%97%BB%E9%A2%91%E9%81%93/</url>
-    <content><![CDATA[<p>在写代码之余，几个Bug 一直修不好，跟Ben聊起Telegram的时候，发现他居然有个挺有趣的频道，感兴趣的朋友可以关注一下。<br>频道内容包括：湾区Berkeley中文校园新闻、抗议游行、LGBTQ话题讨论，还有各种日常，想了解美国湾区文化的话可以订阅。</p>
-<p>链接：<br><a href="https://telegram.me/bayareanichijou">四只饼干跑得快 - San Francisco Bay Area Nichijou</a></p>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>Telegram</tag>
-        <tag>公众号</tag>
-        <tag>测试</tag>
       </tags>
   </entry>
   <entry>
@@ -653,23 +680,6 @@
       </tags>
   </entry>
   <entry>
-    <title>新的博客主题</title>
-    <url>/2018/08/07/%E6%96%B0%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/</url>
-    <content><![CDATA[<p>很久都没有维护这个博客了，现在的我刚从之前的社区大学毕业，正式转到了UC。</p>
-<p>现在算是从社区大学过渡到UC之间的转学假期，是我这几年感觉最轻松的一段日子了。</p>
-<p>把之前的服务器关掉了，因为以后住的地方应该也不会给我放服务器机房所以就把hexo 博客转到了Github Pages上。之前的树莓派当作SS节点使用。</p>
-<p>想尝试一下Ghost 但是很多时候Ghost 需要一台服务器，想基于Github 给我省一台服务器的钱。毕竟免费的东西很多都过期了，现在要开始节约运营成本了。于是想了想更新hexo 博客的主题也是一次不错的选择。这次博客主题是 Next。简洁高效，动画也还算炫酷，我也不需要那么多花里胡哨的东西，写写技术的白皮书就够了。  </p>
-<span id="more"></span>
-<p>程序员假期也不能忘记开发东西！</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>突破限制时长使用Wi-Fi</title>
     <url>/2016/09/20/%E7%AA%81%E7%A0%B4%E9%99%90%E5%88%B6%E6%97%B6%E9%95%BF%E4%BD%BF%E7%94%A8Wi-Fi/</url>
     <content><![CDATA[<h3 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h3><p>很多公共Wi-Fi（比如学校、咖啡厅、机场）为了控制流量，会限制每个设备只能连接固定的时长，到点就把你的MAC地址拉进黑名单，除非重新登录验证或者等冷却时间过去。遇到这种情况，其实不用真的去等，换一个”新设备”糊弄一下认证系统就行了。  </p>
@@ -687,6 +697,23 @@
         <tag>Wi-Fi</tag>
         <tag>无线网络</tag>
         <tag>破解</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>新的博客主题</title>
+    <url>/2018/08/07/%E6%96%B0%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/</url>
+    <content><![CDATA[<p>很久都没有维护这个博客了，现在的我刚从之前的社区大学毕业，正式转到了UC。</p>
+<p>现在算是从社区大学过渡到UC之间的转学假期，是我这几年感觉最轻松的一段日子了。</p>
+<p>把之前的服务器关掉了，因为以后住的地方应该也不会给我放服务器机房所以就把hexo 博客转到了Github Pages上。之前的树莓派当作SS节点使用。</p>
+<p>想尝试一下Ghost 但是很多时候Ghost 需要一台服务器，想基于Github 给我省一台服务器的钱。毕竟免费的东西很多都过期了，现在要开始节约运营成本了。于是想了想更新hexo 博客的主题也是一次不错的选择。这次博客主题是 Next。简洁高效，动画也还算炫酷，我也不需要那么多花里胡哨的东西，写写技术的白皮书就够了。  </p>
+<span id="more"></span>
+<p>程序员假期也不能忘记开发东西！</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
