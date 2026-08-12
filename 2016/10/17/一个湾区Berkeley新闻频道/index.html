@@ -1,920 +1,283 @@
-<!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh_CH">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#333">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#333">
-
-
-
-
-
-  <meta name="keywords" content="生活,Telegram,公众号,测试," />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="在写代码之余，几个Bug 一直修不好，和Ben聊一下Telegram， 发现他居然有个挺有趣的Telegram频道， 感兴趣的朋友可以关注一下。该频道的内容是：湾区Berekely中文校园新闻，湾区抗议游行，LGBTQ 的讨论，各种日常＋各位想要了解美国湾区文化的可以订阅。 链接：四只饼干跑得快 - San Francisco Bay Area Nichijou">
-<meta name="keywords" content="生活,Telegram,公众号,测试">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>一个湾区Berkeley新闻频道 （中文） | Xia Hua's Tech Blog</title><meta name="author" content="Xia Hua"><meta name="copyright" content="Xia Hua"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="在写代码之余，几个Bug 一直修不好，跟Ben聊起Telegram的时候，发现他居然有个挺有趣的频道，感兴趣的朋友可以关注一下。频道内容包括：湾区Berkeley中文校园新闻、抗议游行、LGBTQ话题讨论，还有各种日常，想了解美国湾区文化的话可以订阅。 链接：四只饼干跑得快 - San Francisco Bay Area Nichijou">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一个湾区Berkeley新闻频道 （中文）">
-<meta property="og:url" content="https://tonyxiahua.github.io/2016/10/17/一个湾区Berkeley新闻频道/index.html">
+<meta property="og:url" content="https://tonyxiahua.github.io/2016/10/17/%E4%B8%80%E4%B8%AA%E6%B9%BE%E5%8C%BABerkeley%E6%96%B0%E9%97%BB%E9%A2%91%E9%81%93/index.html">
 <meta property="og:site_name" content="Xia Hua&#39;s Tech Blog">
-<meta property="og:description" content="在写代码之余，几个Bug 一直修不好，和Ben聊一下Telegram， 发现他居然有个挺有趣的Telegram频道， 感兴趣的朋友可以关注一下。该频道的内容是：湾区Berekely中文校园新闻，湾区抗议游行，LGBTQ 的讨论，各种日常＋各位想要了解美国湾区文化的可以订阅。 链接：四只饼干跑得快 - San Francisco Bay Area Nichijou">
-<meta property="og:locale" content="zh_CH">
-<meta property="og:updated_time" content="2018-08-07T21:03:43.000Z">
+<meta property="og:description" content="在写代码之余，几个Bug 一直修不好，跟Ben聊起Telegram的时候，发现他居然有个挺有趣的频道，感兴趣的朋友可以关注一下。频道内容包括：湾区Berkeley中文校园新闻、抗议游行、LGBTQ话题讨论，还有各种日常，想了解美国湾区文化的话可以订阅。 链接：四只饼干跑得快 - San Francisco Bay Area Nichijou">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tonyxiahua.github.io/images/icon.jpg">
+<meta property="article:published_time" content="2016-10-18T04:21:34.000Z">
+<meta property="article:modified_time" content="2026-08-12T15:53:34.918Z">
+<meta property="article:author" content="Xia Hua">
+<meta property="article:tag" content="Telegram">
+<meta property="article:tag" content="公众号">
+<meta property="article:tag" content="测试">
+<meta property="article:tag" content="生活">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一个湾区Berkeley新闻频道 （中文）">
-<meta name="twitter:description" content="在写代码之余，几个Bug 一直修不好，和Ben聊一下Telegram， 发现他居然有个挺有趣的Telegram频道， 感兴趣的朋友可以关注一下。该频道的内容是：湾区Berekely中文校园新闻，湾区抗议游行，LGBTQ 的讨论，各种日常＋各位想要了解美国湾区文化的可以订阅。 链接：四只饼干跑得快 - San Francisco Bay Area Nichijou">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+<meta name="twitter:image" content="https://tonyxiahua.github.io/images/icon.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "一个湾区Berkeley新闻频道 （中文）",
+  "url": "https://tonyxiahua.github.io/2016/10/17/%E4%B8%80%E4%B8%AA%E6%B9%BE%E5%8C%BABerkeley%E6%96%B0%E9%97%BB%E9%A2%91%E9%81%93/",
+  "image": "https://tonyxiahua.github.io/images/icon.jpg",
+  "datePublished": "2016-10-18T04:21:34.000Z",
+  "dateModified": "2026-08-12T15:53:34.918Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Xia Hua",
+      "url": "https://tonyxiahua.github.io"
     }
-  };
-</script>
+  ]
+}</script><link rel="shortcut icon" href="/images/favicon.png"><link rel="canonical" href="https://tonyxiahua.github.io/2016/10/17/%E4%B8%80%E4%B8%AA%E6%B9%BE%E5%8C%BABerkeley%E6%96%B0%E9%97%BB%E9%A2%91%E9%81%93/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.7.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
 
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
 
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
 
-  <link rel="canonical" href="https://tonyxiahua.github.io/2016/10/17/一个湾区Berkeley新闻频道/"/>
+        try {
+          const data = JSON.parse(itemStr)
 
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
 
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
 
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
 
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
 
-  <title>一个湾区Berkeley新闻频道 （中文） | Xia Hua's Tech Blog</title>
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
   
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
 
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
 
-
-
-
-
-
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh_CH">
-
-  
-  
+      const theme = saveToLocal.get('theme')
     
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Xia Hua's Tech Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <h1 class="site-subtitle" itemprop="description">Elohim, Essaim.   Elohim, Essaim.  I implore you</h1>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
       
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            About
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            Categories
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            Commonweal 404
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
     
-
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
   
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tonyxiahua.github.io/2016/10/17/一个湾区Berkeley新闻频道/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xia Hua">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/icon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xia Hua's Tech Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">一个湾区Berkeley新闻频道 （中文）</h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-17T21:21:34-07:00">
-                2016-10-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/10/17/一个湾区Berkeley新闻频道/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/10/17/一个湾区Berkeley新闻频道/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-            </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>在写代码之余，几个Bug 一直修不好，跟Ben聊起Telegram的时候，发现他居然有个挺有趣的频道，感兴趣的朋友可以关注一下。<br>频道内容包括：湾区Berkeley中文校园新闻、抗议游行、LGBTQ话题讨论，还有各种日常，想了解美国湾区文化的话可以订阅。</p>
-<p>链接：<br><a href="https://telegram.me/bayareanichijou" target="_blank" rel="noopener">四只饼干跑得快 - San Francisco Bay Area Nichijou</a></p>
-
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-    
-
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>Post author:</strong>
-    Xia Hua
-  </li>
-  <li class="post-copyright-link">
-    <strong>Post link:</strong>
-    <a href="https://tonyxiahua.github.io/2016/10/17/一个湾区Berkeley新闻频道/" title="一个湾区Berkeley新闻频道 （中文）">https://tonyxiahua.github.io/2016/10/17/一个湾区Berkeley新闻频道/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>Copyright Notice: </strong>
-    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.
-  </li>
-</ul>
-
-      </div>
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/生活/" rel="tag"># 生活</a>
-          
-            <a href="/tags/Telegram/" rel="tag"># Telegram</a>
-          
-            <a href="/tags/公众号/" rel="tag"># 公众号</a>
-          
-            <a href="/tags/测试/" rel="tag"># 测试</a>
-          
-        </div>
-      
-
-      
-      
-        <div class="post-widgets">
-        
-
-        
-
-        
-          
-          <div id="needsharebutton-postbottom">
-            <span class="btn">
-              <i class="fa fa-share-alt" aria-hidden="true"></i>
-            </span>
-          </div>
-        
-        </div>
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/09/21/为树莓派安装Chromeium/" rel="next" title="为树莓派安装Chromeium">
-                <i class="fa fa-chevron-left"></i> 为树莓派安装Chromeium
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/18/国外的中国人/" rel="prev" title="国外的中国人">
-                国外的中国人 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    </div>
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/icon.jpg"
-                alt="Xia Hua" />
-            
-              <p class="site-author-name" itemprop="name">Xia Hua</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">39</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">48</span>
-                  <span class="site-state-item-name">tags</span>
-                
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/tonyxiahua" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:contact@tonyxiahua.github.io" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://www.google.com" target="_blank" title="Google">
-                      
-                        <i class="fa fa-fw fa-google"></i>Google</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://twitter.com/rednik111" target="_blank" title="Twitter">
-                      
-                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-            <div class="cc-license motion-element" itemprop="license">
-              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
-              </a>
-            </div>
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-block">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                个人作品
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://nekospeed.com/" title="喵速网－留学生的VPN代理" target="_blank">喵速网－留学生的VPN代理</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://lucillecao.com/" title="喵站" target="_blank">喵站</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://huaxiatony.github.io/" title="留学生生活指南" target="_blank">留学生生活指南</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-        </div>
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Xia Hua 2018 all rights reserved</span>
-
-  
-</div>
-
-
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
-
-
-
-
-        
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
-    </span>
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
-  
-</div>
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-
-    
-      <div id="needsharebutton-float">
-        <span class="btn">
-          <i class="fa fa-share-alt" aria-hidden="true"></i>
-        </span>
-      </div>
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '一个湾区Berkeley新闻频道 （中文）',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/images/icon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">45</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Xia Hua's Tech Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">一个湾区Berkeley新闻频道 （中文）</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">一个湾区Berkeley新闻频道 （中文）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2016-10-18T04:21:34.000Z" title="发表于 2016-10-17 21:21:34">2016-10-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-08-12T15:53:34.918Z" title="更新于 2026-08-12 08:53:34">2026-08-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>在写代码之余，几个Bug 一直修不好，跟Ben聊起Telegram的时候，发现他居然有个挺有趣的频道，感兴趣的朋友可以关注一下。<br>频道内容包括：湾区Berkeley中文校园新闻、抗议游行、LGBTQ话题讨论，还有各种日常，想了解美国湾区文化的话可以订阅。</p>
+<p>链接：<br><a target="_blank" rel="noopener" href="https://telegram.me/bayareanichijou">四只饼干跑得快 - San Francisco Bay Area Nichijou</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://tonyxiahua.github.io">Xia Hua</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://tonyxiahua.github.io/2016/10/17/%E4%B8%80%E4%B8%AA%E6%B9%BE%E5%8C%BABerkeley%E6%96%B0%E9%97%BB%E9%A2%91%E9%81%93/">https://tonyxiahua.github.io/2016/10/17/%E4%B8%80%E4%B8%AA%E6%B9%BE%E5%8C%BABerkeley%E6%96%B0%E9%97%BB%E9%A2%91%E9%81%93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://tonyxiahua.github.io" target="_blank">Xia Hua's Tech Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%94%9F%E6%B4%BB/">生活</a><a class="post-meta__tags" href="/tags/Telegram/">Telegram</a><a class="post-meta__tags" href="/tags/%E5%85%AC%E4%BC%97%E5%8F%B7/">公众号</a><a class="post-meta__tags" href="/tags/%E6%B5%8B%E8%AF%95/">测试</a></div><div class="post-share"><div class="social-share" data-image="/images/icon.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2016/10/18/%E5%9B%BD%E5%A4%96%E7%9A%84%E4%B8%AD%E5%9B%BD%E4%BA%BA/" title="国外的中国人"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">国外的中国人</div></div><div class="info-2"><div class="info-item-1"> 声明：本篇文章只是rednik.xyz网站的吐槽，与rednik本人无任何关系。  时隔已久，一转眼我就在美国留学了两年了。两年以来，见过了不少人，经历了不少事情，虽然这篇文章算不上什么肺腑之言。但是有些趣事还是值得向大家说说。 首先，NovaDNG有一篇文章说的很有趣，《[吐槽向]中国用户长啥样》，NovaDNG本身在美国留过学，见过颇多的美国的中国人。让我值得思考的是，我和他共同对这一类的中国人发出特有的厌恶之情。这源于什么？坦白来说，我们之前属于同一个博客团队，虽然在网址博客内容方面我毫无建树，但在思想层面上还是有很多共通之处。 若翻墙只是思想探路，那么厌恶的东西才是逃避的共趋。    我和很多中国学生相处过，但是作为一个介于学习外国文化的中国学生，以一种上帝视角观看他们的时候。 总会有那么一点的感觉不舒服。中国学生十分聪明，中国学生十分精明。他们会选择适合于他们的规则去获得想要的目标。以最省力的方法完成最困难的事情。这是我很欣赏的地方。 但是机智和聪明用过了头，有时候就会变味了。 我在微信的聊天群里面见过一群人要Paper的。见过很多人为了一件小事吵起来而不注意周围的人...</div></div></div></a><a class="pagination-related" href="/2016/09/21/%E4%B8%BA%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85Chromeium/" title="为树莓派安装Chromeium"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">为树莓派安装Chromeium</div></div><div class="info-2"><div class="info-item-1">缘由关于Debain 环境下的linux相信大家并不陌生，树莓派就是其一。由于原来系统中的自带浏览器并不能满足主流的浏览需求，所以我们要切换到Chromeium 方法只需要把下面代码复制到Terminal 然后运行就可以了 12345678910wget https://dl.dropboxusercontent.com/u/87113035/chromium-browser-l10n_45.0.2454.85-0ubuntu0.15.04.1.1181_all.debwget https://dl.dropboxusercontent.com/u/87113035/chromium-browser_45.0.2454.85-0ubuntu0.15.04.1.1181_armhf.debwget https://dl.dropboxusercontent.com/u/87113035/chromium-codecs-ffmpeg-extra_45.0.2454.85-0ubuntu0.15.04.1.1181_armhf.debsudo dpkg -i chromium-code...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2016/10/18/%E5%9B%BD%E5%A4%96%E7%9A%84%E4%B8%AD%E5%9B%BD%E4%BA%BA/" title="国外的中国人"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2016-10-18</div><div class="info-item-2">国外的中国人</div></div><div class="info-2"><div class="info-item-1"> 声明：本篇文章只是rednik.xyz网站的吐槽，与rednik本人无任何关系。  时隔已久，一转眼我就在美国留学了两年了。两年以来，见过了不少人，经历了不少事情，虽然这篇文章算不上什么肺腑之言。但是有些趣事还是值得向大家说说。 首先，NovaDNG有一篇文章说的很有趣，《[吐槽向]中国用户长啥样》，NovaDNG本身在美国留过学，见过颇多的美国的中国人。让我值得思考的是，我和他共同对这一类的中国人发出特有的厌恶之情。这源于什么？坦白来说，我们之前属于同一个博客团队，虽然在网址博客内容方面我毫无建树，但在思想层面上还是有很多共通之处。 若翻墙只是思想探路，那么厌恶的东西才是逃避的共趋。    我和很多中国学生相处过，但是作为一个介于学习外国文化的中国学生，以一种上帝视角观看他们的时候。 总会有那么一点的感觉不舒服。中国学生十分聪明，中国学生十分精明。他们会选择适合于他们的规则去获得想要的目标。以最省力的方法完成最困难的事情。这是我很欣赏的地方。 但是机智和聪明用过了头，有时候就会变味了。 我在微信的聊天群里面见过一群人要Paper的。见过很多人为了一件小事吵起来而不注意周围的人...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/images/icon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Xia Hua</div><div class="author-info-description">Notes on hardware tinkering, cars, and living abroad.</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">45</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/tonyxiahua" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2018/08/14/interstate5/" title="加州五号高速公路驾驶手册">加州五号高速公路驾驶手册</a><time datetime="2018-08-14T09:43:03.000Z" title="发表于 2018-08-14 02:43:03">2018-08-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2018/08/07/LA%E7%94%9F%E6%B4%BB%E6%8C%87%E5%8D%97/" title="洛杉矶生活指南">洛杉矶生活指南</a><time datetime="2018-08-07T20:08:37.000Z" title="发表于 2018-08-07 13:08:37">2018-08-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2018/08/07/%E6%96%B0%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/" title="新的博客主题">新的博客主题</a><time datetime="2018-08-07T19:20:27.000Z" title="发表于 2018-08-07 12:20:27">2018-08-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2017/01/13/ShadowSocks-on-Chromebook/" title="ShadowSocks on Chromebook">ShadowSocks on Chromebook</a><time datetime="2017-01-14T04:10:57.000Z" title="发表于 2017-01-13 20:10:57">2017-01-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2017/01/06/Chromebook-Pixel-2013-Lightbar-Switch/" title="Chromebook Pixel 2013 Lightbar Switch">Chromebook Pixel 2013 Lightbar Switch</a><time datetime="2017-01-06T17:54:13.000Z" title="发表于 2017-01-06 09:54:13">2017-01-06</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Xia Hua</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.7.0</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.7.0"></script><script src="/js/main.js?v=5.7.0"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+
+  const disqusReset = conf => {
+    window.DISQUS && window.DISQUS.reset({
+      reload: true,
+      config: conf
+    })
   }
-</script>
 
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://rednikxyz.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'https://tonyxiahua.github.io/2016/10/17/一个湾区Berkeley新闻频道/';
-          this.page.identifier = '2016/10/17/一个湾区Berkeley新闻频道/';
-          this.page.title = '一个湾区Berkeley新闻频道 （中文）';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://rednikxyz.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+  const loadDisqus = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyDisqus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
     }
+
+    window.disqus_identifier = isShuoshuo ? path : '/2016/10/17/%E4%B8%80%E4%B8%AA%E6%B9%BE%E5%8C%BABerkeley%E6%96%B0%E9%97%BB%E9%A2%91%E9%81%93/'
+    window.disqus_url = isShuoshuo ? location.origin + path : 'https://tonyxiahua.github.io/2016/10/17/%E4%B8%80%E4%B8%AA%E6%B9%BE%E5%8C%BABerkeley%E6%96%B0%E9%97%BB%E9%A2%91%E9%81%93/'
+
+    const disqus_config = function () {
+      this.page.url = disqus_url
+      this.page.identifier = disqus_identifier
+      this.page.title = '一个湾区Berkeley新闻频道 （中文）'
+    }
+
+    if (window.DISQUS) disqusReset(disqus_config)
     else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      const script = document.createElement('script')
+      script.src = 'https://rednikxyz.disqus.com/embed.js'
+      script.setAttribute('data-timestamp', +new Date())
+      document.head.appendChild(script)
     }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 
+    btf.addGlobalFn('themeChange', () => disqusReset(disqus_config), 'disqus')
+  }
 
-  
-  
-  
-  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+  const getCount = async() => {
+    try {
+      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
+      if (!eleGroup) return
+      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
 
-  
-  
-  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=rednikxyz&api_key=&thread:link=${cleanedLinks}`,{
+        method: 'GET'
+      })
+      const result = await res.json()
 
-  <script>
-    
-      pbOptions = {};
-      
-          pbOptions.iconStyle = "box";
-      
-          pbOptions.boxForm = "horizontal";
-      
-          pbOptions.position = "bottomCenter";
-      
-          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-      
-      new needShareButton('#needsharebutton-postbottom', pbOptions);
-    
-    
-      flOptions = {};
-      
-          flOptions.iconStyle = "box";
-      
-          flOptions.boxForm = "horizontal";
-      
-          flOptions.position = "middleRight";
-      
-          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-      
-      new needShareButton('#needsharebutton-float', flOptions);
-    
-  </script>
+      const count = result.response.length ? result.response[0].posts : 0
+      eleGroup.textContent = count
+    } catch (err) {
+      console.error(err)
+    }
+  }
 
-  
+  if (isShuoshuo) {
+    'Disqus' === 'Disqus'
+      ? window.shuoshuoComment = { loadComment: loadDisqus }
+      : window.loadOtherComment = loadDisqus
+    return
+  }
 
-  
-
-  
-  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
-  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
-
-
-  
-
-</body>
-</html>
+  if ('Disqus' === 'Disqus' || !false) {
+    if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+    else {
+      loadDisqus()
+      
+    }
+  } else {
+    window.loadOtherComment = loadDisqus
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.7.0"></script></div></div></body></html>

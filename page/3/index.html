@@ -1,1934 +1,267 @@
-<!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh_CH">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#333">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#333">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Xia Hua's Tech Blog</title><meta name="author" content="Xia Hua"><meta name="copyright" content="Xia Hua"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Notes on hardware tinkering, cars, and living abroad.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Xia Hua&#39;s Tech Blog">
 <meta property="og:url" content="https://tonyxiahua.github.io/page/3/index.html">
 <meta property="og:site_name" content="Xia Hua&#39;s Tech Blog">
-<meta property="og:locale" content="zh_CH">
+<meta property="og:description" content="Notes on hardware tinkering, cars, and living abroad.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tonyxiahua.github.io/images/icon.jpg">
+<meta property="article:author" content="Xia Hua">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xia Hua&#39;s Tech Blog">
+<meta name="twitter:image" content="https://tonyxiahua.github.io/images/icon.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/images/favicon.png"><link rel="canonical" href="https://tonyxiahua.github.io/page/3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.7.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
 
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
 
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
     }
-  };
-</script>
 
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
 
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
 
-  <link rel="canonical" href="https://tonyxiahua.github.io/page/3/"/>
+          script.src = url
+          script.async = true
 
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
 
+          script.onload = resolve
+          script.onerror = reject
 
+          document.head.appendChild(script)
+        })
 
+        scriptCache.set(url, promise)
 
-  <title>Xia Hua's Tech Blog - Elohim, Essaim.   Elohim, Essaim.  I implore you</title>
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
   
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
 
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
 
-
-
-
-
-
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh_CH">
-
-  
-  
+      const theme = saveToLocal.get('theme')
     
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
     
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Xia Hua's Tech Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
       
-        <h1 class="site-subtitle" itemprop="description">Elohim, Essaim.   Elohim, Essaim.  I implore you</h1>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
   
-
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Xia Hua\'s Tech Blog',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/images/icon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">45</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Xia Hua's Tech Blog</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">Xia Hua's Tech Blog</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/tonyxiahua" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2016/10/26/Arduino-Basic-Connections/" title="Arduino Basic Connections">Arduino Basic Connections</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2016-10-26T14:04:51.000Z" title="发表于 2016-10-26 07:04:51">2016-10-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span></div><div class="content">这里分享一下来自 www.pighixxx.com 的 Arduino 基础接线图（ABC，Arduino Basic Connections），希望对大家有用。      </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2016/10/25/Audi-B6-A4-Spary-car-charger/" title="给塑料充电器喷漆">给塑料充电器喷漆</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2016-10-25T10:40:58.000Z" title="发表于 2016-10-25 03:40:58">2016-10-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%B1%BD%E8%BD%A6/">汽车</a></span></div><div class="content">或许你在发愁没有找到合适颜色的商品，或许你在烦恼不同颜色的不搭调。没有问题！现在你只需要一个喷漆，就能够马上转换你的心情！ 其实在我上个月的时候就开始研究喷漆了，原因是有一辆古老的变速单车，而他的主人又舍不得丢掉它，纠结之下就开始了我的改装单车计划。但是到了现在这个单车我还只是停留在拆卸状态，如果遇到周末的话就可以进行了。但是平时呢，需要学习一下如何提升自己的喷漆技巧，为了让上色更加沉着，还是需要 100 小时的基本训练，1000小时的熟练之路。 现在手头上有一个红色的充电器插头，一看下去我十分不满意，这个红色看上去太艳了，和我车内黑色的内饰不搭调，蓝色指示灯也就算了，但是这个红色实在是没法忍受……于是一气之下就开喷了。 这个是Amazon 当时的购买图片：     看上去太鲜艳了。 于是我拿起我的喷漆……喷漆这个东西切记需要耐心，给东西上色一次是不会成功的，特别是这种有塑料保护膜的东西。必须要先用砂纸打磨掉外面的保护漆。之后第一次上色，上色要喷均匀，喷好第一次Coating 就视情况闲置15-30分钟，等色干之后就可以进行第二次上色了，同样的，喷均匀之后需要等等。如果你不满意的...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2016/10/24/CIS-22C-Labs/" title="CIS 22C Labs">CIS 22C Labs</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2016-10-24T15:50:58.000Z" title="发表于 2016-10-24 08:50:58">2016-10-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span></div><div class="content">CIS 22C 是 De Anza College 秋季学期的数据结构课，Delia 教授的班。这门课一共五个 Lab，从链表写到优先队列，记录一下每个 Lab 实现的内容，方便自己以后回顾，也给同样在上这门课的同学一个参考。   Lab 1：链表（Linked List）用链表维护一份城市记录（City），实现读取、打印、按条件查找和删除节点，练手链表最基础的增删查操作。 Lab 2：类的链表管理在 Lab 1 的基础上，把节点换成课程班级信息（ClassNode），练习面向对象的节点设计和链表操作的封装。 Lab 3：栈与队列判断回文用自己实现的 Stack 和 Queue 判断一个单词是不是回文——把字符依次压栈、入队，再对比出栈和出队的顺序是否一致，是这门课里最直观的一次栈&#x2F;队列应用练习。 Lab 4：二叉搜索树（BST）用二叉搜索树维护员工记录（Employee），实现插入、中序遍历输出、以及基于姓名的查找，是五个 Lab 里代码量最大的一个。 Lab 5：优先队列用堆实现的优先队列模拟一个超售（overbooking）场景下的顾客排队逻辑，按优先级取出顾客，...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2016/10/21/AuditionTakeVoice/" title="Audition 消除伴奏获取人声的办法">Audition 消除伴奏获取人声的办法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2016-10-22T04:17:02.000Z" title="发表于 2016-10-21 21:17:02">2016-10-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%B1%BD%E8%BD%A6/">汽车</a></span></div><div class="content">如果你正为找不到一首歌曲的清唱人声版本发愁，为什么不下载完整的歌曲，自己动手分离出来呢？ 步骤 使用Audition 打开你的歌曲 在Effects里面找到 Stereo Imagery 选择 Center Channel Extractor 之后在里面的弹出的窗口第二个Tab里拉下选项，里面有你想要保留的项目，例如男声，女声，bass，还有noise。 最后按Apply  尾语其实是自己稍微记录一下Audition的一些常用功能。希望对大家有用。 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2016/10/18/%E5%9B%BD%E5%A4%96%E7%9A%84%E4%B8%AD%E5%9B%BD%E4%BA%BA/" title="国外的中国人">国外的中国人</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2016-10-18T15:36:17.000Z" title="发表于 2016-10-18 08:36:17">2016-10-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></span></div><div class="content"> 声明：本篇文章只是rednik.xyz网站的吐槽，与rednik本人无任何关系。  时隔已久，一转眼我就在美国留学了两年了。两年以来，见过了不少人，经历了不少事情，虽然这篇文章算不上什么肺腑之言。但是有些趣事还是值得向大家说说。 首先，NovaDNG有一篇文章说的很有趣，《[吐槽向]中国用户长啥样》，NovaDNG本身在美国留过学，见过颇多的美国的中国人。让我值得思考的是，我和他共同对这一类的中国人发出特有的厌恶之情。这源于什么？坦白来说，我们之前属于同一个博客团队，虽然在网址博客内容方面我毫无建树，但在思想层面上还是有很多共通之处。 若翻墙只是思想探路，那么厌恶的东西才是逃避的共趋。    我和很多中国学生相处过，但是作为一个介于学习外国文化的中国学生，以一种上帝视角观看他们的时候。 总会有那么一点的感觉不舒服。中国学生十分聪明，中国学生十分精明。他们会选择适合于他们的规则去获得想要的目标。以最省力的方法完成最困难的事情。这是我很欣赏的地方。 但是机智和聪明用过了头，有时候就会变味了。 我在微信的聊天群里面见过一群人要Paper的。见过很多人为了一件小事吵起来而不注意周围的人...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2016/10/17/%E4%B8%80%E4%B8%AA%E6%B9%BE%E5%8C%BABerkeley%E6%96%B0%E9%97%BB%E9%A2%91%E9%81%93/" title="一个湾区Berkeley新闻频道 （中文）">一个湾区Berkeley新闻频道 （中文）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2016-10-18T04:21:34.000Z" title="发表于 2016-10-17 21:21:34">2016-10-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></span></div><div class="content">在写代码之余，几个Bug 一直修不好，跟Ben聊起Telegram的时候，发现他居然有个挺有趣的频道，感兴趣的朋友可以关注一下。频道内容包括：湾区Berkeley中文校园新闻、抗议游行、LGBTQ话题讨论，还有各种日常，想了解美国湾区文化的话可以订阅。 链接：四只饼干跑得快 - San Francisco Bay Area Nichijou </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2016/09/21/%E4%B8%BA%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85Chromeium/" title="为树莓派安装Chromeium">为树莓派安装Chromeium</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2016-09-21T13:47:22.000Z" title="发表于 2016-09-21 06:47:22">2016-09-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span></div><div class="content">缘由关于Debain 环境下的linux相信大家并不陌生，树莓派就是其一。由于原来系统中的自带浏览器并不能满足主流的浏览需求，所以我们要切换到Chromeium 方法只需要把下面代码复制到Terminal 然后运行就可以了 12345678910wget https://dl.dropboxusercontent.com/u/87113035/chromium-browser-l10n_45.0.2454.85-0ubuntu0.15.04.1.1181_all.debwget https://dl.dropboxusercontent.com/u/87113035/chromium-browser_45.0.2454.85-0ubuntu0.15.04.1.1181_armhf.debwget https://dl.dropboxusercontent.com/u/87113035/chromium-codecs-ffmpeg-extra_45.0.2454.85-0ubuntu0.15.04.1.1181_armhf.debsudo dpkg -i chromium-code...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2016/09/20/%E7%AA%81%E7%A0%B4%E9%99%90%E5%88%B6%E6%97%B6%E9%95%BF%E4%BD%BF%E7%94%A8Wi-Fi/" title="突破限制时长使用Wi-Fi">突破限制时长使用Wi-Fi</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2016-09-20T16:38:41.000Z" title="发表于 2016-09-20 09:38:41">2016-09-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span></div><div class="content">缘由很多公共Wi-Fi（比如学校、咖啡厅、机场）为了控制流量，会限制每个设备只能连接固定的时长，到点就把你的MAC地址拉进黑名单，除非重新登录验证或者等冷却时间过去。遇到这种情况，其实不用真的去等，换一个”新设备”糊弄一下认证系统就行了。     方法核心思路很简单：大部分限制都是靠MAC地址来识别设备的，只要在到达时长限制之前，手动修改一下网卡的MAC地址，对于认证系统来说，你就变成了一台”从没连过”的新设备，自然又能重新计时。 Mac下修改MAC地址（以内建Wi-Fi网卡en0为例），打开Terminal 执行：sudo ifconfig en0 ether 02:xx:xx:xx:xx:xx把后面的地址换成随便一个自定义的就行。 Windows下可以在设备管理器里进入网卡属性，”高级”选项卡一般会有个”Network Address”，手动填一个新的地址，禁用再重新启用一下网卡就生效了。 笔记这个方法对大部分按MAC地址计时限流的Wi-Fi有效，但如果对方是按账号或者设备指纹来识别的，就不一定管用了。用之前建议先看看对方的服务条款，公共场合还是别太过分，够用就行。 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2016/09/15/%E4%BD%BF%E7%94%A8%E7%8E%B0%E6%9C%89%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E8%BF%9B%E8%A1%8CWi-Fi%E4%BA%8C%E7%BA%A7%E4%B8%AD%E7%BB%A7%E6%96%B9%E6%A1%88/" title="使用现有无线网络进行Wi-Fi二级中继方案">使用现有无线网络进行Wi-Fi二级中继方案</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2016-09-15T10:20:52.000Z" title="发表于 2016-09-15 03:20:52">2016-09-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span></div><div class="content">引语这是我的一个突发奇想，在一次旅途中，我的Macbook连接上了某个有条件才能连接的Wi-Fi，怎么样才能够使用我的Macbook（PC），让我所有的电子设备（Android ＋ iOS）都能够限制特定设备享用的Wifi呢？ 或许大家会感到束手无策，但是只要使用了PC平台，和一个USB的Wi-Fi 网卡，这个问题就能够迎刃而解。 使用的实例 某美国航班可以在飞机上使用Wi-Fi，而这个连接的要求是需要T-Mobile的手机用户才能够获得无线连接，使用PC作为接入设备，能够让飞机上的游客享受免费的Wi-Fi。 Xfinity Wi-Fi 有免费一小时的网络连接，但是每月对MAC地址的限制，如何使用有限的电子设备，来享用全设备接入的Wi-Fi服务？ 某些校园网络只对学生开放网络连接，如何让拜访你学区的家人，使用学校的互联网呢？  实战好了，问题就提到这里。现在是实际操作的时间。  我现在有一台Macbook，一个无线网卡。电脑里面已经装好了Windows 10 的VirtualBox虚拟机。 现在我的思路是，让Windows虚拟机连接USB 网卡，建立Windows 下的无线网络。...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2016/07/29/Arduino-UNO-R3-%E4%B8%8A%E6%89%8B%E6%B5%8B%E8%AF%95/" title="Arduino UNO R3 上手测试">Arduino UNO R3 上手测试</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2016-07-30T04:59:10.000Z" title="发表于 2016-07-29 21:59:10">2016-07-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span></div><div class="content">简介Arduino 作为一款偏向硬件控制的单片机，相比Raspberry Pi 3，我当时购入的Starter kit 有很多有趣的控，比如NFC卡，JoyStick，Speaker，一堆我都不知道怎么玩的东西qwq。感觉就是一个很强大的控制模块。经过几天的捣鼓，暂时知道了一些基本的玩法，现在向大家介绍一下。 安装硬件首先我寄来的时候是一堆乱七八糟的零件包，如果是小白的话估计也被弄晕，我之前没有接触过Arduino，当时到手的时候连开机都不知道如何开启…（图）（图）    当然，我发现了一条USB-B的连接线，这大概就是主板的编程线了，所以顺着这个逻辑很快就找到了主板module ，之后的一天都在捣鼓配件的安装和主板上的接口调查。 （图片） 编译Macbook OS X EI Capitan 10.11.5由于我用的是Macbook，驱动方面首先就是没有的，需要自行添加。这里有一个地址，是我在网站上面找到的。我现在会上传到本站下载，同时这是一个本站资源下载测试的项目。 关于更多的信息，如果你的EI Captain 系统没有关闭csrutil机制，这样驱动是无法安装成功的。  在O...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/4/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/images/icon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Xia Hua</div><div class="author-info-description">Notes on hardware tinkering, cars, and living abroad.</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">45</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/tonyxiahua" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2018/08/14/interstate5/" title="加州五号高速公路驾驶手册">加州五号高速公路驾驶手册</a><time datetime="2018-08-14T09:43:03.000Z" title="发表于 2018-08-14 02:43:03">2018-08-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2018/08/07/LA%E7%94%9F%E6%B4%BB%E6%8C%87%E5%8D%97/" title="洛杉矶生活指南">洛杉矶生活指南</a><time datetime="2018-08-07T20:08:37.000Z" title="发表于 2018-08-07 13:08:37">2018-08-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2018/08/07/%E6%96%B0%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/" title="新的博客主题">新的博客主题</a><time datetime="2018-08-07T19:20:27.000Z" title="发表于 2018-08-07 12:20:27">2018-08-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2017/01/13/ShadowSocks-on-Chromebook/" title="ShadowSocks on Chromebook">ShadowSocks on Chromebook</a><time datetime="2017-01-14T04:10:57.000Z" title="发表于 2017-01-13 20:10:57">2017-01-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2017/01/06/Chromebook-Pixel-2013-Lightbar-Switch/" title="Chromebook Pixel 2013 Lightbar Switch">Chromebook Pixel 2013 Lightbar Switch</a><time datetime="2017-01-06T17:54:13.000Z" title="发表于 2017-01-06 09:54:13">2017-01-06</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/"><span class="card-category-list-name">技术</span><span class="card-category-list-count">18</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%B1%BD%E8%BD%A6/"><span class="card-category-list-name">汽车</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/"><span class="card-category-list-name">生活</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/"><span class="card-category-list-name">随笔</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Arduino/" style="font-size: 1.1em; color: #999">Arduino</a> <a href="/tags/%E7%95%99%E5%AD%A6/" style="font-size: 1.1em; color: #999">留学</a> <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 1.23em; color: #999ea6">单片机</a> <a href="/tags/Bilibili/" style="font-size: 1.1em; color: #999">Bilibili</a> <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 1.1em; color: #999">树莓派</a> <a href="/tags/A4/" style="font-size: 1.37em; color: #99a4b2">A4</a> <a href="/tags/Linux/" style="font-size: 1.23em; color: #999ea6">Linux</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 1.1em; color: #999">测试</a> <a href="/tags/%E5%96%B7%E6%BC%86/" style="font-size: 1.1em; color: #999">喷漆</a> <a href="/tags/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C/" style="font-size: 1.1em; color: #999">无线网络</a> <a href="/tags/%E7%A0%B4%E8%A7%A3/" style="font-size: 1.1em; color: #999">破解</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 1.23em; color: #999ea6">生活</a> <a href="/tags/Audi/" style="font-size: 1.5em; color: #99a9bf">Audi</a> <a href="/tags/Environment/" style="font-size: 1.1em; color: #999">Environment</a> <a href="/tags/B6/" style="font-size: 1.1em; color: #999">B6</a> <a href="/tags/Audition/" style="font-size: 1.1em; color: #999">Audition</a> <a href="/tags/Telegram/" style="font-size: 1.1em; color: #999">Telegram</a> <a href="/tags/MacOS/" style="font-size: 1.1em; color: #999">MacOS</a> <a href="/tags/%E6%97%A0%E7%BA%BF/" style="font-size: 1.1em; color: #999">无线</a> <a href="/tags/%E4%BF%9D%E5%85%BB/" style="font-size: 1.1em; color: #999">保养</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.1em; color: #999">数据结构</a> <a href="/tags/%E7%A7%91%E6%8A%80/" style="font-size: 1.1em; color: #999">科技</a> <a href="/tags/Assembly/" style="font-size: 1.1em; color: #999">Assembly</a> <a href="/tags/3hBWpYhdsX5C/" style="font-size: 1.1em; color: #999">3hBWpYhdsX5C</a> <a href="/tags/C/" style="font-size: 1.23em; color: #999ea6">C++</a> <a href="/tags/Chromebook/" style="font-size: 1.1em; color: #999">Chromebook</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1.1em; color: #999">教程</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 1.1em; color: #999">网络</a> <a href="/tags/%E5%85%85%E7%94%B5%E5%99%A8/" style="font-size: 1.1em; color: #999">充电器</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="font-size: 1.1em; color: #999">网络安全</a> <a href="/tags/Adobe/" style="font-size: 1.1em; color: #999">Adobe</a> <a href="/tags/%E5%85%AC%E4%BC%97%E5%8F%B7/" style="font-size: 1.1em; color: #999">公众号</a> <a href="/tags/%E7%A0%94%E7%A9%B6/" style="font-size: 1.1em; color: #999">研究</a> <a href="/tags/Chrome/" style="font-size: 1.1em; color: #999">Chrome</a> <a href="/tags/%E7%9B%B4%E6%92%AD/" style="font-size: 1.1em; color: #999">直播</a> <a href="/tags/hexo/" style="font-size: 1.1em; color: #999">hexo</a> <a href="/tags/Wi-Fi/" style="font-size: 1.23em; color: #999ea6">Wi-Fi</a> <a href="/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 1.1em; color: #999">技术</a> <a href="/tags/%E6%B1%BD%E8%BD%A6%E7%A0%94%E7%A9%B6/" style="font-size: 1.1em; color: #999">汽车研究</a> <a href="/tags/Windows/" style="font-size: 1.1em; color: #999">Windows</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div>
   
-    <ul id="menu" class="menu">
+    <ul class="card-archive-list">
       
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2018/08/">
+            <span class="card-archive-list-date">
+              八月 2018
+            </span>
+            <span class="card-archive-list-count">3</span>
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            About
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2017/01/">
+            <span class="card-archive-list-date">
+              一月 2017
+            </span>
+            <span class="card-archive-list-count">2</span>
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2016/12/">
+            <span class="card-archive-list-date">
+              十二月 2016
+            </span>
+            <span class="card-archive-list-count">2</span>
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            Categories
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2016/11/">
+            <span class="card-archive-list-date">
+              十一月 2016
+            </span>
+            <span class="card-archive-list-count">11</span>
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2016/10/">
+            <span class="card-archive-list-date">
+              十月 2016
+            </span>
+            <span class="card-archive-list-count">8</span>
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            Commonweal 404
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2016/09/">
+            <span class="card-archive-list-date">
+              九月 2016
+            </span>
+            <span class="card-archive-list-count">3</span>
           </a>
         </li>
       
-
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2016/07/">
+            <span class="card-archive-list-date">
+              七月 2016
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2016/06/">
+            <span class="card-archive-list-date">
+              六月 2016
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
       
     </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tonyxiahua.github.io/2016/11/08/webOS-is-not-dead-yet/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xia Hua">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/icon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xia Hua's Tech Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/08/webOS-is-not-dead-yet/" itemprop="url">webOS is not dead yet :)</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-08T16:34:51-08:00">
-                2016-11-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/11/08/webOS-is-not-dead-yet/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/11/08/webOS-is-not-dead-yet/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <a id="more"></a>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tonyxiahua.github.io/2016/11/02/Audi-B6-A4-切换温度单位/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xia Hua">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/icon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xia Hua's Tech Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/02/Audi-B6-A4-切换温度单位/" itemprop="url">Audi B6 A4 切换温度单位</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-02T16:37:49-07:00">
-                2016-11-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/11/02/Audi-B6-A4-切换温度单位/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/11/02/Audi-B6-A4-切换温度单位/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>如何切换Audi B6 A4 以及同类型的温度显示？</p>
-<p>打开空调，同时按住内循环键以及温度减少键三秒。</p>
-<p>观察显示台控制中心，看看是否切换为摄氏度显示方式？</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/11/02/Audi-B6-A4-切换温度单位/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tonyxiahua.github.io/2016/10/29/Audi-B6-A4-彩色中控屏幕/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xia Hua">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/icon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xia Hua's Tech Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/29/Audi-B6-A4-彩色中控屏幕/" itemprop="url">Audi B6 A4 彩色中控屏幕</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-29T18:28:35-07:00">
-                2016-10-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/10/29/Audi-B6-A4-彩色中控屏幕/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/10/29/Audi-B6-A4-彩色中控屏幕/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在YouTube上看到了一个战斗民族的开发者，给老款的B6 A4 添加了一个彩色的新款中控屏幕，还添加了很多自检功能，十分想要这个套装，但是在eBay上并没有找到这个商品，看起来要去战斗民族的老窝里面寻找一下了。</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/x4rM9b3M8FY" frameborder="0" allowfullscreen></iframe></div>
-<p><a href="https://www.youtube.com/watch?v=x4rM9b3M8FY" target="_blank" rel="noopener">视频可能有点小，点我去YouTube上看</a></p>
-<p>还有它们的研发网站：</p>
-<p><a href="https://vk.com/colormfa" target="_blank" rel="noopener">Color MFA Autopilot</a></p>
-<p>这个是它们的博客，我看了一下AutoPilot 这个公司，貌似给很多汽车厂提供中控屏幕？<br><a href="https://www.drive2.ru/o/MultiMFA" target="_blank" rel="noopener">Color MFA Blog</a></p>
-<p>暂时就这些。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tonyxiahua.github.io/2016/10/28/MacOS-里面的一个简易C-编译器/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xia Hua">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/icon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xia Hua's Tech Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/28/MacOS-里面的一个简易C-编译器/" itemprop="url">MacOS 里面的一个简易C++编译器</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-28T04:11:00-07:00">
-                2016-10-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/10/28/MacOS-里面的一个简易C-编译器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/10/28/MacOS-里面的一个简易C-编译器/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h2><p>其实现在大家使用习惯了GUI界面的IDE， 一旦回归到没有GUI时候就感觉到很不习惯。可是Terminal 形式的界面简洁轻量加载快是普通的IDE 不能比较的。有时候需要向大家演示小程序的时候，还是值得一试。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p><code>touch code.cpp</code><br>新建一个code.cpp文件</p>
-<p><code>nano code.cpp</code><br>编辑你的C++文件</p>
-<p><code>g++ -o code code.cpp</code><br>编译你的文件 并且保存名为code</p>
-<p><code>./code</code><br>运行code<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/10/28/MacOS-里面的一个简易C-编译器/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tonyxiahua.github.io/2016/10/26/Arduino-Basic-Connections/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xia Hua">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/icon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xia Hua's Tech Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/26/Arduino-Basic-Connections/" itemprop="url">Arduino Basic Connections</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-26T07:04:51-07:00">
-                2016-10-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/10/26/Arduino-Basic-Connections/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/10/26/Arduino-Basic-Connections/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>这里分享一下来自 www.pighixxx.com 的 Arduino 基础接线图（ABC，Arduino Basic Connections），希望对大家有用。</p>
-<p><img src="/images/arduino_basic_connections/1.jpg" alt="1"><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/10/26/Arduino-Basic-Connections/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tonyxiahua.github.io/2016/10/25/Audi-B6-A4-Spary-car-charger/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xia Hua">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/icon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xia Hua's Tech Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/25/Audi-B6-A4-Spary-car-charger/" itemprop="url">给塑料充电器喷漆</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-25T03:40:58-07:00">
-                2016-10-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/10/25/Audi-B6-A4-Spary-car-charger/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/10/25/Audi-B6-A4-Spary-car-charger/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>或许你在发愁没有找到合适颜色的商品，或许你在烦恼不同颜色的不搭调。没有问题！现在你只需要一个喷漆，就能够马上转换你的心情！</p>
-<p>其实在我上个月的时候就开始研究喷漆了，原因是有一辆古老的变速单车，而他的主人又舍不得丢掉它，纠结之下就开始了我的改装单车计划。但是到了现在这个单车我还只是停留在拆卸状态，如果遇到周末的话就可以进行了。但是平时呢，需要学习一下如何提升自己的喷漆技巧，为了让上色更加沉着，还是需要 100 小时的基本训练，1000小时的熟练之路。</p>
-<p>现在手头上有一个红色的充电器插头，一看下去我十分不满意，这个红色看上去太艳了，和我车内黑色的内饰不搭调，蓝色指示灯也就算了，但是这个红色实在是没法忍受……于是一气之下就开喷了。</p>
-<p>这个是Amazon 当时的购买图片：<br><img src="/images/spary_carcharger/1.jpg" alt="Vinsic® USB Type C Car Charger "><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/10/25/Audi-B6-A4-Spary-car-charger/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tonyxiahua.github.io/2016/10/24/CIS-22C-Labs/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xia Hua">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/icon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xia Hua's Tech Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/24/CIS-22C-Labs/" itemprop="url">CIS 22C Labs</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-24T08:50:58-07:00">
-                2016-10-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/10/24/CIS-22C-Labs/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/10/24/CIS-22C-Labs/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Here is the code page for CIS 22C Labs Delia’s Class.<br>Fall 2016 De Anza College.<br>Recommend using high resolution devices to view this page. Thanks.<br>这是一个我课程代码的页面，如果发现有任何错误请告知我，谢谢。<br>由于主题排版的问题，在便携设备上可能出现无法显示引索条，建议使用电脑访问。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/10/24/CIS-22C-Labs/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tonyxiahua.github.io/2016/10/21/AuditionTakeVoice/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xia Hua">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/icon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xia Hua's Tech Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/21/AuditionTakeVoice/" itemprop="url">Audition 消除伴奏获取人声的办法</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-21T21:17:02-07:00">
-                2016-10-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/10/21/AuditionTakeVoice/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/10/21/AuditionTakeVoice/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>如果你正为找不到一首歌曲的清唱人声版本发愁，为什么不下载完整的歌曲，自己动手分离出来呢？</p>
-<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
-<li>使用Audition 打开你的歌曲</li>
-<li>在Effects里面找到 Stereo Imagery</li>
-<li>选择 Center Channel Extractor</li>
-<li>之后在里面的弹出的窗口第二个Tab里拉下选项，里面有你想要保留的项目，例如男声，女声，bass，还有noise。</li>
-<li>最后按Apply</li>
-</ol>
-<h3 id="尾语"><a href="#尾语" class="headerlink" title="尾语"></a>尾语</h3><p>其实是自己稍微记录一下Audition的一些常用功能。希望对大家有用。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tonyxiahua.github.io/2016/10/18/国外的中国人/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xia Hua">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/icon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xia Hua's Tech Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/18/国外的中国人/" itemprop="url">国外的中国人</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-18T08:36:17-07:00">
-                2016-10-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/10/18/国外的中国人/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/10/18/国外的中国人/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>声明：本篇文章只是rednik.xyz网站的吐槽，与rednik本人无任何关系。</p>
-</blockquote>
-<p>时隔已久，一转眼我就在美国留学了两年了。两年以来，见过了不少人，经历了不少事情，虽然这篇文章算不上什么肺腑之言。但是有些趣事还是值得向大家说说。</p>
-<p>首先，NovaDNG有一篇文章说的很有趣，<a href="http://www.phonekr.com/chinese-user/" target="_blank" rel="noopener">《[吐槽向]中国用户长啥样》</a>，NovaDNG本身在美国留过学，见过颇多的美国的中国人。让我值得思考的是，我和他共同对这一类的中国人发出特有的厌恶之情。这源于什么？坦白来说，我们之前属于同一个博客团队，虽然在网址博客内容方面我毫无建树，但在思想层面上还是有很多共通之处。</p>
-<p>若翻墙只是思想探路，那么厌恶的东西才是逃避的共趋。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/10/18/国外的中国人/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/icon.jpg"
-                alt="Xia Hua" />
-            
-              <p class="site-author-name" itemprop="name">Xia Hua</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">39</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">48</span>
-                  <span class="site-state-item-name">tags</span>
-                
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/tonyxiahua" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:contact@tonyxiahua.github.io" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://www.google.com" target="_blank" title="Google">
-                      
-                        <i class="fa fa-fw fa-google"></i>Google</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://twitter.com/rednik111" target="_blank" title="Twitter">
-                      
-                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-            <div class="cc-license motion-element" itemprop="license">
-              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
-              </a>
-            </div>
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-block">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                个人作品
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://nekospeed.com/" title="喵速网－留学生的VPN代理" target="_blank">喵速网－留学生的VPN代理</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://lucillecao.com/" title="喵站" target="_blank">喵站</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://huaxiatony.github.io/" title="留学生生活指南" target="_blank">留学生生活指南</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-        </div>
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Xia Hua 2018 all rights reserved</span>
-
-  
-</div>
-
-
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
-
-
-
-
-        
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
-    </span>
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
-  
-</div>
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-
-    
-      <div id="needsharebutton-float">
-        <span class="btn">
-          <i class="fa fa-share-alt" aria-hidden="true"></i>
-        </span>
-      </div>
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://rednikxyz.disqus.com/count.js" async></script>
-    
-
-    
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
-
-  
-  
-  <script src="/lib/needsharebutton/needsharebutton.js"></script>
-
-  <script>
-    
-      pbOptions = {};
-      
-          pbOptions.iconStyle = "box";
-      
-          pbOptions.boxForm = "horizontal";
-      
-          pbOptions.position = "bottomCenter";
-      
-          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-      
-      new needShareButton('#needsharebutton-postbottom', pbOptions);
-    
-    
-      flOptions = {};
-      
-          flOptions.iconStyle = "box";
-      
-          flOptions.boxForm = "horizontal";
-      
-          flOptions.position = "middleRight";
-      
-          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-      
-      new needShareButton('#needsharebutton-float', flOptions);
-    
-  </script>
-
-  
-
-  
-
-  
-  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
-  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
-
-
-  
-
-</body>
-</html>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">31</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-12T15:58:09.818Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Xia Hua</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.7.0</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.7.0"></script><script src="/js/main.js?v=5.7.0"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.7.0"></script></div></div></body></html>
