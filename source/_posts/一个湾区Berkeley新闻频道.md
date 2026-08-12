@@ -4,8 +4,6 @@ date: 2016-10-17 21:21:34
 tags:
   - 生活
   - Telegram
-  - 公众号
-  - 测试
 categories:
   - 生活
 ---

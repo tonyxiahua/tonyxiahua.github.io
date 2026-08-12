@@ -12,12 +12,12 @@ categories:
 
 ## Start up
 
-Recently, BiliBili is in a boost of the user watching live channel, also many people start their business of using how to get started using the live broadcast softwares. Such as the OBS, and CopyLiu’s Danmu for Windows operating system. As a matter of fact, some user has Macbook or some Linux computer, they are facing a severe condition of unfriendly Chinese Software developing environment. Windows is also in the highest priority than other systems, and user of Mac the face become :( So I am one of them, after a few days struggling, I found some replaceable ways to access the Danmu function like in Windows. Let’s have a look.
+BiliBili live streaming has been booming lately, and plenty of people are getting into broadcast tools like OBS and CopyLiu's Danmu client for Windows. The catch: those tools only really target Windows. Users on a Macbook or Linux box are stuck with an unfriendly, mostly Windows-first software ecosystem — so we don't get the same Danmu experience out of the box.
 
-I found the project of [Octavian](https://github.com/OctavianLee/Barrage). He uses Python to make a command line tool which shows : User Message & Live Channel Count. (in Terminal).
-
-Here is the installation tutorial:  
+I'm one of those Mac users, and after a few days of digging I found a workaround. [Octavian's project](https://github.com/OctavianLee/Barrage) uses Python to build a command-line tool that shows the user message feed and live channel count right in your Terminal — basically a lightweight Danmu client that works anywhere Python runs.
 <!-- more -->
+
+Here's the installation tutorial:
 
 ### Step 1
 
@@ -48,12 +48,6 @@ python main.py
 
 ### Summary
 
-If you successfully run those commands above. You should see the selection menu on the screen.
+If you successfully run those commands above, you should see a selection menu on the screen. Type "1" to pick a room number and start receiving messages from that channel, or type "2" to log into Bilibili and send messages from your own account — though that second option hasn't worked reliably for me, since BiliBili keeps changing their API.
 
-Type “1” to select the room number, and receive the message from that channel.
-
-Type “2” to login Bilibili, and find out the part to get access to your account and send messages. (But this function havn’t successed yet. BiliBili always changes their API)
-
-If you've done those, you should have your Danmu Machine working in your Terminal. In every 5 seconds it shows the count of live channel watcher. Also receiving the message.
-
-Nice day.
+Once you've got it running, your Danmu Machine will sit in the Terminal refreshing the live channel watcher count every 5 seconds while streaming in the message feed. Nice day.

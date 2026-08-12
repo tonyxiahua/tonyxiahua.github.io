@@ -11,12 +11,12 @@ categories:
 
 ### 缘由
 
-关于Debain 环境下的linux相信大家并不陌生，  
-树莓派就是其一。由于原来系统中的自带浏览器并不能满足主流的浏览需求，所以我们要切换到Chromeium
+基于 Debian 的 Linux 发行版大家应该都不陌生，树莓派自带的系统就是其中之一。问题是它自带的浏览器体验实在跟不上主流网页的需求，卡顿、兼容性差是常态，所以还是得把它换成 Chromium。
+<!-- more -->
 
 ### 方法
 
-只需要把下面代码复制到Terminal 然后运行就可以了
+只需要把下面代码复制到 Terminal 里运行就可以了：
 
 ```sh
 
@@ -30,9 +30,8 @@ sudo dpkg -i chromium-codecs-ffmpeg-extra_45.0.2454.85-0ubuntu0.15.04.1.1181_arm
 
 sudo dpkg -i chromium-browser-l10n_45.0.2454.85-0ubuntu0.15.04.1.1181_all.deb chromium-browser_45.0.2454.85-0ubuntu0.15.04.1.1181_armhf.deb
 ```
-<!-- more -->
 
-之后在启动菜单里面的Internet里面选择Chromeium就好了
+之后在启动菜单里面的 Internet 分类里选择 Chromium 就好了。
 
 ### 笔记
 
