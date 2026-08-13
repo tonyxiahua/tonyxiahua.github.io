@@ -243,11 +243,15 @@ def verify_negative_regressions():
     )
 
 
+def verify_required_text(text, page_name, required_text):
+    for phrase in required_text:
+        require(phrase in text, f"{page_name}: missing {phrase!r}")
+
+
 def verify_page(path, required_text):
     require(path.is_file(), f"Missing page: {path.relative_to(ROOT)}")
     parser, text = parse(path)
-    for phrase in required_text:
-        require(phrase in text, f"{path.name}: missing {phrase!r}")
+    verify_required_text(text, path.name, required_text)
     verify_html_resources(parser)
     source = path.read_text(encoding="utf-8").lower()
     for forbidden in ("google-analytics", "googletagmanager", "facebook.net", "<iframe", "<form"):
@@ -255,23 +259,26 @@ def verify_page(path, required_text):
     return parser
 
 
-verify_negative_regressions()
-
-
-privacy_parser = verify_page(
-    PRIVACY,
-    [
+PRIVACY_REQUIRED = [
         "Privacy Policy",
         "August 13, 2026",
         "do not collect, transmit, sell, or share your personal data",
         "Camera",
+        "Used to detect the tennis court, players, strokes, and ball during a session.",
         "Microphone",
+        "Used when you choose to record match audio and to detect ball-strike cues.",
         "Photos",
+        "Used only when you request that TENS import a video or save a video to your photo library.",
         "HealthKit",
         "Apple Watch",
+        "Used to support tennis workouts and display fitness information when you choose to connect them.",
         "Information We Do Not Collect",
         "has no account system, advertising SDK, third-party analytics SDK, or developer-operated server",
         "On-Device Data",
+        "Match videos",
+        "tracking samples",
+        "session analytics",
+        "preferences",
         "stored locally on your devices",
         "deleting a session or removing the app",
         "Videos you save to Photos and health information you save through HealthKit may remain in Apple services",
@@ -283,11 +290,8 @@ privacy_parser = verify_page(
         "this page will be updated and its effective date will be revised",
         "xhua006@gmail.com",
         "© 2026 Xia Hua. All rights reserved.",
-    ],
-)
-support_parser = verify_page(
-    SUPPORT,
-    [
+]
+SUPPORT_REQUIRED = [
         "TENS Support",
         "Position your iPhone",
         "full tennis court",
@@ -307,8 +311,36 @@ support_parser = verify_page(
         "Please do not send sensitive health data or private recordings",
         "xhua006@gmail.com",
         "© 2026 Xia Hua. All rights reserved.",
-    ],
-)
+]
+
+
+def verify_content_regressions():
+    source = PRIVACY.read_text(encoding="utf-8")
+    required_phrases = [
+        "Used to detect the tennis court, players, strokes, and ball during a session.",
+        "Used when you choose to record match audio and to detect ball-strike cues.",
+        "Used only when you request that TENS import a video or save a video to your photo library.",
+        "Used to support tennis workouts and display fitness information when you choose to connect them.",
+        "Match videos",
+        "tracking samples",
+        "session analytics",
+        "preferences",
+    ]
+    for phrase in required_phrases:
+        mutated = source.replace(phrase, "", 1)
+        parser = PageParser()
+        parser.feed(mutated)
+        require_rejected(
+            lambda: verify_required_text(" ".join(parser.text), PRIVACY.name, PRIVACY_REQUIRED),
+            f"{PRIVACY.name}: missing {phrase!r}",
+        )
+
+
+verify_negative_regressions()
+verify_content_regressions()
+
+privacy_parser = verify_page(PRIVACY, PRIVACY_REQUIRED)
+support_parser = verify_page(SUPPORT, SUPPORT_REQUIRED)
 
 require(STYLES.is_file(), "Missing tens/assets/styles.css")
 verify_stylesheet(STYLES.read_text(encoding="utf-8"))
