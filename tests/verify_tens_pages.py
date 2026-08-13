@@ -14,7 +14,8 @@ CSS_IMPORT = re.compile(
     r'''@import\s+(?:url\(\s*)?["'](?P<url>.*?)["']''', re.IGNORECASE
 )
 CSS_ESCAPE = re.compile(
-    r"\\(?:(?P<hex>[0-9a-fA-F]{1,6})[ \t\r\n\f]?|(?P<char>.))", re.DOTALL
+    r"\\(?:(?P<continuation>\r\n|[\n\r\f])|(?P<hex>[0-9a-fA-F]{1,6})[ \t\r\n\f]?|(?P<char>.))",
+    re.DOTALL,
 )
 RESOURCE_ATTRIBUTES = {
     "link": "href",
@@ -80,6 +81,8 @@ def verify_html_resources(parser):
 
 def decode_css_escapes(value):
     def replace(match):
+        if match.group("continuation"):
+            return ""
         if match.group("hex"):
             return chr(int(match.group("hex"), 16))
         return match.group("char")
@@ -111,6 +114,8 @@ def verify_negative_regressions():
     remote_background = '.court { background-image: url(//example.com/court.png); }'
     escaped_background = r'.court { background-image: url(https\3a//example.com/court.png); }'
     escaped_import = r'@\69mport "https://example.com/font.css";'
+    continued_background = ".court { background-image: url(https\\\n://example.com/court.png); }"
+    continued_import = '@\\\nimport "https://example.com/font.css";'
     script_page = '<!doctype html><script>window.track = true;</script>'
     video_page = '<!doctype html><video src="https://example.com/match.mp4"></video>'
 
@@ -128,6 +133,14 @@ def verify_negative_regressions():
     )
     require_rejected(
         lambda: verify_stylesheet(escaped_import),
+        "External stylesheet resource: https://example.com/font.css",
+    )
+    require_rejected(
+        lambda: verify_stylesheet(continued_background),
+        "External stylesheet resource: https://example.com/court.png",
+    )
+    require_rejected(
+        lambda: verify_stylesheet(continued_import),
         "External stylesheet resource: https://example.com/font.css",
     )
     parser = PageParser()
