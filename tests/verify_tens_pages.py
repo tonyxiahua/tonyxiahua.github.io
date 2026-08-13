@@ -13,6 +13,21 @@ CSS_URL = re.compile(
 CSS_IMPORT = re.compile(
     r'''@import\s+(?:url\(\s*)?["'](?P<url>.*?)["']''', re.IGNORECASE
 )
+CSS_ESCAPE = re.compile(
+    r"\\(?:(?P<hex>[0-9a-fA-F]{1,6})[ \t\r\n\f]?|(?P<char>.))", re.DOTALL
+)
+RESOURCE_ATTRIBUTES = {
+    "link": "href",
+    "script": "src",
+    "img": "src",
+    "iframe": "src",
+    "audio": "src",
+    "video": "src",
+    "source": "src",
+    "track": "src",
+    "embed": "src",
+    "object": "data",
+}
 
 
 class PageParser(HTMLParser):
@@ -27,8 +42,8 @@ class PageParser(HTMLParser):
         values = dict(attrs)
         if tag == "a" and "href" in values:
             self.links.append(values["href"])
-        if tag in {"link", "script", "img", "iframe"}:
-            resource = values.get("href") or values.get("src")
+        if tag in RESOURCE_ATTRIBUTES:
+            resource = values.get(RESOURCE_ATTRIBUTES[tag])
             if resource:
                 self.resources.append(resource)
         if tag == "script":
@@ -63,7 +78,17 @@ def verify_html_resources(parser):
         verify_local_resource(resource, "resource")
 
 
+def decode_css_escapes(value):
+    def replace(match):
+        if match.group("hex"):
+            return chr(int(match.group("hex"), 16))
+        return match.group("char")
+
+    return CSS_ESCAPE.sub(replace, value)
+
+
 def verify_stylesheet(source):
+    source = decode_css_escapes(source)
     references = [match.group("url") for match in CSS_IMPORT.finditer(source)]
     references.extend(
         match.group("quoted") or match.group("bare") for match in CSS_URL.finditer(source)
@@ -84,7 +109,10 @@ def require_rejected(action, expected_message):
 def verify_negative_regressions():
     remote_stylesheet = '@import url("https://example.com/font.css");'
     remote_background = '.court { background-image: url(//example.com/court.png); }'
+    escaped_background = r'.court { background-image: url(https\3a//example.com/court.png); }'
+    escaped_import = r'@\69mport "https://example.com/font.css";'
     script_page = '<!doctype html><script>window.track = true;</script>'
+    video_page = '<!doctype html><video src="https://example.com/match.mp4"></video>'
 
     require_rejected(
         lambda: verify_stylesheet(remote_stylesheet),
@@ -94,9 +122,23 @@ def verify_negative_regressions():
         lambda: verify_stylesheet(remote_background),
         "External stylesheet resource: //example.com/court.png",
     )
+    require_rejected(
+        lambda: verify_stylesheet(escaped_background),
+        "External stylesheet resource: https://example.com/court.png",
+    )
+    require_rejected(
+        lambda: verify_stylesheet(escaped_import),
+        "External stylesheet resource: https://example.com/font.css",
+    )
     parser = PageParser()
     parser.feed(script_page)
     require_rejected(lambda: verify_html_resources(parser), "Script tags are not allowed")
+    parser = PageParser()
+    parser.feed(video_page)
+    require_rejected(
+        lambda: verify_html_resources(parser),
+        "External resource: https://example.com/match.mp4",
+    )
 
 
 def verify_page(path, required_text):
