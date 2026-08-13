@@ -18,6 +18,7 @@ CSS_ESCAPE = re.compile(
     re.DOTALL,
 )
 RESOURCE_ATTRIBUTES = {
+    "base": ("href",),
     "link": ("href",),
     "script": ("src",),
     "img": ("src",),
@@ -28,6 +29,10 @@ RESOURCE_ATTRIBUTES = {
     "track": ("src",),
     "embed": ("src",),
     "object": ("data",),
+    "image": ("href", "xlink:href"),
+    "use": ("href", "xlink:href"),
+    "feimage": ("href", "xlink:href"),
+    "mpath": ("href", "xlink:href"),
 }
 SRCSET_ATTRIBUTES = {"img": ("srcset",), "source": ("srcset",), "link": ("imagesrcset",)}
 
@@ -150,6 +155,10 @@ def verify_negative_regressions():
     style_page = '<!doctype html><style>@import "https://example.com/font.css";</style>'
     srcset_page = '<!doctype html><img srcset="https://example.com/court.png 1x">'
     poster_page = '<!doctype html><video poster="https://example.com/cover.png"></video>'
+    base_page = '<!doctype html><base href="https://example.com/"><img src="court.png">'
+    svg_image_page = '<!doctype html><svg><image href="https://example.com/court.png"></image></svg>'
+    svg_use_page = '<!doctype html><svg><use href="https://example.com/icons.svg#icon"></use></svg>'
+    svg_filter_page = '<!doctype html><svg><feImage href="https://example.com/filter.png"></feImage></svg>'
 
     require_rejected(
         lambda: verify_stylesheet(remote_stylesheet),
@@ -207,6 +216,30 @@ def verify_negative_regressions():
     require_rejected(
         lambda: verify_html_resources(parser),
         "External resource: https://example.com/cover.png",
+    )
+    parser = PageParser()
+    parser.feed(base_page)
+    require_rejected(
+        lambda: verify_html_resources(parser),
+        "External resource: https://example.com/",
+    )
+    parser = PageParser()
+    parser.feed(svg_image_page)
+    require_rejected(
+        lambda: verify_html_resources(parser),
+        "External resource: https://example.com/court.png",
+    )
+    parser = PageParser()
+    parser.feed(svg_use_page)
+    require_rejected(
+        lambda: verify_html_resources(parser),
+        "External resource: https://example.com/icons.svg#icon",
+    )
+    parser = PageParser()
+    parser.feed(svg_filter_page)
+    require_rejected(
+        lambda: verify_html_resources(parser),
+        "External resource: https://example.com/filter.png",
     )
 
 
