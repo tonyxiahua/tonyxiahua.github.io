@@ -1,11 +1,18 @@
 from html.parser import HTMLParser
 from pathlib import Path
+import re
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 PRIVACY = ROOT / "tens/privacy/index.html"
 SUPPORT = ROOT / "tens/support/index.html"
 STYLES = ROOT / "tens/assets/styles.css"
+CSS_URL = re.compile(
+    r'''url\(\s*(?:["'](?P<quoted>.*?)["']|(?P<bare>[^)\s]+))\s*\)''', re.IGNORECASE
+)
+CSS_IMPORT = re.compile(
+    r'''@import\s+(?:url\(\s*)?["'](?P<url>.*?)["']''', re.IGNORECASE
+)
 
 
 class PageParser(HTMLParser):
@@ -13,6 +20,7 @@ class PageParser(HTMLParser):
         super().__init__()
         self.links = []
         self.resources = []
+        self.scripts = []
         self.text = []
 
     def handle_starttag(self, tag, attrs):
@@ -23,6 +31,8 @@ class PageParser(HTMLParser):
             resource = values.get("href") or values.get("src")
             if resource:
                 self.resources.append(resource)
+        if tag == "script":
+            self.scripts.append(values)
 
     def handle_data(self, data):
         self.text.append(data)
@@ -39,18 +49,69 @@ def require(condition, message):
         raise AssertionError(message)
 
 
+def verify_local_resource(resource, context):
+    parsed = urlparse(resource.strip())
+    require(
+        not parsed.scheme and not parsed.netloc,
+        f"External {context}: {resource}",
+    )
+
+
+def verify_html_resources(parser):
+    require(not parser.scripts, "Script tags are not allowed")
+    for resource in parser.resources:
+        verify_local_resource(resource, "resource")
+
+
+def verify_stylesheet(source):
+    references = [match.group("url") for match in CSS_IMPORT.finditer(source)]
+    references.extend(
+        match.group("quoted") or match.group("bare") for match in CSS_URL.finditer(source)
+    )
+    for reference in references:
+        verify_local_resource(reference, "stylesheet resource")
+
+
+def require_rejected(action, expected_message):
+    try:
+        action()
+    except AssertionError as error:
+        require(expected_message in str(error), f"Unexpected failure: {error}")
+    else:
+        raise AssertionError(f"Expected rejection: {expected_message}")
+
+
+def verify_negative_regressions():
+    remote_stylesheet = '@import url("https://example.com/font.css");'
+    remote_background = '.court { background-image: url(//example.com/court.png); }'
+    script_page = '<!doctype html><script>window.track = true;</script>'
+
+    require_rejected(
+        lambda: verify_stylesheet(remote_stylesheet),
+        "External stylesheet resource: https://example.com/font.css",
+    )
+    require_rejected(
+        lambda: verify_stylesheet(remote_background),
+        "External stylesheet resource: //example.com/court.png",
+    )
+    parser = PageParser()
+    parser.feed(script_page)
+    require_rejected(lambda: verify_html_resources(parser), "Script tags are not allowed")
+
+
 def verify_page(path, required_text):
     require(path.is_file(), f"Missing page: {path.relative_to(ROOT)}")
     parser, text = parse(path)
     for phrase in required_text:
         require(phrase in text, f"{path.name}: missing {phrase!r}")
-    for resource in parser.resources:
-        parsed = urlparse(resource)
-        require(not parsed.scheme and not parsed.netloc, f"External resource: {resource}")
+    verify_html_resources(parser)
     source = path.read_text(encoding="utf-8").lower()
     for forbidden in ("google-analytics", "googletagmanager", "facebook.net", "<iframe", "<form"):
         require(forbidden not in source, f"Forbidden integration: {forbidden}")
     return parser
+
+
+verify_negative_regressions()
 
 
 privacy_parser = verify_page(
@@ -64,6 +125,18 @@ privacy_parser = verify_page(
         "Photos",
         "HealthKit",
         "Apple Watch",
+        "Information We Do Not Collect",
+        "has no account system, advertising SDK, third-party analytics SDK, or developer-operated server",
+        "On-Device Data",
+        "stored locally on your devices",
+        "deleting a session or removing the app",
+        "Videos you save to Photos and health information you save through HealthKit may remain in Apple services",
+        "Health Data",
+        "does not use HealthKit data for advertising or sell it to third parties",
+        "Children's Privacy",
+        "not directed to children under 13 and does not knowingly collect children's personal information",
+        "Changes to This Policy",
+        "this page will be updated and its effective date will be revised",
         "xhua006@gmail.com",
         "© 2026 Xia Hua. All rights reserved.",
     ],
@@ -76,12 +149,25 @@ support_parser = verify_page(
         "full tennis court",
         "Apple Watch",
         "Troubleshooting",
+        "Court detection",
+        "Make sure the full court is in frame",
+        "Improve lighting where possible, clear obstructions",
+        "Permissions",
+        "camera, microphone, Photos, notifications, or Health permissions",
+        "Apple Watch",
+        "Apple Watch is paired with the iPhone, unlocked, and reachable",
+        "Video import or save",
+        "When importing or saving video, allow Photos access when prompted",
+        "Local data removal",
+        "Delete a session to remove its locally stored session data, or remove the app to remove its local data",
+        "Please do not send sensitive health data or private recordings",
         "xhua006@gmail.com",
         "© 2026 Xia Hua. All rights reserved.",
     ],
 )
 
 require(STYLES.is_file(), "Missing tens/assets/styles.css")
+verify_stylesheet(STYLES.read_text(encoding="utf-8"))
 require("/tens/assets/styles.css" in privacy_parser.resources, "Privacy CSS link is incorrect")
 require("/tens/assets/styles.css" in support_parser.resources, "Support CSS link is incorrect")
 require("/tens/support/" in privacy_parser.links, "Privacy page must link to Support")
