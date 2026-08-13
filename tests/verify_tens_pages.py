@@ -18,17 +18,18 @@ CSS_ESCAPE = re.compile(
     re.DOTALL,
 )
 RESOURCE_ATTRIBUTES = {
-    "link": "href",
-    "script": "src",
-    "img": "src",
-    "iframe": "src",
-    "audio": "src",
-    "video": "src",
-    "source": "src",
-    "track": "src",
-    "embed": "src",
-    "object": "data",
+    "link": ("href",),
+    "script": ("src",),
+    "img": ("src",),
+    "iframe": ("src",),
+    "audio": ("src",),
+    "video": ("src", "poster"),
+    "source": ("src",),
+    "track": ("src",),
+    "embed": ("src",),
+    "object": ("data",),
 }
+SRCSET_ATTRIBUTES = {"img": ("srcset",), "source": ("srcset",), "link": ("imagesrcset",)}
 
 
 class PageParser(HTMLParser):
@@ -36,7 +37,11 @@ class PageParser(HTMLParser):
         super().__init__()
         self.links = []
         self.resources = []
+        self.srcsets = []
         self.scripts = []
+        self.inline_styles = []
+        self.style_blocks = []
+        self.in_style_block = False
         self.text = []
 
     def handle_starttag(self, tag, attrs):
@@ -44,14 +49,30 @@ class PageParser(HTMLParser):
         if tag == "a" and "href" in values:
             self.links.append(values["href"])
         if tag in RESOURCE_ATTRIBUTES:
-            resource = values.get(RESOURCE_ATTRIBUTES[tag])
-            if resource:
-                self.resources.append(resource)
+            for attribute in RESOURCE_ATTRIBUTES[tag]:
+                resource = values.get(attribute)
+                if resource:
+                    self.resources.append(resource)
+        if tag in SRCSET_ATTRIBUTES:
+            for attribute in SRCSET_ATTRIBUTES[tag]:
+                srcset = values.get(attribute)
+                if srcset:
+                    self.srcsets.append(srcset)
+        if "style" in values:
+            self.inline_styles.append(values["style"])
         if tag == "script":
             self.scripts.append(values)
+        if tag == "style":
+            self.in_style_block = True
+
+    def handle_endtag(self, tag):
+        if tag == "style":
+            self.in_style_block = False
 
     def handle_data(self, data):
         self.text.append(data)
+        if self.in_style_block:
+            self.style_blocks.append(data)
 
 
 def parse(path):
@@ -77,6 +98,13 @@ def verify_html_resources(parser):
     require(not parser.scripts, "Script tags are not allowed")
     for resource in parser.resources:
         verify_local_resource(resource, "resource")
+    for srcset in parser.srcsets:
+        for candidate in srcset.split(","):
+            resource = candidate.strip().split(maxsplit=1)[0]
+            if resource:
+                verify_local_resource(resource, "resource")
+    for source in parser.inline_styles + parser.style_blocks:
+        verify_stylesheet(source)
 
 
 def decode_css_escapes(value):
@@ -118,6 +146,10 @@ def verify_negative_regressions():
     continued_import = '@\\\nimport "https://example.com/font.css";'
     script_page = '<!doctype html><script>window.track = true;</script>'
     video_page = '<!doctype html><video src="https://example.com/match.mp4"></video>'
+    inline_style_page = '<!doctype html><p style="background: url(https://example.com/court.png)">TENS</p>'
+    style_page = '<!doctype html><style>@import "https://example.com/font.css";</style>'
+    srcset_page = '<!doctype html><img srcset="https://example.com/court.png 1x">'
+    poster_page = '<!doctype html><video poster="https://example.com/cover.png"></video>'
 
     require_rejected(
         lambda: verify_stylesheet(remote_stylesheet),
@@ -151,6 +183,30 @@ def verify_negative_regressions():
     require_rejected(
         lambda: verify_html_resources(parser),
         "External resource: https://example.com/match.mp4",
+    )
+    parser = PageParser()
+    parser.feed(inline_style_page)
+    require_rejected(
+        lambda: verify_html_resources(parser),
+        "External stylesheet resource: https://example.com/court.png",
+    )
+    parser = PageParser()
+    parser.feed(style_page)
+    require_rejected(
+        lambda: verify_html_resources(parser),
+        "External stylesheet resource: https://example.com/font.css",
+    )
+    parser = PageParser()
+    parser.feed(srcset_page)
+    require_rejected(
+        lambda: verify_html_resources(parser),
+        "External resource: https://example.com/court.png",
+    )
+    parser = PageParser()
+    parser.feed(poster_page)
+    require_rejected(
+        lambda: verify_html_resources(parser),
+        "External resource: https://example.com/cover.png",
     )
 
 
